@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     public float playerSpeed = 5f;
 
     //player turn speed, should be 15 * playerSpeed
-    public float playerTurnSpeed = 75f;
+    public float playerTurnSpeed;
 
     private Rigidbody rb;
     private float moveInput;
@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     {
         //store the rigidbody component
         rb = GetComponent<Rigidbody>();
+        playerTurnSpeed = 50f;
 	}
 
     private void Update()
