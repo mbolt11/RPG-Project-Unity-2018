@@ -38,9 +38,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4502735606228086}
   - component: {fileID: 54564686275160648}
+  - component: {fileID: 65275900011038786}
   m_Layer: 0
   m_Name: Robot
-  m_TagString: Untagged
+  m_TagString: Robot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -351,6 +352,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &65275900011038786
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1497239384764936}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.25, y: 1.5, z: 1}
+  m_Center: {x: 0, y: 1.25, z: 0}
 --- !u!65 &65376991702367926
 BoxCollider:
   m_ObjectHideFlags: 1

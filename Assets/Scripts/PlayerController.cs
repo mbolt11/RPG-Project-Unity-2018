@@ -14,13 +14,13 @@ public class PlayerController : MonoBehaviour
     private float moveInput;
     private float turnInput;
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start()
     {
         //store the rigidbody component
         rb = GetComponent<Rigidbody>();
         playerTurnSpeed = 50f;
-	}
+    }
 
     private void Update()
     {
@@ -30,11 +30,11 @@ public class PlayerController : MonoBehaviour
     }
 
     //physics code
-    void FixedUpdate ()
+    void FixedUpdate()
     {
         MovePlayer();
         TurnPlayer();
-	}
+    }
 
     //Move player Forward/Backward
     private void MovePlayer()
@@ -50,4 +50,14 @@ public class PlayerController : MonoBehaviour
         Quaternion turn = Quaternion.Euler(0f, turnValue, 0f);
         rb.MoveRotation(rb.rotation * turn);
     }
+
+    //If the player collides with a Robot, move him to the fixing area
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Robot")
+        {
+            transform.position = new Vector3(100, 0, 0);
+        }
+    }
 }
+
