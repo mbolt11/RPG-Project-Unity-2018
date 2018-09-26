@@ -5,7 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Scenes/NeverUnload.unity
+    guid: 9e52bd1b8af974552ba0dcf84f853d76
+  - enabled: 1
+    path: Assets/Scenes/Overworld.unity
+    guid: 89dec36fc29513649b02e09b357b5c32
+  - enabled: 1
+    path: Assets/Scenes/FixItMode.unity
+    guid: 9775a1eeec56740f093fd125bb3a0515
   m_configObjects: {}

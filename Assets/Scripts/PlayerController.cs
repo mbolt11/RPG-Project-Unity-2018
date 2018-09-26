@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -13,6 +14,9 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
     private float moveInput;
     private float turnInput;
+
+    //Keeps track of if we have loaded the fixing scene yet
+    private bool loaded = false; 
 
     // Use this for initialization
     void Start()
@@ -51,12 +55,20 @@ public class PlayerController : MonoBehaviour
         rb.MoveRotation(rb.rotation * turn);
     }
 
-    //If the player collides with a Robot, move him to the fixing area
+    //If the player collides with a Robot, move him to the fixing scene
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Robot")
         {
-            transform.position = new Vector3(100, 0, 0);
+            if(!loaded)
+            {
+                //Load the fix it scene
+                SceneManager.LoadSceneAsync(2, LoadSceneMode.Single);
+                loaded = true;
+
+                //Unload the overworld scene
+                MySceneManager.mySceneManager.UnloadScene(1);
+            }
         }
     }
 }
