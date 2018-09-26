@@ -113,50 +113,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &142698128
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 1619764219939982, guid: ad56ec4243d2c4142a1fd684d8915718,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 142698129}
-  - component: {fileID: 142698130}
-  m_Layer: 0
-  m_Name: BaseRampCollider
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &142698129
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 4275285413099500, guid: ad56ec4243d2c4142a1fd684d8915718,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 142698128}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.95, y: -0.30700004, z: 0.49400017}
-  m_LocalScale: {x: 0.103535004, y: 2.0000012, z: 3.2095296}
-  m_Children: []
-  m_Father: {fileID: 1210095806}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &142698130
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 65122950606944332, guid: ad56ec4243d2c4142a1fd684d8915718,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 142698128}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
@@ -1361,11 +1317,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1122302976}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &1210095806 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4836698960489608, guid: ad56ec4243d2c4142a1fd684d8915718,
-    type: 2}
-  m_PrefabInternal: {fileID: 1770274904}
 --- !u!1 &1242943502
 GameObject:
   m_ObjectHideFlags: 0
@@ -1836,7 +1787,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4836698960489608, guid: ad56ec4243d2c4142a1fd684d8915718, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 16.45
+      value: 10.67
       objectReference: {fileID: 0}
     - target: {fileID: 4836698960489608, guid: ad56ec4243d2c4142a1fd684d8915718, type: 2}
       propertyPath: m_LocalPosition.y
