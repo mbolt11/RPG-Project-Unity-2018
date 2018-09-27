@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour
                 loaded = true;
 
                 //Unload the overworld scene
-                MySceneManager.mySceneManager.UnloadScene(1);
+                //MySceneManager.mySceneManager.UnloadScene(1);
             }
         }
     }
