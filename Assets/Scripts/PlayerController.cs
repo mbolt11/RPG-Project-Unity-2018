@@ -6,9 +6,9 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     //player forward/backward speed
-    public float playerSpeed = 5f;
+    public float playerSpeed = 7f;
 
-    //player turn speed, should be 15 * playerSpeed
+    //player turn speed, should be 10 * playerSpeed
     public float playerTurnSpeed;
 
     private Rigidbody rb;
@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
     {
         //store the rigidbody component
         rb = GetComponent<Rigidbody>();
-        playerTurnSpeed = 50f;
+        playerTurnSpeed = 10f * playerSpeed;
     }
 
     private void Update()
