@@ -6,24 +6,36 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     //player forward/backward speed
-    public float playerSpeed = 7f;
+    public float playerSpeed = 5f;
 
-    //player turn speed, should be 10 * playerSpeed
+    //player turn speed, should be 15 * playerSpeed
     public float playerTurnSpeed;
+
+    //Public variables for the transition
+    public GameObject transition;
+    public float pauseTime;
+    private float tcounter = -598;
+    private RectTransform mytransform;
 
     private Rigidbody rb;
     private float moveInput;
     private float turnInput;
 
     //Keeps track of if we have loaded the fixing scene yet
-    private bool loaded = false; 
+    private bool loaded = false;
 
     // Use this for initialization
     void Start()
     {
         //store the rigidbody component
         rb = GetComponent<Rigidbody>();
-        playerTurnSpeed = 10f * playerSpeed;
+        playerTurnSpeed = 50f;
+
+        //Set the initial position of the black transition screen
+        mytransform = transition.GetComponentInChildren<RectTransform>();
+        Vector3 startpos = new Vector3(tcounter, 304, 0);
+        Quaternion noturn = Quaternion.Euler(0f, 0f, 0f);
+        mytransform.SetPositionAndRotation(startpos, noturn);
     }
 
     private void Update()
@@ -55,21 +67,36 @@ public class PlayerController : MonoBehaviour
         rb.MoveRotation(rb.rotation * turn);
     }
 
-    //If the player collides with a Robot, move him to the fixing scene
+    //If the player collides with a Robot, go to the fixing scene
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Robot")
         {
-            if(!loaded)
+            //Safety check that scene has not loaded already
+            if (!loaded)
             {
+                //Make transition image move across the Hud
+                StartCoroutine(Transition());
+
                 //Load the fix it scene
-                SceneManager.LoadSceneAsync(2, LoadSceneMode.Single);
-                loaded = true;
+                SceneManager.LoadSceneAsync(1);
 
                 //Unload the overworld scene
-                //MySceneManager.mySceneManager.UnloadScene(1);
+                SceneManager.UnloadSceneAsync(0);
             }
         }
     }
-}
 
+    //Coroutine for transition
+    IEnumerator Transition()
+    {
+        while (tcounter < 598)
+        {
+            Vector3 movecanvas = new Vector3(tcounter, 0, 0);
+            Quaternion noturn = Quaternion.Euler(0f, 0f, 0f);
+            mytransform.SetPositionAndRotation(movecanvas, noturn);
+            tcounter++;
+            yield return new WaitForSeconds(pauseTime);
+        }
+    }
+}
