@@ -647,6 +647,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transitionPanel: {fileID: 2135950518}
+  panelNum: 1
+  down: 0
 --- !u!1 &724030933
 GameObject:
   m_ObjectHideFlags: 0

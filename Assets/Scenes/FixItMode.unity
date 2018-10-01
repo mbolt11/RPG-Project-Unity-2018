@@ -825,6 +825,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transitionPanel: {fileID: 146122538}
+  panelNum: 2
   down: 1
 --- !u!1 &1055921977
 GameObject:

@@ -5,33 +5,39 @@ using UnityEngine;
 public class TransitionScript : MonoBehaviour {
 
     public GameObject transitionPanel;
+    public int panelNum;
     public bool down;
     private Animator anim;
     
 	// Use this for initialization
 	void Start () {
-        if (down)
-            EndTransition();
         Time.timeScale = 1;
         anim = transitionPanel.GetComponent<Animator>();
-        anim.enabled = false;
+        if (down)
+            EndTransition();
+        else
+            anim.enabled = false;
 	}
 
     public void StartTransition()
     {
+        string animationName = "TransitionAnimSlideIn" + panelNum;
         anim.enabled = true;
-        anim.Play("TransitionAnimSlideIn");
+        anim.Play(animationName);
         down = true;
-        Time.timeScale = 0;
+        Time.timeScale = 1;
     }
 
     public void EndTransition()
     {
-        //Debug.Log("reached endTransition");
+        string animationName = "TransitionAnimSlideIn" + panelNum;
         anim.enabled = true;
-        anim.Play("TransitionAnimSlideOut");
+        Debug.Log("end animation should happen");
+        //Debug.Log(animationName);
+        anim.Play(animationName);
+        Debug.Log(anim.GetCurrentAnimatorStateInfo(0));
         down = false;
         Time.timeScale = 1;
-        anim.enabled = false;
+        //anim.enabled = false;
     }
 }
