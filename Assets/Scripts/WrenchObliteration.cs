@@ -18,12 +18,13 @@ public class WrenchObliteration : MonoBehaviour {
         if(other.CompareTag("Robot"))
         {
             //damage to the robot
+            ObliterationParticles.Play();
         }
 
-        //ObliterationParticles.transform.parent = null;
-        ObliterationParticles.Play();
+        ObliterationParticles.transform.parent = null;
+        
 
-        Destroy(ObliterationParticles, ObliterationParticles.main.duration);
+        Destroy(ObliterationParticles.gameObject, ObliterationParticles.main.duration);
         Destroy(gameObject);
     }
 }

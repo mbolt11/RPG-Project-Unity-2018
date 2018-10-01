@@ -67,13 +67,21 @@ public class PlayerController : MonoBehaviour
             if (!loaded)
             {
                 userCamera.GetComponent<TransitionScript>().StartTransition();
+                StartCoroutine(WaitFor()); //wait for 3 seconds
+                Debug.Log("doneWaiting");
                 //Load the fix it scene
-                SceneManager.LoadSceneAsync(1);
+                //SceneManager.LoadSceneAsync(1);
 
                 //Unload the overworld scene
-                SceneManager.UnloadSceneAsync(0);
-                userCamera.GetComponent<TransitionScript>().EndTransition();
+                //SceneManager.UnloadSceneAsync(0);
+                //userCamera.GetComponent<TransitionScript>().EndTransition();
             }
         }
+    }
+
+    IEnumerator WaitFor()
+    {
+        Debug.Log("waiting");
+        yield return new WaitForSeconds(3000);
     }
 }
