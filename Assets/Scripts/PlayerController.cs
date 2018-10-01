@@ -11,12 +11,6 @@ public class PlayerController : MonoBehaviour
     //player turn speed, should be 15 * playerSpeed
     public float playerTurnSpeed;
 
-    //Public variables for the transition
-    public GameObject transition;
-    public float pauseTime;
-    private float tcounter = -598;
-    private RectTransform mytransform;
-
     private Rigidbody rb;
     private float moveInput;
     private float turnInput;
@@ -24,18 +18,15 @@ public class PlayerController : MonoBehaviour
     //Keeps track of if we have loaded the fixing scene yet
     private bool loaded = false;
 
+    //reference to the main camera
+    public GameObject userCamera;
+
     // Use this for initialization
     void Start()
     {
         //store the rigidbody component
         rb = GetComponent<Rigidbody>();
         playerTurnSpeed = 50f;
-
-        //Set the initial position of the black transition screen
-        mytransform = transition.GetComponentInChildren<RectTransform>();
-        Vector3 startpos = new Vector3(tcounter, 304, 0);
-        Quaternion noturn = Quaternion.Euler(0f, 0f, 0f);
-        mytransform.SetPositionAndRotation(startpos, noturn);
     }
 
     private void Update()
@@ -75,28 +66,14 @@ public class PlayerController : MonoBehaviour
             //Safety check that scene has not loaded already
             if (!loaded)
             {
-                //Make transition image move across the Hud
-                StartCoroutine(Transition());
-
+                userCamera.GetComponent<TransitionScript>().StartTransition();
                 //Load the fix it scene
                 SceneManager.LoadSceneAsync(1);
 
                 //Unload the overworld scene
                 SceneManager.UnloadSceneAsync(0);
+                userCamera.GetComponent<TransitionScript>().EndTransition();
             }
-        }
-    }
-
-    //Coroutine for transition
-    IEnumerator Transition()
-    {
-        while (tcounter < 598)
-        {
-            Vector3 movecanvas = new Vector3(tcounter, 0, 0);
-            Quaternion noturn = Quaternion.Euler(0f, 0f, 0f);
-            mytransform.SetPositionAndRotation(movecanvas, noturn);
-            tcounter++;
-            yield return new WaitForSeconds(pauseTime);
         }
     }
 }
