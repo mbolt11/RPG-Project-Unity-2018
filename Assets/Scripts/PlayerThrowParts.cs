@@ -14,6 +14,9 @@ public class PlayerThrowParts : MonoBehaviour {
     private string fireButton;
     private bool fired;
 
+    private Vector3 currentarmpos;
+    private Quaternion currentarmrot;
+
 	// Use this for initialization
 	void Start ()
     {
@@ -37,8 +40,8 @@ public class PlayerThrowParts : MonoBehaviour {
     private void Fire()
     {
         //Save the starting arm position
-        Vector3 currentarmpos = armtransform.position;
-        Quaternion currentarmrot = armtransform.rotation;
+        currentarmpos = armtransform.position;
+        currentarmrot = armtransform.rotation;
 
         //Move the player's arm to show him throwing
         Vector3 armposition1 = new Vector3(armtransform.position.x, armtransform.position.y, armtransform.position.z + 0.5f);
@@ -50,8 +53,14 @@ public class PlayerThrowParts : MonoBehaviour {
         wrenchInstance.velocity = velocity * weaponSpawn.forward;
         fired = false;
 
-        /* Need to find a way to pause slightly before returning the arm to position?
+        /* Need to find a way to pause slightly before returning the arm to position?*/
+        StartCoroutine("ResetArm");
+    }
+
+    private IEnumerator ResetArm()
+    {
+        yield return new WaitForSeconds(0.5f);
         //Move the player's arm back to starting position
-        armtransform.SetPositionAndRotation(currentarmpos, currentarmrot);*/
+        armtransform.SetPositionAndRotation(currentarmpos, currentarmrot);
     }
 }
