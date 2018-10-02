@@ -8,7 +8,8 @@ public class WrenchObliteration : MonoBehaviour {
     public ParticleSystem ObliterationParticles;
     
 	// Use this for initialization
-	void Start () {
+	void Start () 
+    {
         Destroy(gameObject, MaxLifeTime);
 	}
 
@@ -17,7 +18,7 @@ public class WrenchObliteration : MonoBehaviour {
         //if the robot is hit then special noise, particles, and event occurs??
         if(other.CompareTag("Robot"))
         {
-            //damage to the robot
+            //Effect when hitting the robot
             ObliterationParticles.Play();
         }
 
