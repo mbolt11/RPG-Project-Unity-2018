@@ -244,6 +244,16 @@ Prefab:
       propertyPath: m_Name
       value: Fix-It Robot
       objectReference: {fileID: 0}
+    - target: {fileID: 65275900011038786, guid: a1dea7a54df964f8885227b455af7cfc,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 65275900011038786, guid: a1dea7a54df964f8885227b455af7cfc,
+        type: 2}
+      propertyPath: m_Size.z
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1dea7a54df964f8885227b455af7cfc, type: 2}
   m_IsPrefabAsset: 0
@@ -292,7 +302,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 4
   m_CollisionDetection: 0
 --- !u!4 &494611795
 Transform:
