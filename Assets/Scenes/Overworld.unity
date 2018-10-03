@@ -426,6 +426,7 @@ GameObject:
   - component: {fileID: 494611795}
   - component: {fileID: 494611794}
   - component: {fileID: 494611793}
+  - component: {fileID: 494611796}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -460,7 +461,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 4
+  m_Constraints: 36
   m_CollisionDetection: 0
 --- !u!4 &494611795
 Transform:
@@ -478,6 +479,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &494611796
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 494611792}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1001 &506543286
 Prefab:
   m_ObjectHideFlags: 0
