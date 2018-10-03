@@ -14,8 +14,8 @@ public class PlayerThrowParts : MonoBehaviour {
     private string fireButton;
     private bool fired;
 
-    private Vector3 currentarmpos;
-    private Quaternion currentarmrot;
+    private Vector3 normalarmpos;
+    private Quaternion normalarmrot;
 
 	// Use this for initialization
 	void Start ()
@@ -24,6 +24,10 @@ public class PlayerThrowParts : MonoBehaviour {
 
         //Get the transform of the player's arm for later
         armtransform = playerArm.GetComponent<Transform>();
+
+        //Save the starting arm position
+        normalarmpos = armtransform.position;
+        normalarmrot = armtransform.rotation;
     }
 	
 	// Update is called once per frame
@@ -39,10 +43,6 @@ public class PlayerThrowParts : MonoBehaviour {
 
     private void Fire()
     {
-        //Save the starting arm position
-        currentarmpos = armtransform.position;
-        currentarmrot = armtransform.rotation;
-
         //Move the player's arm to show him throwing
         Vector3 armposition1 = new Vector3(armtransform.position.x, armtransform.position.y, armtransform.position.z + 0.5f);
         Quaternion armrotation1 = Quaternion.Euler(armtransform.rotation.x + 90, armtransform.rotation.y, armtransform.rotation.z);
@@ -51,16 +51,15 @@ public class PlayerThrowParts : MonoBehaviour {
         //Throw the wrench
         Rigidbody wrenchInstance = Instantiate(wrench, weaponSpawn.position, weaponSpawn.rotation) as Rigidbody;
         wrenchInstance.velocity = velocity * weaponSpawn.forward;
-        fired = false;
-
-        /* Need to find a way to pause slightly before returning the arm to position?*/
         StartCoroutine("ResetArm");
+        fired = false;
     }
 
     private IEnumerator ResetArm()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(.1f);
+
         //Move the player's arm back to starting position
-        armtransform.SetPositionAndRotation(currentarmpos, currentarmrot);
+        armtransform.SetPositionAndRotation(normalarmpos, normalarmrot);
     }
 }

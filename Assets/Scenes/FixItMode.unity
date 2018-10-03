@@ -278,7 +278,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerSpeed: 5
   playerTurnSpeed: 50
-  userCamera: {fileID: 0}
+  userCamera: {fileID: 1054460920}
 --- !u!54 &494611794
 Rigidbody:
   m_ObjectHideFlags: 0
