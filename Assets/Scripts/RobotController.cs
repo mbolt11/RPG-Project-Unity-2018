@@ -26,6 +26,7 @@ public class RobotController : MonoBehaviour
         {
             //Put the robot back to his position (we don't want him to be moved by the wrench
 
+
             //Change the color
             robotBody.transform.GetComponent<Renderer>().material.color = Color.green;
         }

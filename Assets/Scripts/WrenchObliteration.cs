@@ -23,7 +23,6 @@ public class WrenchObliteration : MonoBehaviour {
         }
 
         ObliterationParticles.transform.parent = null;
-        
 
         Destroy(ObliterationParticles.gameObject, ObliterationParticles.main.duration);
         Destroy(gameObject);

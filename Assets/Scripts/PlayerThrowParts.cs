@@ -42,18 +42,9 @@ public class PlayerThrowParts : MonoBehaviour {
 
     private void Fire()
     {
-        //Save the starting arm position
-        //currentarmpos = armtransform.position;
-        //currentarmrot = armtransform.rotation;
-
-        /*Move the player's arm to show him throwing
-        Vector3 armposition1 = new Vector3(armtransform.position.x, armtransform.position.y, armtransform.position.z + 0.5f);
-        Quaternion armrotation1 = Quaternion.Euler(armtransform.rotation.x + 90, armtransform.rotation.y, armtransform.rotation.z);
-        armtransform.SetPositionAndRotation(armposition1, armrotation1);*/
-
         //Move the player's arm to show him throwing
         Vector3 armposition1 = new Vector3(bodytransform.position.x + 0.7f, bodytransform.position.y + 0.5f, bodytransform.position.z);
-        Quaternion armrotation1 = Quaternion.Euler(bodytransform.localRotation.x + 270, bodytransform.localRotation.y, bodytransform.localRotation.z - 150);
+        Quaternion armrotation1 = Quaternion.Euler(bodytransform.rotation.x + 270, bodytransform.rotation.y, bodytransform.rotation.z - 150);
         armtransform.SetPositionAndRotation(armposition1, armrotation1);
 
         //Throw the wrench
@@ -69,13 +60,9 @@ public class PlayerThrowParts : MonoBehaviour {
     {
         yield return new WaitForSeconds(0.3f);
 
-        /*Move the player's arm back to poised position
-        Vector3 armposition2 = new Vector3(armtransform.position.x, armtransform.position.y, armtransform.position.z - 0.5f);
-        Quaternion armrotation2 = Quaternion.Euler(armtransform.rotation.x - 90, armtransform.rotation.y, armtransform.rotation.z);
-        armtransform.SetPositionAndRotation(armposition2, armrotation2);*/
-
+        //Move the player's arm back to poised position
         Vector3 armposition2 = new Vector3(bodytransform.position.x + 0.7f, bodytransform.position.y + 0.5f, bodytransform.position.z);
-        Quaternion armrotation2 = Quaternion.Euler(bodytransform.localRotation.x + 180, bodytransform.localRotation.y, bodytransform.localRotation.z - 150);
+        Quaternion armrotation2 = Quaternion.Euler(bodytransform.rotation.x + 180, bodytransform.rotation.y, bodytransform.rotation.z - 150);
         armtransform.SetPositionAndRotation(armposition2, armrotation2);
     }
 }
