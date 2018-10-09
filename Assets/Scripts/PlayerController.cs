@@ -100,7 +100,7 @@ public class PlayerController : MonoBehaviour
     IEnumerator WaitFor()
     {
         Debug.Log("waiting");
-        yield return new WaitForSeconds(6);
+        yield return new WaitForSeconds(3);
         Debug.Log("doneWaiting");
 
         //Unload the overworld scene
