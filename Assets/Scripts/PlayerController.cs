@@ -92,6 +92,10 @@ public class PlayerController : MonoBehaviour
             Vector3 movement = transform.forward * playerSpeed * Time.deltaTime;
             rb.MovePosition(rb.position + movement);
         }
+        else
+        {
+            rb.velocity = new Vector3(0f,0f,0f);
+        }
     }
 
     //turn player left/right
