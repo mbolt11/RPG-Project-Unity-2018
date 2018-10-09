@@ -7,12 +7,15 @@ public class FixItPlayerMovement : MonoBehaviour
     // Move the player target by increments of 2 on button up
 
     public GameObject player;
+    private Rigidbody rb;
 
     private void Start()
     {
         //Set player target start position
         Vector3 playerstartpos = new Vector3(-8, 0, -6);
         transform.position = playerstartpos;
+
+        rb = player.GetComponent<Rigidbody>();
 
         //Set player start rotation
         player.transform.Rotate(0, 0, 0);
@@ -30,6 +33,7 @@ public class FixItPlayerMovement : MonoBehaviour
                 pos.z += 2;
                 transform.position = pos;
             }
+            rb.rotation = Quaternion.Euler(0f, 0f, 0f);
         }
 
         if(Input.GetKeyUp("a"))
@@ -42,7 +46,7 @@ public class FixItPlayerMovement : MonoBehaviour
                 transform.position = pos;
             }
             //Rotate the way the player is facing toward the left
-            player.transform.Rotate(0, -90, 0);
+            rb.rotation = Quaternion.Euler(0f, -90f, 0f);
         }
 
         if (Input.GetKeyUp("s"))
@@ -54,6 +58,7 @@ public class FixItPlayerMovement : MonoBehaviour
                 pos.z -= 2;
                 transform.position = pos;
             }
+            rb.rotation = Quaternion.Euler(0f, 180f, 0f);
         }
 
         if (Input.GetKeyUp("d"))
@@ -65,9 +70,9 @@ public class FixItPlayerMovement : MonoBehaviour
                 pos.x += 2;
                 transform.position = pos;
             }
-        }
             //Rotate the way the player is facing toward the right
-            player.transform.Rotate(0,90,0);
+            rb.rotation = Quaternion.Euler(0f, 90f, 0f);
         }
+    }
     }
 
