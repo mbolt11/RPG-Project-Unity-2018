@@ -4,15 +4,8 @@ using UnityEngine;
 
 public class FixItPlayerMovement : MonoBehaviour 
 {
-    //Set player target start position
-    private void Start()
-    {
-        Vector3 playerstartpos = new Vector3(-8, 0, -6);
-        transform.position = playerstartpos;
-    }
-
     // Move the player target by increments of 2 on button up
-{
+
     public GameObject player;
 
     private void Start()
@@ -77,4 +70,4 @@ public class FixItPlayerMovement : MonoBehaviour
             player.transform.Rotate(0,90,0);
         }
     }
-}
+
