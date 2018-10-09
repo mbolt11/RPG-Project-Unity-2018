@@ -15,6 +15,9 @@ public class PlayerController : MonoBehaviour
     private float moveInput;
     private float turnInput;
 
+    //direction flags
+    bool moveForward, moveBack, moveLeft, moveRight;
+
     //Keeps track of if we have loaded the fixing scene yet
     private bool loaded = false;
 
@@ -31,9 +34,47 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        //see which key is down
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            moveLeft = false;
+            moveRight = false;
+            moveForward = true;
+            moveBack = false;
+        }
+        else if (Input.GetKeyDown(KeyCode.A))
+        {
+            moveLeft = true;
+            moveRight = false;
+            moveForward = false;
+            moveBack = false;
+        }
+        else if (Input.GetKeyDown(KeyCode.S))
+        {
+            moveLeft = false;
+            moveRight = false;
+            moveForward = false;
+            moveBack = true;
+        }
+        else if (Input.GetKeyDown(KeyCode.D))
+        {
+            moveLeft = false;
+            moveRight = true;
+            moveForward = false;
+            moveBack = false;
+        }
+
+        if(!Input.anyKey)
+        {
+            moveLeft = false;
+            moveRight = false;
+            moveForward = false;
+            moveBack = false;
+        }
+
         //get keyboard input each frame
-        moveInput = Input.GetAxis("Vertical");
-        turnInput = Input.GetAxis("Horizontal");
+        //moveInput = Input.GetAxis("Vertical");
+        //turnInput = Input.GetAxis("Horizontal");
     }
 
     //physics code
@@ -46,39 +87,33 @@ public class PlayerController : MonoBehaviour
     //Move player Forward/Backward
     private void MovePlayer()
     {
-        if (turnInput != 0)
-            moveInput = turnInput;
-
-        Vector3 movement = transform.forward * moveInput * playerSpeed * Time.deltaTime;
-        rb.MovePosition(rb.position + movement);
+        if(moveForward || moveBack || moveLeft || moveRight)
+        {
+            Vector3 movement = transform.forward * playerSpeed * Time.deltaTime;
+            rb.MovePosition(rb.position + movement);
+        }
     }
 
     //turn player left/right
     private void TurnPlayer()
     {
-        Quaternion rot;
-
-        if (turnInput < 0f)
+        if(moveLeft)
         {
-            rot = Quaternion.Euler(0f, -90f, -0f);
-            rb.MoveRotation(rot);
+            rb.rotation = Quaternion.Euler(0f, -90f, 0f);
         }
-        else if(turnInput > 0f)
+        else if(moveRight)
         {
-            rot = Quaternion.Euler(0f, 90f, 0f);
-            rb.MoveRotation(rot);
+            rb.rotation = Quaternion.Euler(0f, 90f, 0f);
         }
-
-        if(moveInput < 0f)
+        else if(moveForward)
         {
-            rot = Quaternion.Euler(0f, 180f, 0f);
-            rb.MoveRotation(rot);
+            rb.rotation = Quaternion.Euler(0f, 0f, 0f);
         }
-        else if(moveInput >= 0f)
+        else if(moveBack)
         {
-            rot = Quaternion.Euler(0f, 0f, 0f);
-            rb.MoveRotation(rot);
+            rb.rotation = Quaternion.Euler(0f, 180f, 0f);
         }
+        
     }
 
     //If the player collides with a Robot, go to the fixing scene
