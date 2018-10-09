@@ -39,13 +39,16 @@ public class PlayerController : MonoBehaviour
     //physics code
     void FixedUpdate()
     {
-        MovePlayer();
         TurnPlayer();
+        MovePlayer();
     }
 
     //Move player Forward/Backward
     private void MovePlayer()
     {
+        if (turnInput != 0)
+            moveInput = turnInput;
+
         Vector3 movement = transform.forward * moveInput * playerSpeed * Time.deltaTime;
         rb.MovePosition(rb.position + movement);
     }
@@ -53,9 +56,29 @@ public class PlayerController : MonoBehaviour
     //turn player left/right
     private void TurnPlayer()
     {
-        float turnValue = turnInput * playerTurnSpeed * Time.deltaTime;
-        Quaternion turn = Quaternion.Euler(0f, turnValue, 0f);
-        rb.MoveRotation(rb.rotation * turn);
+        Quaternion rot;
+
+        if (turnInput < 0f)
+        {
+            rot = Quaternion.Euler(0f, -90f, -0f);
+            rb.MoveRotation(rot);
+        }
+        else if(turnInput > 0f)
+        {
+            rot = Quaternion.Euler(0f, 90f, 0f);
+            rb.MoveRotation(rot);
+        }
+
+        if(moveInput < 0f)
+        {
+            rot = Quaternion.Euler(0f, 180f, 0f);
+            rb.MoveRotation(rot);
+        }
+        else if(moveInput >= 0f)
+        {
+            rot = Quaternion.Euler(0f, 0f, 0f);
+            rb.MoveRotation(rot);
+        }
     }
 
     //If the player collides with a Robot, go to the fixing scene
