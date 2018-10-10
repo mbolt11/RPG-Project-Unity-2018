@@ -9,9 +9,7 @@ public class PlayerThrowParts : MonoBehaviour {
     public float velocity;
 
     public GameObject playerArm;
-    public GameObject playerBody;
     private Transform armtransform;
-    private Transform bodytransform;
 
     private string fireButton;
     private bool fired;
@@ -24,9 +22,8 @@ public class PlayerThrowParts : MonoBehaviour {
     {
         fireButton = "Fire1";
 
-        //Get the transform of the player's arm and body for later
+        //Get the transform of the player's arm for later
         armtransform = playerArm.GetComponent<Transform>();
-        bodytransform = playerBody.GetComponent<Transform>();
     }
 	
 	// Update is called once per frame
@@ -38,14 +35,15 @@ public class PlayerThrowParts : MonoBehaviour {
             fired = true;
             Fire();
         }
-	}
+    }
 
     private void Fire()
     {
         //Move the player's arm to show him throwing
-        Vector3 armposition1 = new Vector3(bodytransform.position.x + 0.7f, bodytransform.position.y + 0.5f, bodytransform.position.z);
-        Quaternion armrotation1 = Quaternion.Euler(bodytransform.rotation.x + 270, bodytransform.rotation.y, bodytransform.rotation.z - 150);
-        armtransform.SetPositionAndRotation(armposition1, armrotation1);
+        Vector3 throwPos = new Vector3(armtransform.localPosition.x, armtransform.localPosition.y, armtransform.localPosition.z + 0.2f);
+        Quaternion throwRot = Quaternion.Euler(armtransform.localRotation.x + 90, armtransform.localRotation.y, armtransform.localRotation.z);
+        armtransform.localPosition = throwPos;
+        armtransform.localRotation = throwRot;
 
         //Throw the wrench
         Rigidbody wrenchInstance = Instantiate(wrench, weaponSpawn.position, weaponSpawn.rotation) as Rigidbody;
@@ -60,9 +58,10 @@ public class PlayerThrowParts : MonoBehaviour {
     {
         yield return new WaitForSeconds(0.3f);
 
-        //Move the player's arm back to poised position
-        Vector3 armposition2 = new Vector3(bodytransform.position.x + 0.7f, bodytransform.position.y + 0.5f, bodytransform.position.z);
-        Quaternion armrotation2 = Quaternion.Euler(bodytransform.rotation.x + 180, bodytransform.rotation.y, bodytransform.rotation.z - 150);
-        armtransform.SetPositionAndRotation(armposition2, armrotation2);
+        //Move the player's arm back to ready position
+        Vector3 readyPos = new Vector3(armtransform.localPosition.x, armtransform.localPosition.y, armtransform.localPosition.z - 0.2f);
+        Quaternion readyRot = Quaternion.Euler(armtransform.localRotation.x - 180, armtransform.localRotation.y, armtransform.localRotation.z - 150);
+        armtransform.localPosition = readyPos;
+        armtransform.localRotation = readyRot;
     }
 }
