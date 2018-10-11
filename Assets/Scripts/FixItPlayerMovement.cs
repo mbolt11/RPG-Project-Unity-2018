@@ -17,7 +17,7 @@ public class FixItPlayerMovement : MonoBehaviour
         transform.position = playerstartpos;
 
         //Set player start rotation
-        player.transform.Rotate(0, 0, 0);
+        player.transform.rotation = Quaternion.Euler(0, 0, 0);
 
         //Get the player rigidbody and the player collision script
         rb = player.GetComponent<Rigidbody>();
