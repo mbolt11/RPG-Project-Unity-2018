@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WrenchObliteration : MonoBehaviour {
 
-    public float MaxLifeTime = 4f;
+    public float MaxLifeTime = 2f;
     public ParticleSystem ObliterationParticles;
     
 	// Use this for initialization
