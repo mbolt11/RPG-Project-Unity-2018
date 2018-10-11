@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -334,7 +334,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &116723878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2469,6 +2469,34 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4720930237219158, guid: 8c07799bbb8814707a7e317ec2f362cf,
     type: 2}
   m_PrefabInternal: {fileID: 857858117}
+--- !u!1 &935049569
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 935049570}
+  m_Layer: 0
+  m_Name: RobotWeaponSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &935049570
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 935049569}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: -0.31, y: 1.34, z: -0.82}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1311637482}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1001 &957308042
 Prefab:
   m_ObjectHideFlags: 0
@@ -3417,6 +3445,21 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1497239384764936, guid: a1dea7a54df964f8885227b455af7cfc,
     type: 2}
   m_PrefabInternal: {fileID: 323548792}
+--- !u!114 &1311637479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1311637478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7ebe61f4edccb34095d32420f3ba1b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cog: {fileID: 54384404085332442, guid: 1a5c9c34146ebbc42af280d68f43bd19, type: 2}
+  weaponSpawn: {fileID: 935049570}
+  velocity: 20
+  secondsBetweenThrow: 2
 --- !u!4 &1311637482 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4502735606228086, guid: a1dea7a54df964f8885227b455af7cfc,
@@ -3797,7 +3840,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1527851547}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c64c67859178d2248b69446ed523110e, type: 3}
+  m_Script: {fileID: 11500000, guid: d0d46f4bdaacc4a18b1fa42114289b49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1563107090
