@@ -39,7 +39,9 @@ GameObject:
   - component: {fileID: 4502735606228086}
   - component: {fileID: 54564686275160648}
   - component: {fileID: 65275900011038786}
-  - component: {fileID: 114202006994606912}
+  - component: {fileID: 114388501999125172}
+  - component: {fileID: 114392483618727872}
+  - component: {fileID: 114213185566760922}
   m_Layer: 0
   m_Name: CommonRobot
   m_TagString: Robot
@@ -60,6 +62,21 @@ GameObject:
   - component: {fileID: 65792261252052592}
   m_Layer: 0
   m_Name: Arm2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1773774374711060
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4738574613574534}
+  m_Layer: 0
+  m_Name: RobotWeaponSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -154,9 +171,23 @@ Transform:
   - {fileID: 4756614143737344}
   - {fileID: 4323565994479076}
   - {fileID: 4073503084485050}
+  - {fileID: 4738574613574534}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4738574613574534
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1773774374711060}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0.15, y: 1.84, z: -2.89}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4502735606228086}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!4 &4756614143737344
 Transform:
   m_ObjectHideFlags: 1
@@ -413,7 +444,33 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114202006994606912
+--- !u!114 &114213185566760922
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1497239384764936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7ebe61f4edccb34095d32420f3ba1b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cog: {fileID: 54384404085332442, guid: 1a5c9c34146ebbc42af280d68f43bd19, type: 2}
+  weaponSpawn: {fileID: 4738574613574534}
+  velocity: 20
+  secondsBetweenThrow: 2
+--- !u!114 &114388501999125172
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1497239384764936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0d46f4bdaacc4a18b1fa42114289b49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114392483618727872
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}

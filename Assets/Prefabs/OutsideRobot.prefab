@@ -47,6 +47,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1271301792351688
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4973003256077734}
+  m_Layer: 0
+  m_Name: RobotWeaponSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1391852604604748
 GameObject:
   m_ObjectHideFlags: 0
@@ -111,6 +126,8 @@ GameObject:
   - component: {fileID: 4330062051658292}
   - component: {fileID: 65520535182764064}
   - component: {fileID: 114277670969404768}
+  - component: {fileID: 114565843923979604}
+  - component: {fileID: 114550575565006432}
   m_Layer: 0
   m_Name: OutsideRobot
   m_TagString: Untagged
@@ -156,7 +173,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1860691001590296}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4886075160347952}
@@ -165,6 +182,7 @@ Transform:
   - {fileID: 4345207241917188}
   - {fileID: 4359122576251438}
   - {fileID: 4592040032121578}
+  - {fileID: 4973003256077734}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -233,6 +251,19 @@ Transform:
   m_Father: {fileID: 4330062051658292}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4973003256077734
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1271301792351688}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: -0.31, y: 1.84, z: -5.82}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4330062051658292}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!23 &23060345834923456
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -569,6 +600,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   robotBody: {fileID: 1391852604604748}
+--- !u!114 &114550575565006432
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1860691001590296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0d46f4bdaacc4a18b1fa42114289b49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114565843923979604
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1860691001590296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7ebe61f4edccb34095d32420f3ba1b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cog: {fileID: 54935167317925194, guid: f5a2d19d564785d45a6207078113bcaa, type: 2}
+  weaponSpawn: {fileID: 4973003256077734}
+  velocity: 20
+  secondsBetweenThrow: 2
 --- !u!135 &135542010480901612
 SphereCollider:
   m_ObjectHideFlags: 1

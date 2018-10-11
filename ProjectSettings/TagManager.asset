@@ -8,6 +8,8 @@ TagManager:
   - Wrench
   - Common Robot
   - Outside Robot
+  - CommonPart
+  - OutsidePart
   layers:
   - Default
   - TransparentFX
