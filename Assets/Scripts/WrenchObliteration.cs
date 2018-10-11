@@ -20,11 +20,16 @@ public class WrenchObliteration : MonoBehaviour {
         {
             //Effect when hitting the robot
             ObliterationParticles.Play();
+
+            ObliterationParticles.transform.parent = null;
+
+            Destroy(ObliterationParticles.gameObject, ObliterationParticles.main.duration);
+            Destroy(gameObject);
         }
 
-        ObliterationParticles.transform.parent = null;
+        //ObliterationParticles.transform.parent = null;
 
-        Destroy(ObliterationParticles.gameObject, ObliterationParticles.main.duration);
-        Destroy(gameObject);
+        //Destroy(ObliterationParticles.gameObject, ObliterationParticles.main.duration);
+        //Destroy(gameObject);
     }
 }
