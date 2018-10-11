@@ -8,14 +8,19 @@ public class CustomGrid : MonoBehaviour
     public GameObject playerTarget;
     public GameObject robotTarget;
     public GameObject player;
-    public GameObject robot;
+    private Transform robot;
 
     //Target position and grid size
     Vector3 playertargetPos;
     Vector3 robottargetPos;
     public float gridSize;
 
-	//Set the robot and players position to be at the true position of the target
+    private void Start()
+    {
+        robot = GameObject.Find("FixItRobot").transform.GetChild(0);
+    }
+
+    //Set the robot and players position to be at the true position of the target
     void LateUpdate ()
     {
         //Set the position of the player target
