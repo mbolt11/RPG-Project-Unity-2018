@@ -763,12 +763,12 @@ Prefab:
     - target: {fileID: 65275900011038786, guid: a1dea7a54df964f8885227b455af7cfc,
         type: 2}
       propertyPath: m_Size.x
-      value: 2
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 65275900011038786, guid: a1dea7a54df964f8885227b455af7cfc,
         type: 2}
       propertyPath: m_Size.z
-      value: 2
+      value: 1.25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1dea7a54df964f8885227b455af7cfc, type: 2}
@@ -1366,8 +1366,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 1.5, z: 2}
-  m_Center: {x: 0, y: 1.25, z: 0}
+  m_Size: {x: 1.5, y: 2, z: 1.25}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1001 &504923342
 Prefab:
   m_ObjectHideFlags: 0

@@ -8,6 +8,7 @@ public class FixItPlayerMovement : MonoBehaviour
     private Rigidbody rb;
 
     private CollisionWithRobot collisionscript;
+    private char lastkeypressed;
 
     private void Start()
     {
@@ -24,7 +25,7 @@ public class FixItPlayerMovement : MonoBehaviour
     }
 
     // Move the player target by increments of 2 on button down
-    void FixedUpdate()
+    void Update()
     {
         if (Input.GetKeyDown("w"))
         {
@@ -37,15 +38,7 @@ public class FixItPlayerMovement : MonoBehaviour
             }
             //Rotate the way the player is facing toward front
             rb.rotation = Quaternion.Euler(0f, 0f, 0f);
-
-            //If the player collided with the robot, move it back
-            if(collisionscript.hasCollided)
-            {
-                var pos = transform.position;
-                pos.z -= 2;
-                transform.position = pos;
-                collisionscript.hasCollided = false;
-            }
+            lastkeypressed = 'w';
         }
 
         if (Input.GetKeyDown("a"))
@@ -59,15 +52,7 @@ public class FixItPlayerMovement : MonoBehaviour
             }
             //Rotate the way the player is facing toward the left
             rb.rotation = Quaternion.Euler(0f, -90f, 0f);
-
-            //If the player collided with the robot, move it back
-            if (collisionscript.hasCollided)
-            {
-                var pos = transform.position;
-                pos.x += 2;
-                transform.position = pos;
-                collisionscript.hasCollided = false;
-            }
+            lastkeypressed = 'a';
         }
 
         if (Input.GetKeyDown("s"))
@@ -81,15 +66,7 @@ public class FixItPlayerMovement : MonoBehaviour
             }
             //Rotate the way the player is facing toward back
             rb.rotation = Quaternion.Euler(0f, 180f, 0f);
-
-            //If the player collided with the robot, move it back
-            if (collisionscript.hasCollided)
-            {
-                var pos = transform.position;
-                pos.z += 2;
-                transform.position = pos;
-                collisionscript.hasCollided = false;
-            }
+            lastkeypressed = 's';
         }
 
         if (Input.GetKeyDown("d"))
@@ -103,15 +80,41 @@ public class FixItPlayerMovement : MonoBehaviour
             }
             //Rotate the way the player is facing toward the right
             rb.rotation = Quaternion.Euler(0f, 90f, 0f);
+            lastkeypressed = 'd';
+        }
+    }
 
-            //If the player collided with the robot, move it back
-            if (collisionscript.hasCollided)
+    private void LateUpdate()
+    {
+        //If the player collided with the robot, move it back
+        if (collisionscript.hasCollided)
+        {
+            //The direction you move it back depends on what key was pressed to cause the collision
+            switch(lastkeypressed)
             {
-                var pos = transform.position;
-                pos.x -= 2;
-                transform.position = pos;
-                collisionscript.hasCollided = false;
+                case 'w':
+                    var posW = transform.position;
+                    posW.z -= 2;
+                    transform.position = posW;
+                    break;
+                case 'a':
+                    var posA = transform.position;
+                    posA.x += 2;
+                    transform.position = posA;
+                    break;
+                case 's':
+                    var posS = transform.position;
+                    posS.z += 2;
+                    transform.position = posS;
+                    break;
+                case 'd':
+                    var posD = transform.position;
+                    posD.x -= 2;
+                    transform.position = posD;
+                    break;
             }
+            //After moving the player back, reset hasCollided
+            collisionscript.hasCollided = false;
         }
     }
 }
