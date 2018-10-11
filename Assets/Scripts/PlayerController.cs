@@ -71,10 +71,6 @@ public class PlayerController : MonoBehaviour
             moveForward = false;
             moveBack = false;
         }
-
-        //get keyboard input each frame
-        //moveInput = Input.GetAxis("Vertical");
-        //turnInput = Input.GetAxis("Horizontal");
     }
 
     //physics code
