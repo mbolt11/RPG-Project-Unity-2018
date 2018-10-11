@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class RobotController : MonoBehaviour
 {
@@ -10,7 +11,18 @@ public class RobotController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
+        Scene currentScene = SceneManager.GetActiveScene();
+        if(currentScene.name == "Overworld")
+        {
+            GetComponent<FixItCommonRobotMovement>().enabled = false;
+            GetComponent<RobotThrowsParts>().enabled = false;
+            Debug.Log("Scripts Disabled");
+        }
+        else
+        {
+            GetComponent<FixItCommonRobotMovement>().enabled = true;
+            GetComponent<RobotThrowsParts>().enabled = true;
+        }
     }
 
     // Update is called once per frame
