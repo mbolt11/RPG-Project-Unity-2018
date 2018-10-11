@@ -6,14 +6,13 @@ public class FixItCommonRobotMovement : MonoBehaviour {
 
     // Use this for initialization
     private bool panleft;
-    private bool panright;
+
     private int frames;
 
 	void Start () {
         Vector3 robotstartpos = new Vector3(0, 0, 8);
         transform.position = robotstartpos;
         panleft = true;
-        panright = false;
         frames = 60;
     }
 	
@@ -36,7 +35,6 @@ public class FixItCommonRobotMovement : MonoBehaviour {
                     if (transform.position.x >= 6)
                     {
                         panleft = false;
-                        panright = true;
                     }
                 }
             }
@@ -52,7 +50,6 @@ public class FixItCommonRobotMovement : MonoBehaviour {
                     if (transform.position.x <= -8)
                     {
                         panleft = true;
-                        panright = false;
                     }
                 }
             }

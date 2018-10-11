@@ -119,8 +119,16 @@ public class PlayerController : MonoBehaviour
     //If the player collides with a Robot, go to the fixing scene
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Robot")
+        if (other.tag == "Common Robot" || other.tag == "Outside Robot")
         {
+            if(other.tag == "Common Robot")
+            {
+                GameObject.Find("GameController").GetComponent<OverworldGameController>().getSingleton().setEnemyRobot("Common Robot");
+            }
+            else if(other.tag == "Outside Robot")
+            {
+                GameObject.Find("GameController").GetComponent<OverworldGameController>().getSingleton().setEnemyRobot("Outside Robot");
+            }
             //Safety check that scene has not loaded already
             if (!loaded)
             {

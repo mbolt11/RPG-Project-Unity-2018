@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Robot
   - Wrench
+  - Common Robot
+  - Outside Robot
   layers:
   - Default
   - TransparentFX

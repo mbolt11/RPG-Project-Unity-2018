@@ -19,8 +19,9 @@ public class RobotWeaponObliteration : MonoBehaviour
         //if the robot is hit then special noise, particles, and event occurs??
         if (other.CompareTag("Player"))
         {
-            //Effect when hitting the robot
+            //Effect when hitting the player
             ObliterationParticles.Play();
+            Debug.Log("obliterate!");
         }
         Debug.Log(other.tag);
         ObliterationParticles.transform.parent = null;
