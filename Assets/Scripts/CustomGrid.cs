@@ -9,6 +9,8 @@ public class CustomGrid : MonoBehaviour
     public GameObject robotTarget;
     public GameObject player;
     private Transform robot;
+    private OverworldGameController gameInfo;
+    private string enemyID;
 
     //Target position and grid size
     Vector3 playertargetPos;
@@ -17,7 +19,19 @@ public class CustomGrid : MonoBehaviour
 
     private void Start()
     {
-        robot = GameObject.Find("FixItRobot").transform.GetChild(0);
+        if (GameObject.Find("GameController") != false)
+        {
+            gameInfo = GameObject.Find("GameController").GetComponent<OverworldGameController>().getSingleton();
+            enemyID = gameInfo.getEnemyID();
+            //Debug.Log("Enemy ID is " + enemyID);
+        }
+        else
+        {
+            enemyID = "Common Robot";
+        }
+
+        if (enemyID == "Outside Robot")
+            robotTarget.transform.position = new Vector3(-8, 0, 8);
     }
 
     //Set the robot and players position to be at the true position of the target
@@ -28,13 +42,23 @@ public class CustomGrid : MonoBehaviour
         playertargetPos.y = Mathf.Floor(playerTarget.transform.position.y / gridSize) * gridSize;
         playertargetPos.z = Mathf.Floor(playerTarget.transform.position.z / gridSize) * gridSize;
 
-        //Set the position of the robot target
-        robottargetPos.x = Mathf.Floor(robotTarget.transform.position.x / gridSize) * gridSize;
-        robottargetPos.y = Mathf.Floor(robotTarget.transform.position.y / gridSize) * gridSize;
-        robottargetPos.z = Mathf.Floor(robotTarget.transform.position.z / gridSize) * gridSize;
-
         //Set the player and robot to 
         player.transform.position = playertargetPos;
-        robot.transform.position = robottargetPos;
+
+       if (robot != null)
+        {
+            //Set the position of the robot target
+            robottargetPos.x = Mathf.Floor(robotTarget.transform.position.x / gridSize) * gridSize;
+            robottargetPos.y = (Mathf.Floor(robotTarget.transform.position.y / gridSize) * gridSize) + 0.5f;
+            robottargetPos.z = Mathf.Floor(robotTarget.transform.position.z / gridSize) * gridSize;
+
+            robot.transform.position = robottargetPos;
+        }
+        else
+        {
+            GameObject fix = GameObject.Find("Fix-It Robot");
+            Debug.Log("Trying to assign child" + fix);
+            robot = GameObject.Find("Fix-It Robot").transform.GetChild(0);
+        }
     }
 }

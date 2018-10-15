@@ -32,10 +32,10 @@ public class TransitionScript : MonoBehaviour {
     {
         string animationName = "TransitionAnimSlideIn" + panelNum;
         anim.enabled = true;
-        Debug.Log("end animation should happen");
+        //Debug.Log("end animation should happen");
         //Debug.Log(animationName);
         anim.Play(animationName);
-        Debug.Log(anim.GetCurrentAnimatorStateInfo(0));
+        //Debug.Log(anim.GetCurrentAnimatorStateInfo(0));
         down = false;
         Time.timeScale = 1;
         //anim.enabled = false;

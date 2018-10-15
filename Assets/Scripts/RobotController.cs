@@ -14,21 +14,21 @@ public class RobotController : MonoBehaviour
         Scene currentScene = SceneManager.GetActiveScene();
         if(currentScene.name == "Overworld")
         {
-            GetComponent<FixItCommonRobotMovement>().enabled = false;
+            if(tag == "Common Robot")
+                GetComponent<FixItCommonRobotMovement>().enabled = false;
+            else
+                GetComponent<FixItOutsideRobotMovement>().enabled = false;
             GetComponent<RobotThrowsParts>().enabled = false;
-            Debug.Log("Scripts Disabled");
+            //Debug.Log("Scripts Disabled");
         }
         else
         {
-            GetComponent<FixItCommonRobotMovement>().enabled = true;
+            if (tag == "Common Robot")
+                GetComponent<FixItCommonRobotMovement>().enabled = true;
+            else
+                GetComponent<FixItOutsideRobotMovement>().enabled = true;
             GetComponent<RobotThrowsParts>().enabled = true;
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     private void OnTriggerEnter(Collider other)
