@@ -2170,7 +2170,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4715323970452266, guid: 60cbfa0087cb7483db79766703b179b0,
     type: 2}
   m_PrefabInternal: {fileID: 1613951335}
-<<<<<<< HEAD
 --- !u!1 &1689824108
 GameObject:
   m_ObjectHideFlags: 0
@@ -2255,8 +2254,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad56ec4243d2c4142a1fd684d8915718, type: 2}
   m_IsPrefabAsset: 0
-=======
->>>>>>> b8bedd59a06605aa37760f1e845de3128f6c20ce
 --- !u!1 &1869769804
 GameObject:
   m_ObjectHideFlags: 0
