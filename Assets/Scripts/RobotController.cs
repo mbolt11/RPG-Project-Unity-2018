@@ -15,25 +15,32 @@ public class RobotController : MonoBehaviour
         if(currentScene.name == "Overworld")
         {
             if(tag == "Common Robot")
+            {
                 GetComponent<FixItCommonRobotMovement>().enabled = false;
+            }
             else
+            {
                 GetComponent<FixItOutsideRobotMovement>().enabled = false;
+            }
             GetComponent<RobotThrowsParts>().enabled = false;
-            //Debug.Log("Scripts Disabled");
         }
         else
         {
             if (tag == "Common Robot")
+            {
                 GetComponent<FixItCommonRobotMovement>().enabled = true;
+            }
             else
+            {
                 GetComponent<FixItOutsideRobotMovement>().enabled = true;
-            GetComponent<RobotThrowsParts>().enabled = true;
+                GetComponent<RobotThrowsParts>().enabled = true;
+            }
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        //If a wrench hits the robot, it turns blue to indicate it is fixed
+        //If a wrench hits the robot, it turns green to indicate it is fixed
         if (other.tag == "Wrench")
         {
             //Put the robot back to his position (we don't want him to be moved by the wrench

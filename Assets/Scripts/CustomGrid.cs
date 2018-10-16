@@ -23,7 +23,6 @@ public class CustomGrid : MonoBehaviour
         {
             gameInfo = GameObject.Find("GameController").GetComponent<OverworldGameController>().getSingleton();
             enemyID = gameInfo.getEnemyID();
-            //Debug.Log("Enemy ID is " + enemyID);
         }
         else
         {
@@ -49,7 +48,7 @@ public class CustomGrid : MonoBehaviour
         {
             //Set the position of the robot target
             robottargetPos.x = Mathf.Floor(robotTarget.transform.position.x / gridSize) * gridSize;
-            robottargetPos.y = (Mathf.Floor(robotTarget.transform.position.y / gridSize) * gridSize) + 0.5f;
+            //robottargetPos.y = (Mathf.Floor(robotTarget.transform.position.y / gridSize) * gridSize) + 0.5f;
             robottargetPos.z = Mathf.Floor(robotTarget.transform.position.z / gridSize) * gridSize;
 
             robot.transform.position = robottargetPos;

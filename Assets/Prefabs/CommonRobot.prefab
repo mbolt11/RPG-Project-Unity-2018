@@ -38,10 +38,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4502735606228086}
   - component: {fileID: 54564686275160648}
-  - component: {fileID: 65275900011038786}
-  - component: {fileID: 114388501999125172}
-  - component: {fileID: 114392483618727872}
   - component: {fileID: 114213185566760922}
+  - component: {fileID: 65275900011038786}
   - component: {fileID: 65739575409956808}
   - component: {fileID: 65777470108112964}
   m_Layer: 0
@@ -384,7 +382,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 84
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!65 &65275900011038786
 BoxCollider:
@@ -485,26 +483,3 @@ MonoBehaviour:
   weaponSpawn: {fileID: 4738574613574534}
   velocity: 20
   secondsBetweenThrow: 2
---- !u!114 &114388501999125172
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1497239384764936}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0d46f4bdaacc4a18b1fa42114289b49, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114392483618727872
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1497239384764936}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1baa1a8e75784ee88e8f997fe4418cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  robotBody: {fileID: 1902954387415514}
