@@ -12,29 +12,15 @@ public class RobotController : MonoBehaviour
     void Start()
     {
         Scene currentScene = SceneManager.GetActiveScene();
+        //If we are in the overworld
         if(currentScene.name == "Overworld")
         {
-            if(tag == "Common Robot")
-            {
-                GetComponent<FixItCommonRobotMovement>().enabled = false;
-            }
-            else
-            {
-                GetComponent<FixItOutsideRobotMovement>().enabled = false;
-            }
             GetComponent<RobotThrowsParts>().enabled = false;
         }
+        //If we are in the Fix It World
         else
         {
-            if (tag == "Common Robot")
-            {
-                GetComponent<FixItCommonRobotMovement>().enabled = true;
-            }
-            else
-            {
-                GetComponent<FixItOutsideRobotMovement>().enabled = true;
-                GetComponent<RobotThrowsParts>().enabled = true;
-            }
+            GetComponent<RobotThrowsParts>().enabled = true;
         }
     }
 
@@ -43,9 +29,6 @@ public class RobotController : MonoBehaviour
         //If a wrench hits the robot, it turns green to indicate it is fixed
         if (other.tag == "Wrench")
         {
-            //Put the robot back to his position (we don't want him to be moved by the wrench
-
-
             //Change the color
             robotBody.transform.GetComponent<Renderer>().material.color = Color.green;
         }

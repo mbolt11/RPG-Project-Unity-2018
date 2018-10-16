@@ -123,6 +123,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4330062051658292}
+  - component: {fileID: 114837369640329500}
   - component: {fileID: 114565843923979604}
   - component: {fileID: 54811896247620542}
   - component: {fileID: 65520535182764064}
@@ -630,6 +631,18 @@ MonoBehaviour:
   weaponSpawn: {fileID: 4973003256077734}
   velocity: 20
   secondsBetweenThrow: 2
+--- !u!114 &114837369640329500
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1860691001590296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1baa1a8e75784ee88e8f997fe4418cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  robotBody: {fileID: 1391852604604748}
 --- !u!135 &135261534094900878
 SphereCollider:
   m_ObjectHideFlags: 1
