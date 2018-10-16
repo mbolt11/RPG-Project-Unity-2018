@@ -124,12 +124,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4330062051658292}
   - component: {fileID: 65520535182764064}
-  - component: {fileID: 114277670969404768}
   - component: {fileID: 114565843923979604}
   - component: {fileID: 54811896247620542}
   - component: {fileID: 65647801478172862}
   - component: {fileID: 135261534094900878}
-  - component: {fileID: 114725126636731872}
   m_Layer: 0
   m_Name: OutsideRobot
   m_TagString: Outside Robot
@@ -617,18 +615,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114277670969404768
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1860691001590296}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1baa1a8e75784ee88e8f997fe4418cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  robotBody: {fileID: 1391852604604748}
 --- !u!114 &114565843923979604
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -642,19 +628,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cog: {fileID: 54938243439689160, guid: 74ec0c569f1dd2744923b5ac0a7f687f, type: 2}
   weaponSpawn: {fileID: 4973003256077734}
-  velocity: 10
+  velocity: 20
   secondsBetweenThrow: 2
---- !u!114 &114725126636731872
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1860691001590296}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0897f5a58ddcf44c9f81e4be867d455, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!135 &135261534094900878
 SphereCollider:
   m_ObjectHideFlags: 1

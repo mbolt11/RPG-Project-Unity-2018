@@ -9,6 +9,7 @@ public class FixItOutsideRobotMovement : MonoBehaviour
     private int frames;
     private int movesPerSide;
     private int currIndex;
+    private Transform currRobot;
 
 
     void Start()
@@ -18,6 +19,9 @@ public class FixItOutsideRobotMovement : MonoBehaviour
         currIndex = 0;
         movesPerSide = 0;
         frames = 60;
+        currRobot = GameObject.Find("Fix-It Robot").GetComponentInChildren<Transform>();
+
+        //rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -28,8 +32,13 @@ public class FixItOutsideRobotMovement : MonoBehaviour
         if(movesPerSide > 6)
         {
             //rotate 90 degrees
-            transform.rotation = Quaternion.AngleAxis(90, Vector3.up);
+
+            currRobot.Rotate(0, 90f, 0);
+            //currRobot.rotation = Quaternion.Euler(0f, currRobot.rotation.y + 45f, 0f);
+            Debug.Log("TagRotation:" + currRobot.tag);
+            //Debug.Log("movesPerSide:" +movesPerSide);
             movesPerSide = 0;
+
             currIndex++;
             if (currIndex > 3)
                 currIndex = 0;   
