@@ -10,6 +10,7 @@ TagManager:
   - Outside Robot
   - CommonPart
   - OutsidePart
+  - Villager
   layers:
   - Default
   - TransparentFX

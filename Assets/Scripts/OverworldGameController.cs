@@ -13,6 +13,11 @@ public class OverworldGameController : MonoBehaviour {
     {
         gameInfo = this;
         enemyRobot = "Common Robot";
+
+        if(gameObject.CompareTag("Villager"))
+        {
+            GameObject.Find("VillagerTorso").GetComponent<Renderer>().material.color = new Color(Random.value, Random.value, Random.value);
+        }
     }
 
     void Awake()
