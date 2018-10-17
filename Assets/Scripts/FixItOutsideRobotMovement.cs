@@ -5,7 +5,11 @@ using UnityEngine;
 public class FixItOutsideRobotMovement : MonoBehaviour
 {
 
-    // Use this for initialization
+    public GameObject playerbody;
+    public GameObject playerTarget;
+    private Renderer pbrenderer;
+    private Transform pttransform;
+
     private int frames;
     private int movesPerSide;
     private int currIndex;
@@ -21,6 +25,9 @@ public class FixItOutsideRobotMovement : MonoBehaviour
         frames = 60;
         currRobot = GameObject.Find("Fix-It Robot").GetComponentInChildren<Transform>();
 
+        pttransform = playerTarget.GetComponent<Transform>();
+        pbrenderer = playerbody.GetComponent<Renderer>();
+
         //rb = GetComponent<Rigidbody>();
     }
 
@@ -32,7 +39,6 @@ public class FixItOutsideRobotMovement : MonoBehaviour
         if(movesPerSide > 6)
         {
             //rotate 90 degrees
-
             currRobot.Rotate(0, 90f, 0);
             //currRobot.rotation = Quaternion.Euler(0f, currRobot.rotation.y + 45f, 0f);
             Debug.Log("TagRotation:" + currRobot.tag);
@@ -46,33 +52,108 @@ public class FixItOutsideRobotMovement : MonoBehaviour
 
         if (frames >= 60)
         {
-            if(currIndex == 0)
+            if (currIndex == 0)
             {
-                var pos = transform.position;
-                pos.x += 2;
-                transform.position = pos;
+                //Hold the values for where the robot will be once moved and the current player position
+                Vector3 futurerobotpos = new Vector3(transform.position.x + 2, transform.position.y, transform.position.z);
+                Vector3 playerposition = new Vector3(pttransform.position.x, pttransform.position.y, pttransform.position.z);
+
+                //If the player is not in the way, move the robot
+                if (futurerobotpos != playerposition)
+                {
+                    var pos = transform.position;
+                    pos.x += 2;
+                    transform.position = pos;
+                }
+                //If the player is in the way, it takes damage
+                else
+                {
+                    PlayerTakeDamage(pbrenderer);
+                }
+
             }
             else if(currIndex == 1)
             {
-                var pos = transform.position;
-                pos.z -= 2;
-                transform.position = pos;
+                //Hold the values for where the robot will be once moved and the current player position
+                Vector3 futurerobotpos = new Vector3(transform.position.x, transform.position.y, transform.position.z - 2);
+                Vector3 playerposition = new Vector3(pttransform.position.x, pttransform.position.y, pttransform.position.z);
+
+                //If the player is not in the way, move the robot
+                if (futurerobotpos != playerposition)
+                {
+                    var pos = transform.position;
+                    pos.z -= 2;
+                    transform.position = pos;
+                }
+                //If the player is in the way, it takes damage
+                else
+                {
+                    PlayerTakeDamage(pbrenderer);
+                }
             }
             else if(currIndex == 2)
             {
-                var pos = transform.position;
-                pos.x -= 2;
-                transform.position = pos;
+                //Hold the values for where the robot will be once moved and the current player position
+                Vector3 futurerobotpos = new Vector3(transform.position.x - 2, transform.position.y, transform.position.z);
+                Vector3 playerposition = new Vector3(pttransform.position.x, pttransform.position.y, pttransform.position.z);
+
+                //If the player is not in the way, move the robot
+                if (futurerobotpos != playerposition)
+                {
+                    var pos = transform.position;
+                    pos.x -= 2;
+                    transform.position = pos;
+                }
+                //If the player is in the way, it takes damage
+                else
+                {
+                    PlayerTakeDamage(pbrenderer);
+                }
             }
             else
             {
-                var pos = transform.position;
-                pos.z += 2;
-                transform.position = pos;
+                //Hold the values for where the robot will be once moved and the current player position
+                Vector3 futurerobotpos = new Vector3(transform.position.x, transform.position.y, transform.position.z + 2);
+                Vector3 playerposition = new Vector3(pttransform.position.x, pttransform.position.y, pttransform.position.z);
+
+                //If the player is not in the way, move the robot
+                if (futurerobotpos != playerposition)
+                {
+                    var pos = transform.position;
+                    pos.z += 2;
+                    transform.position = pos;
+                }
+                //If the player is in the way, it takes damage
+                else
+                {
+                    PlayerTakeDamage(pbrenderer);
+                }
             }
 
             frames = 0;
             movesPerSide++;
         }
+    }
+
+    void PlayerTakeDamage(Renderer playerbodyrenderer)
+    {
+        //Change the player's body color to show damage
+        float newR = playerbodyrenderer.material.color.r + 0.25f;
+        if (newR > 1)
+        {
+            newR = 1;
+        }
+        float newG = playerbodyrenderer.material.color.g - 0.13f;
+        if (newG < 0)
+        {
+            newG = 0;
+        }
+        float newB = playerbodyrenderer.material.color.b - 0.2f;
+        if (newB < 0)
+        {
+            newB = 0;
+        }
+        Color change = new Color(newR, newG, newB, 1);
+        playerbodyrenderer.material.color = change;
     }
 }

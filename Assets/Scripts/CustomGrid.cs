@@ -41,14 +41,14 @@ public class CustomGrid : MonoBehaviour
         playertargetPos.y = Mathf.Floor(playerTarget.transform.position.y / gridSize) * gridSize;
         playertargetPos.z = Mathf.Floor(playerTarget.transform.position.z / gridSize) * gridSize;
 
-        //Set the player and robot to 
+        //Set the player tansform 
         player.transform.position = playertargetPos;
 
        if (robot != null)
         {
             //Set the position of the robot target
             robottargetPos.x = Mathf.Floor(robotTarget.transform.position.x / gridSize) * gridSize;
-            //robottargetPos.y = (Mathf.Floor(robotTarget.transform.position.y / gridSize) * gridSize) + 0.5f;
+            robottargetPos.y = (Mathf.Floor(robotTarget.transform.position.y / gridSize) * gridSize) + 0.5f;
             robottargetPos.z = Mathf.Floor(robotTarget.transform.position.z / gridSize) * gridSize;
 
             robot.transform.position = robottargetPos;

@@ -9,6 +9,10 @@ public class FixItPlayerMovement : MonoBehaviour
     private Rigidbody rb;
     private Transform rtTransform;
 
+    //For body coloring
+    public GameObject playerbody;
+    private Renderer pbrenderer;
+
     private void Start()
     {
         //Set player target start position
@@ -20,9 +24,8 @@ public class FixItPlayerMovement : MonoBehaviour
 
         //Get the player rigidbody and the player collision script
         rb = player.GetComponent<Rigidbody>();
-
-        //Get the robot target transform
         rtTransform = robotTarget.GetComponent<Transform>();
+        pbrenderer = playerbody.GetComponent<Renderer>();
     }
 
     // Move the player target by increments of 2 on button down
@@ -39,13 +42,18 @@ public class FixItPlayerMovement : MonoBehaviour
             //Check if movement will put player past the edge
             if (transform.position.z < 8)
             {
-                //Check if movement will put the player where the robot is
+                //If player will not run into robot
                 if (futureplayerpos != robotposition)
                 {
                     //Move the player foward 2 units
                     var pos = transform.position;
                     pos.z += 2;
                     transform.position = pos;
+                }
+                //If player will run into robot
+                else
+                {
+                    PlayerTakeDamage(pbrenderer);
                 }
             }
             //Rotate the way the player is facing toward front
@@ -63,13 +71,18 @@ public class FixItPlayerMovement : MonoBehaviour
             //Check if the movement will put the player past the edge
             if (transform.position.x > -8)
             {
-                //Check if the movement will put the player where the robot is
+                //If the player will not run into robot
                 if (futureplayerpos != robotposition)
                 {
                     //Move the player left 2 units
                     var pos = transform.position;
                     pos.x -= 2;
                     transform.position = pos;
+                }
+                //If player will run into robot
+                else
+                {
+                    PlayerTakeDamage(pbrenderer);
                 }
             }
             //Rotate the way the player is facing toward the left
@@ -95,6 +108,11 @@ public class FixItPlayerMovement : MonoBehaviour
                     pos.z -= 2;
                     transform.position = pos;
                 }
+                //If player will run into robot
+                else
+                {
+                    PlayerTakeDamage(pbrenderer);
+                }
             }
             //Rotate the way the player is facing toward back
             rb.rotation = Quaternion.Euler(0f, 180f, 0f);
@@ -119,10 +137,37 @@ public class FixItPlayerMovement : MonoBehaviour
                     pos.x += 2;
                     transform.position = pos;
                 }
+                //If player will run into robot
+                else
+                {
+                    PlayerTakeDamage(pbrenderer);
+                }
             }
             //Rotate the way the player is facing toward the right
             rb.rotation = Quaternion.Euler(0f, 90f, 0f);
         }
+    }
+
+    void PlayerTakeDamage(Renderer playerbodyrenderer)
+    {
+        //Change the player's body color to show damage
+        float newR = playerbodyrenderer.material.color.r + 0.25f;
+        if (newR > 1)
+        {
+            newR = 1;
+        }
+        float newG = playerbodyrenderer.material.color.g - 0.13f;
+        if (newG < 0)
+        {
+            newG = 0;
+        }
+        float newB = playerbodyrenderer.material.color.b - 0.2f;
+        if (newB < 0)
+        {
+            newB = 0;
+        }
+        Color change = new Color(newR, newG, newB, 1);
+        playerbodyrenderer.material.color = change;
     }
 }
 
