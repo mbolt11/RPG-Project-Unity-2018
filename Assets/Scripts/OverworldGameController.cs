@@ -22,7 +22,7 @@ public class OverworldGameController : MonoBehaviour {
 
     void Awake()
     {
-        if (!created)
+        if (!created && !gameObject.CompareTag("Villager"))
         {
             DontDestroyOnLoad(this.gameObject);
             created = true;

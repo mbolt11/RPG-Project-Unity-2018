@@ -27,8 +27,6 @@ public class FixItOutsideRobotMovement : MonoBehaviour
 
         pttransform = playerTarget.GetComponent<Transform>();
         pbrenderer = playerbody.GetComponent<Renderer>();
-
-        //rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -40,9 +38,7 @@ public class FixItOutsideRobotMovement : MonoBehaviour
         {
             //rotate 90 degrees
             currRobot.Rotate(0, 90f, 0);
-            //currRobot.rotation = Quaternion.Euler(0f, currRobot.rotation.y + 45f, 0f);
-            Debug.Log("TagRotation:" + currRobot.tag);
-            //Debug.Log("movesPerSide:" +movesPerSide);
+
             movesPerSide = 0;
 
             currIndex++;
