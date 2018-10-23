@@ -12711,7 +12711,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1586871891}
   m_Layer: 0
-  m_Name: Peculiar Town Residents
+  m_Name: Electra City
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16273,7 +16273,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1374705863890260, guid: 8ae454e87a2a8b64b87cd1412e07bccb, type: 2}
       propertyPath: m_Name
-      value: Aiden Noe
+      value: Ida Noe
       objectReference: {fileID: 0}
     - target: {fileID: 4867020522417708, guid: 8ae454e87a2a8b64b87cd1412e07bccb, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -16509,7 +16509,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1374705863890260, guid: 8ae454e87a2a8b64b87cd1412e07bccb, type: 2}
       propertyPath: m_Name
-      value: Dan Gerus
+      value: Dane Gerus
       objectReference: {fileID: 0}
     - target: {fileID: 4867020522417708, guid: 8ae454e87a2a8b64b87cd1412e07bccb, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
