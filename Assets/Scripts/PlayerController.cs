@@ -24,6 +24,10 @@ public class PlayerController : MonoBehaviour
     //reference to the main camera
     public GameObject userCamera;
 
+    //For player-villager interactions
+    public GameObject villager;
+    private bool inRange = false;
+
     // Use this for initialization
     void Start()
     {
@@ -71,6 +75,12 @@ public class PlayerController : MonoBehaviour
             moveForward = false;
             moveBack = false;
         }
+
+        //Start dialogue if they press enter key when they are in range
+        if (Input.GetKeyDown(KeyCode.Return) && inRange)
+        {
+            villager.GetComponent<VillagerManager>().talkToVillager();
+        }
     }
 
     //physics code
@@ -116,9 +126,9 @@ public class PlayerController : MonoBehaviour
         
     }
 
-    //If the player collides with a Robot, go to the fixing scene
     private void OnTriggerEnter(Collider other)
     {
+        //If the player collides with a Robot, go to the fixing scene
         if (other.tag == "Common Robot" || other.tag == "Outside Robot")
         {
             if(other.tag == "Common Robot")
@@ -137,6 +147,21 @@ public class PlayerController : MonoBehaviour
                 
                 //userCamera.GetComponent<TransitionScript>().EndTransition();
             }
+        }
+
+        //Record if the player is within the radius of a villager
+        if(other.tag == "Villager")
+        {
+            inRange = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        //If player leaves the villager radius, it is no longer in range
+        if (other.tag == "Villager")
+        {
+            inRange = false;
         }
     }
 

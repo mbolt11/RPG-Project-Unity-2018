@@ -1507,6 +1507,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 494611792}
   robotTarget: {fileID: 1527851547}
+  playerbody: {fileID: 1869769804}
 --- !u!1001 &555127387
 Prefab:
   m_ObjectHideFlags: 0

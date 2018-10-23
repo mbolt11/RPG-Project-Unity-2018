@@ -20,8 +20,8 @@ public class CameraController : MonoBehaviour
     {
         transform.position = new Vector3(0f, player.position.y + 2, player.position.z - 4);
         transform.rotation = Quaternion.identity;
-        print(ToString());
-        print(transform.position);
+        //print(ToString());
+        //print(transform.position);
 
     }
 }
