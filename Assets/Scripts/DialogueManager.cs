@@ -127,8 +127,8 @@ public class DialogueManager : MonoBehaviour {
             return true;
         else
         {
-            Debug.Log("index " + dialogueIndex);
-            Debug.Log("dialogueLines " + dialogueLines.Count);
+            //Debug.Log("index " + dialogueIndex);
+            //Debug.Log("dialogueLines " + dialogueLines.Count);
             return false;
         }
     }
