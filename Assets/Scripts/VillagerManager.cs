@@ -11,14 +11,18 @@ public class VillagerManager : MonoBehaviour
     private string[] message3 = { "This is the third message woo yeah!!" };
     private string[] message4 = { "This is the fourth message", "It is really long", "This villager is very talkative", "Robots robots robots", "I really hope this works!", "Hi Steven and Amanda!" };
 
+<<<<<<< HEAD
     //Method which is called when the player interacts with the villager
+=======
+    private int messagecount = 1;
+
+    //Method which is called when the player interacts with the villager
+>>>>>>> f4f092e24bf21206910430206d699c61bfff0842
     public void talkToVillager()
     {
-        //Randomly generate the message
-        System.Random random = new System.Random();
-        int num = random.Next(1, 5);
+        //Select which message this villager will display
         string[] chosenMessage;
-        switch (num)
+        switch (messagecount)
         {
             case 1:
                 chosenMessage = message1;
@@ -32,6 +36,16 @@ public class VillagerManager : MonoBehaviour
             default:
                 chosenMessage = message4;
                 break;
+        }
+
+        //Increment the message count up to the total number of different messages, then reset to 1
+        if (messagecount < 4)
+        {
+            messagecount++;
+        }
+        else
+        {
+            messagecount = 1;
         }
          
         //Add the chosen message as the new dialogue

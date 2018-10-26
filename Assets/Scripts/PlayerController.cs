@@ -18,9 +18,6 @@ public class PlayerController : MonoBehaviour
     private float moveInput;
     private float turnInput;
 
-    //direction flags
-    bool moveForward, moveBack, moveLeft, moveRight;
-
     //Keeps track of if we have loaded the fixing scene yet
     private bool loaded = false;
 
@@ -52,43 +49,8 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        //see which key is down
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            moveLeft = false;
-            moveRight = false;
-            moveForward = true;
-            moveBack = false;
-        }
-        else if (Input.GetKeyDown(KeyCode.A))
-        {
-            moveLeft = true;
-            moveRight = false;
-            moveForward = false;
-            moveBack = false;
-        }
-        else if (Input.GetKeyDown(KeyCode.S))
-        {
-            moveLeft = false;
-            moveRight = false;
-            moveForward = false;
-            moveBack = true;
-        }
-        else if (Input.GetKeyDown(KeyCode.D))
-        {
-            moveLeft = false;
-            moveRight = true;
-            moveForward = false;
-            moveBack = false;
-        }
-
-        if(!Input.anyKey)
-        {
-            moveLeft = false;
-            moveRight = false;
-            moveForward = false;
-            moveBack = false;
-        }
+        moveInput = Input.GetAxis("Vertical");
+        turnInput = Input.GetAxis("Horizontal");
 
         //Start dialogue if they press enter key when they are in range
         if (Input.GetKeyDown(KeyCode.Return) && inRange && !DialogueManager.Instance.stillTalking())
@@ -123,37 +85,17 @@ public class PlayerController : MonoBehaviour
     //Move player Forward/Backward
     private void MovePlayer()
     {
-        if(moveForward || moveBack || moveLeft || moveRight)
-        {
-            Vector3 movement = transform.forward * playerSpeed * Time.deltaTime;
-            rb.MovePosition(rb.position + movement);
-        }
-        else
-        {
-            rb.velocity = new Vector3(0f,0f,0f);
-        }
+        // Adjust the position of the tank based on the player's input.
+        Vector3 movement = transform.forward * moveInput * playerSpeed * Time.deltaTime;
+        rb.MovePosition(rb.position + movement);
     }
 
     //turn player left/right
     private void TurnPlayer()
     {
-        if(moveLeft)
-        {
-            rb.rotation = Quaternion.Euler(0f, -90f, 0f);
-        }
-        else if(moveRight)
-        {
-            rb.rotation = Quaternion.Euler(0f, 90f, 0f);
-        }
-        else if(moveForward)
-        {
-            rb.rotation = Quaternion.Euler(0f, 0f, 0f);
-        }
-        else if(moveBack)
-        {
-            rb.rotation = Quaternion.Euler(0f, 180f, 0f);
-        }
-        
+        float turn = turnInput * playerTurnSpeed * Time.deltaTime;
+        Quaternion turnRotation = Quaternion.Euler(0f, turn, 0f);
+        rb.MoveRotation(rb.rotation * turnRotation);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -169,6 +111,7 @@ public class PlayerController : MonoBehaviour
             {
                 GameObject.Find("GameController").GetComponent<OverworldGameController>().getSingleton().setEnemyRobot("Outside Robot");
             }
+
             //Safety check that scene has not loaded already
             if (!loaded)
             {
@@ -203,12 +146,8 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator WaitFor()
     {
-        Debug.Log("waiting");
         yield return new WaitForSeconds(3);
-        Debug.Log("doneWaiting");
 
-        //Unload the overworld scene
-        //SceneManager.UnloadSceneAsync(0);
         //Load the fix it scene
         SceneManager.LoadScene(1);
     }
