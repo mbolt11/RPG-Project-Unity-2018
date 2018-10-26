@@ -37,4 +37,9 @@ public class VillagerManager : MonoBehaviour
         //Add the chosen message as the new dialogue
         DialogueManager.Instance.AddNewDialogue(chosenMessage);
     }
+
+    public void inRangetoTalkText()
+    {
+        DialogueManager.Instance.EnterKeyTextAppear();
+    }
 }

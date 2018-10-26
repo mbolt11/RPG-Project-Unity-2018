@@ -11,6 +11,9 @@ public class PlayerController : MonoBehaviour
     //player turn speed, should be 15 * playerSpeed
     public float playerTurnSpeed;
 
+    //Singleton
+    public static PlayerController Instance { get; set; }
+
     private Rigidbody rb;
     private float moveInput;
     private float turnInput;
@@ -26,6 +29,7 @@ public class PlayerController : MonoBehaviour
 
     //For player-villager interactions
     public GameObject villager;
+    private string villagerName;
     private bool inRange = false;
 
     // Use this for initialization
@@ -34,6 +38,16 @@ public class PlayerController : MonoBehaviour
         //store the rigidbody component
         rb = GetComponent<Rigidbody>();
         playerTurnSpeed = 50f;
+
+        //Instantiate the script singleton
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            Instance = this;
+        }
     }
 
     private void Update()
@@ -77,9 +91,25 @@ public class PlayerController : MonoBehaviour
         }
 
         //Start dialogue if they press enter key when they are in range
-        if (Input.GetKeyDown(KeyCode.Return) && inRange)
+        if (Input.GetKeyDown(KeyCode.Return) && inRange && !DialogueManager.Instance.stillTalking())
         {
             villager.GetComponent<VillagerManager>().talkToVillager();
+        }
+
+        //have press enter text appear
+        if(inRange && !DialogueManager.Instance.stillTalking())
+        {
+            villager.GetComponent<VillagerManager>().inRangetoTalkText();
+        }
+
+        if(!inRange)
+        {
+            if (DialogueManager.Instance.stillTalking())
+            {
+                DialogueManager.Instance.forceEndDialogue();
+            }
+
+            DialogueManager.Instance.EnterKeyTextDissapear();
         }
     }
 
@@ -153,7 +183,13 @@ public class PlayerController : MonoBehaviour
         if(other.tag == "Villager")
         {
             inRange = true;
+            villagerName = other.name;
         }
+    }
+
+    public string getVillagerName()
+    {
+        return villagerName;
     }
 
     private void OnTriggerExit(Collider other)
