@@ -23,11 +23,6 @@ public class DialogueManager : MonoBehaviour {
 
     private int dialogueIndex;
 
-<<<<<<< HEAD
-=======
-    private int dialogueIndex;
-
->>>>>>> f4f092e24bf21206910430206d699c61bfff0842
     //List of dialogue lines
     private List<string> dialogueLines = new List<string>();
 
@@ -188,7 +183,6 @@ public class DialogueManager : MonoBehaviour {
     //Check the key input to see if player wants to advance or go back in conversation
     private void Update()
     {
-<<<<<<< HEAD
         if (PreviousDialogueExist() && stillTalking())
             PreviousKeyTextAppear();
         else
@@ -199,8 +193,6 @@ public class DialogueManager : MonoBehaviour {
         else
             NextKeyTextDissapear();
 
-=======
->>>>>>> f4f092e24bf21206910430206d699c61bfff0842
         if(dialoguePanel.activeInHierarchy && Input.GetKeyDown(KeyCode.RightArrow))
         {
             ContinueDialogue();

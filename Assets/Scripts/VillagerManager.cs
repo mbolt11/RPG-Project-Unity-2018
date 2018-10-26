@@ -11,13 +11,8 @@ public class VillagerManager : MonoBehaviour
     private string[] message3 = { "This is the third message woo yeah!!" };
     private string[] message4 = { "This is the fourth message", "It is really long", "This villager is very talkative", "Robots robots robots", "I really hope this works!", "Hi Steven and Amanda!" };
 
-<<<<<<< HEAD
-    //Method which is called when the player interacts with the villager
-=======
     private int messagecount = 1;
 
-    //Method which is called when the player interacts with the villager
->>>>>>> f4f092e24bf21206910430206d699c61bfff0842
     public void talkToVillager()
     {
         //Select which message this villager will display
