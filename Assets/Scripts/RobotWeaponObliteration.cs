@@ -21,9 +21,9 @@ public class RobotWeaponObliteration : MonoBehaviour
         {
             //Effect when hitting the player
             ObliterationParticles.Play();
-            Debug.Log("obliterate!");
+            //Debug.Log("obliterate!");
         }
-        Debug.Log(other.tag);
+        //Debug.Log(other.tag);
         ObliterationParticles.transform.parent = null;
 
         Destroy(ObliterationParticles.gameObject, ObliterationParticles.main.duration);

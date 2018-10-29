@@ -30,7 +30,9 @@ public class CustomGrid : MonoBehaviour
         }
 
         if (enemyID == "Outside Robot")
-            robotTarget.transform.position = new Vector3(-8, 0, 8);
+            robotTarget.transform.position = new Vector3(-8, -0.15f, 8);
+        else
+            robotTarget.transform.position = new Vector3(0, -1, 8);
     }
 
     //Set the robot and players position to be at the true position of the target
@@ -48,7 +50,8 @@ public class CustomGrid : MonoBehaviour
         {
             //Set the position of the robot target
             robottargetPos.x = Mathf.Floor(robotTarget.transform.position.x / gridSize) * gridSize;
-            robottargetPos.y = (Mathf.Floor(robotTarget.transform.position.y / gridSize) * gridSize) + 0.5f;
+            //robottargetPos.y = (Mathf.Floor(robotTarget.transform.position.y / gridSize) * gridSize) + 0.5f;
+            robottargetPos.y = robotTarget.transform.position.y + 0.5f;
             robottargetPos.z = Mathf.Floor(robotTarget.transform.position.z / gridSize) * gridSize;
 
             robot.transform.position = robottargetPos;

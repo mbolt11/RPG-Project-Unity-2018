@@ -10,12 +10,12 @@ public class FixItPlayerController : MonoBehaviour
     {
         if (other.tag == "CommonPart")
         {
-            Debug.Log("part hit");
+            //Debug.Log("part hit");
             playerBody.transform.GetComponent<Renderer>().material.color = Color.red;
         }
         else if (other.tag == "OutsidePart")
         {
-            Debug.Log("part hit");
+            //Debug.Log("part hit");
             playerBody.transform.GetComponent<Renderer>().material.color = Color.yellow;
         }
     }

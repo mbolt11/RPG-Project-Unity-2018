@@ -14,7 +14,7 @@ public class FixItCommonRobotMovement : MonoBehaviour {
 
 	void Start () 
     {
-        Vector3 robotstartpos = new Vector3(0, 0, 8);
+        Vector3 robotstartpos = new Vector3(0, -1, 8);
         transform.position = robotstartpos;
         panleft = true;
         frames = 60;

@@ -18,7 +18,7 @@ public class FixItOutsideRobotMovement : MonoBehaviour
 
     void Start()
     {
-        Vector3 robotstartpos = new Vector3(-8, 0, 8);
+        Vector3 robotstartpos = new Vector3(-8, -0.15f, 8);
         transform.position = robotstartpos;
         currIndex = 0;
         movesPerSide = 0;
