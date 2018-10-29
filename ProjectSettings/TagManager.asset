@@ -11,6 +11,7 @@ TagManager:
   - CommonPart
   - OutsidePart
   - Villager
+  - Chest
   layers:
   - Default
   - TransparentFX

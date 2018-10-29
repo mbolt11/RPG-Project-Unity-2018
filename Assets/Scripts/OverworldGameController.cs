@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class OverworldGameController : MonoBehaviour {
 
@@ -8,28 +9,31 @@ public class OverworldGameController : MonoBehaviour {
     private static bool created = false;
 
     private string enemyRobot;
+    private int[] treasure;
+
+    public GameObject chestPromptPanel;
+    private Text enterKeyPrompt;
 
     private void Start()
     {
         gameInfo = this;
         enemyRobot = "Common Robot";
-
-        if(gameObject.CompareTag("Villager"))
-        {
-            GameObject.Find("VillagerTorso").GetComponent<Renderer>().material.color = new Color(Random.value, Random.value, Random.value);
-        }
+        treasure = new int [] {1,1,1,1,1};
     }
 
     void Awake()
     {
-        if (!created && !gameObject.CompareTag("Villager"))
+        if (!created)
         {
             DontDestroyOnLoad(this.gameObject);
             created = true;
             //Debug.Log("Awake: " + this.gameObject);
         }
-    }
 
+        enterKeyPrompt = chestPromptPanel.GetComponentInChildren<Text>();
+        enterKeyPrompt.text = "Enter Key Prompt";
+        chestPromptPanel.SetActive(false);
+    }
 
     public OverworldGameController getSingleton()
     {
@@ -42,6 +46,29 @@ public class OverworldGameController : MonoBehaviour {
             enemyRobot = enemyName;
         else if (enemyName == "Outside Robot")
             enemyRobot = enemyName;
+    }
+
+    public bool openChest(int chestNum)
+    {
+        if (treasure[chestNum] == 1)
+        {
+            treasure[chestNum] = 0;
+            return true;
+        }
+
+        else
+            return false;
+    }
+
+    public void EnterKeyTextAppear()
+    {
+        enterKeyPrompt.text = "Press ENTER to open";
+        chestPromptPanel.SetActive(true);
+    }
+
+    public void EnterKeyTextDissapear()
+    {
+        chestPromptPanel.SetActive(false);
     }
 
     public string getEnemyID()

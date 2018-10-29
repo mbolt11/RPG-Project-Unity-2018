@@ -35,7 +35,6 @@ public class DialogueManager : MonoBehaviour {
 
         enterKeyPrompt = talkPromptPanel.GetComponentInChildren<Text>();
         talkPromptPanel.SetActive(false);
-        enterKeyPrompt.text = "Press ENTER to talk";
         talking = false;
 
         previousKeyPrompt = previousPromptPanel.GetComponentInChildren<Text>();
@@ -76,6 +75,8 @@ public class DialogueManager : MonoBehaviour {
 
     public void EnterKeyTextAppear()
     {
+        //Debug.Log("appear");
+        enterKeyPrompt.text = "Press ENTER to talk";
         talkPromptPanel.SetActive(true);
     }
 

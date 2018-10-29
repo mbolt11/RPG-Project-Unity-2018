@@ -27,7 +27,11 @@ public class PlayerController : MonoBehaviour
     //For player-villager interactions
     public GameObject villager;
     private string villagerName;
-    private bool inRange = false;
+    private bool villagerInRange = false;
+
+    private GameObject chest;
+    private bool chestInRange = false;
+    private int chestNumber;
 
     // Use this for initialization
     void Start()
@@ -52,26 +56,44 @@ public class PlayerController : MonoBehaviour
         moveInput = Input.GetAxis("Vertical");
         turnInput = Input.GetAxis("Horizontal");
 
-        //Start dialogue if they press enter key when they are in range
-        if (Input.GetKeyDown(KeyCode.Return) && inRange && !DialogueManager.Instance.stillTalking())
-        {
-            villager.GetComponent<VillagerManager>().talkToVillager();
-        }
-
-        //have press enter text appear
-        if(inRange && !DialogueManager.Instance.stillTalking())
+        //have press enter text to talk appear
+        if (villagerInRange && !DialogueManager.Instance.stillTalking())
         {
             villager.GetComponent<VillagerManager>().inRangetoTalkText();
         }
 
-        if(!inRange)
+        //Start dialogue if they press enter key when they are in range
+        if (Input.GetKeyDown(KeyCode.Return) && villagerInRange && !DialogueManager.Instance.stillTalking())
+        {
+            villager.GetComponent<VillagerManager>().talkToVillager();
+        }
+
+        //have press enter text to open chest appear
+        if (chestInRange)
+        {
+            OverworldGameController.gameInfo.EnterKeyTextAppear();
+        }
+
+        //destroy chest if player opens it
+        if (Input.GetKeyDown(KeyCode.Return) && chestInRange)
+        {
+            if (OverworldGameController.gameInfo.openChest(chestNumber))
+                Destroy(chest);
+            chestInRange = false;
+        }
+
+        if (!villagerInRange)
         {
             if (DialogueManager.Instance.stillTalking())
             {
                 DialogueManager.Instance.forceEndDialogue();
             }
+        }
 
-            DialogueManager.Instance.EnterKeyTextDissapear();
+        //have enter prompt dissapear
+        if (!chestInRange && !villagerInRange)
+        {
+            OverworldGameController.gameInfo.EnterKeyTextDissapear();
         }
     }
 
@@ -125,8 +147,16 @@ public class PlayerController : MonoBehaviour
         //Record if the player is within the radius of a villager
         if(other.tag == "Villager")
         {
-            inRange = true;
+            villagerInRange = true;
             villagerName = other.name;
+        }
+
+        //record if player in radius of opening a chest
+        if(other.tag == "Chest")
+        {
+            chest = other.gameObject;
+            chestInRange = true;
+            chestNumber = int.Parse(other.name.Substring(other.tag.Length, 1));
         }
     }
 
@@ -140,7 +170,12 @@ public class PlayerController : MonoBehaviour
         //If player leaves the villager radius, it is no longer in range
         if (other.tag == "Villager")
         {
-            inRange = false;
+            villagerInRange = false;
+        }
+
+        if (other.tag == "Chest")
+        {
+            chestInRange = false;
         }
     }
 

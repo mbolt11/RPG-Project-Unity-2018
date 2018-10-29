@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class VillagerManager : MonoBehaviour 
 {
@@ -16,6 +17,14 @@ public class VillagerManager : MonoBehaviour
 
 
     private int messagecount = 1;
+
+    public void Start()
+    {
+        if (gameObject.CompareTag("Villager"))
+        {
+            GameObject.Find("VillagerTorso").GetComponent<Renderer>().material.color = new Color(Random.value, Random.value, Random.value);
+        }
+    }
 
     public void talkToVillager()
     {
