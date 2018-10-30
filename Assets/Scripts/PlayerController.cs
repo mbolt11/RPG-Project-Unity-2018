@@ -100,10 +100,6 @@ public class PlayerController : MonoBehaviour
     //physics code
     void FixedUpdate()
     {
-        var pos = transform.position;
-        pos.y = 0f;
-        transform.position = pos;
-
         TurnPlayer();
         MovePlayer();
     }
