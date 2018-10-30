@@ -24,22 +24,18 @@ public class CreateEnemyRobot : MonoBehaviour {
             enemyID = "Common Robot";
         }
 
-        Rigidbody robotInstance;
+        Rigidbody robotInstance = null;
 
         if(enemyID == CommonRobot.tag)
         {
             robotInstance = Instantiate(CommonRobot, start, target) as Rigidbody;
             robotInstance.transform.parent = GameObject.Find("Fix-It Robot").transform;
-
-            //var yPos = robotInstance.transform.position;
-            //yPos.y = -0.5f;
-            //robotInstance.transform.position = yPos;
         }
         else if(enemyID == OutsideRobot.tag)
         {
-            //Debug.Log("enemy created");
             robotInstance = Instantiate(OutsideRobot, start, target) as Rigidbody;
             robotInstance.transform.parent = GameObject.Find("Fix-It Robot").transform;
-        }            
+        }        
+        
 	}
 }
