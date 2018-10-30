@@ -37,7 +37,7 @@ public class FixItPlayerMovement : MonoBehaviour
             Vector3 futureplayerpos = new Vector3(transform.position.x, transform.position.y, transform.position.z + 2);
 
             //Get the current robot target transform position
-            Vector3 robotposition = new Vector3(rtTransform.position.x, rtTransform.position.y, rtTransform.position.z);
+            Vector3 robotposition = new Vector3(rtTransform.position.x, rtTransform.position.y + 1, rtTransform.position.z);
 
             //Check if movement will put player past the edge
             if (transform.position.z < 8)
@@ -66,7 +66,7 @@ public class FixItPlayerMovement : MonoBehaviour
             Vector3 futureplayerpos = new Vector3(transform.position.x - 2, transform.position.y, transform.position.z);
 
             //Get the current robot target transform position
-            Vector3 robotposition = new Vector3(rtTransform.position.x, rtTransform.position.y, rtTransform.position.z);
+            Vector3 robotposition = new Vector3(rtTransform.position.x, rtTransform.position.y + 1, rtTransform.position.z);
 
             //Check if the movement will put the player past the edge
             if (transform.position.x > -8)
@@ -95,7 +95,7 @@ public class FixItPlayerMovement : MonoBehaviour
             Vector3 futureplayerpos = new Vector3(transform.position.x, transform.position.y, transform.position.z - 2);
 
             //Get the current robot target transform position
-            Vector3 robotposition = new Vector3(rtTransform.position.x, rtTransform.position.y, rtTransform.position.z);
+            Vector3 robotposition = new Vector3(rtTransform.position.x, rtTransform.position.y + 1, rtTransform.position.z);
 
             //Check if the movement will put the player past the edge
             if (transform.position.z > -6)
@@ -124,7 +124,7 @@ public class FixItPlayerMovement : MonoBehaviour
             Vector3 futureplayerpos = new Vector3(transform.position.x + 2, transform.position.y, transform.position.z);
 
             //Get the current robot target transform position
-            Vector3 robotposition = new Vector3(rtTransform.position.x, rtTransform.position.y, rtTransform.position.z);
+            Vector3 robotposition = new Vector3(rtTransform.position.x, rtTransform.position.y + 1, rtTransform.position.z);
 
             //Check if the movement will put the player past the edge
             if (transform.position.x < 6)

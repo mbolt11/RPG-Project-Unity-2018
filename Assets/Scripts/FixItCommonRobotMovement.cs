@@ -36,7 +36,7 @@ public class FixItCommonRobotMovement : MonoBehaviour {
                 if (transform.position.x < 6)
                 {
                     //Hold the values for where the robot will be once moved and the current player position
-                    Vector3 futurerobotpos = new Vector3(transform.position.x + 2, transform.position.y, transform.position.z);
+                    Vector3 futurerobotpos = new Vector3(transform.position.x + 2, transform.position.y + 1, transform.position.z);
                     Vector3 playerposition = new Vector3(pttransform.position.x, pttransform.position.y, pttransform.position.z);
 
                     //If the player is not in the way, move the robot
@@ -65,7 +65,7 @@ public class FixItCommonRobotMovement : MonoBehaviour {
                 if (transform.position.x > -8)
                 {
                     //Hold the values for where the robot will be once moved and the current player position
-                    Vector3 futurerobotpos = new Vector3(transform.position.x - 2, transform.position.y, transform.position.z);
+                    Vector3 futurerobotpos = new Vector3(transform.position.x - 2, transform.position.y + 1, transform.position.z);
                     Vector3 playerposition = new Vector3(pttransform.position.x, pttransform.position.y, pttransform.position.z);
 
                     //If the player is not in the way, move the robot
