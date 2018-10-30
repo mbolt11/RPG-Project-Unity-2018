@@ -60,6 +60,15 @@ public class OverworldGameController : MonoBehaviour {
             return false;
     }
 
+    //check if player has the weapon they are trying to equip
+    //may not need this
+    public bool hasWeapon(int chestNum_in)
+    {
+        if (treasure[chestNum_in] == 0)
+            return true;
+        return false;
+    }
+
     public void EnterKeyTextAppear()
     {
         enterKeyPrompt.text = "Press ENTER to open";

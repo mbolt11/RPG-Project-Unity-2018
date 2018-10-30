@@ -95,3 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2a25f810e3e1ad4fabaa5aaf410c2cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vertLeftTopFront: {x: -1, y: 1, z: 1}
+  vertRightTopFront: {x: 1, y: 1, z: 1}
+  vertRightTopBack: {x: 1, y: 1, z: -1}
+  vertLeftTopBack: {x: -1, y: 1, z: -1}
