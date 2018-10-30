@@ -40,10 +40,16 @@ public class RobotController : MonoBehaviour
         {
             //Change the color
             robotBody.transform.GetComponent<Renderer>().material.color = Color.green;
-            GameObject.Destroy(other.gameObject);
+            Destroy(other.gameObject);
 
             //stop throwing parts
             GetComponent<RobotThrowsParts>().enabled = false;
+
+            //check if boss
+            if(isBoss)
+            {
+                //DROP A TOOL HERE
+            }
         }
     }
 }
