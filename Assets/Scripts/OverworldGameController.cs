@@ -27,7 +27,6 @@ public class OverworldGameController : MonoBehaviour {
         {
             DontDestroyOnLoad(this.gameObject);
             created = true;
-            //Debug.Log("Awake: " + this.gameObject);
         }
 
         enterKeyPrompt = chestPromptPanel.GetComponentInChildren<Text>();
@@ -75,7 +74,7 @@ public class OverworldGameController : MonoBehaviour {
         chestPromptPanel.SetActive(true);
     }
 
-    public void EnterKeyTextDissapear()
+    public void EnterKeyTextDisappear()
     {
         chestPromptPanel.SetActive(false);
     }

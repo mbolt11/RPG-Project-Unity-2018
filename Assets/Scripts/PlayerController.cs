@@ -93,20 +93,24 @@ public class PlayerController : MonoBehaviour
         //have enter prompt dissapear
         if (!chestInRange && !villagerInRange)
         {
-            OverworldGameController.gameInfo.EnterKeyTextDissapear();
+            OverworldGameController.gameInfo.EnterKeyTextDisappear();
         }
     }
 
     //physics code
     void FixedUpdate()
     {
+        var pos = transform.position;
+        pos.y = 0f;
+        transform.position = pos;
+
         TurnPlayer();
         MovePlayer();
     }
 
     //Move player Forward/Backward
     private void MovePlayer()
-    {
+    { 
         // Adjust the position of the tank based on the player's input.
         Vector3 movement = transform.forward * moveInput * playerSpeed * Time.deltaTime;
         rb.MovePosition(rb.position + movement);
