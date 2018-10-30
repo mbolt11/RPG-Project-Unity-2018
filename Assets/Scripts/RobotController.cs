@@ -27,7 +27,7 @@ public class RobotController : MonoBehaviour
         {
             if(isBoss)
             {
-                robotBody.transform.GetComponent<Renderer>().material.color = new Color(212f, 175f, 55f);
+                robotBody.transform.GetComponent<Renderer>().material.color = new Color(212f, 175f, 55f, 1f);
             }
             GetComponent<RobotThrowsParts>().enabled = true;
         }
