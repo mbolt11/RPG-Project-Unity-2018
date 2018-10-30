@@ -9,16 +9,18 @@ public class OverworldGameController : MonoBehaviour {
     private static bool created = false;
 
     private string enemyRobot;
-    private int[] treasure;
+    private int[] treasureNumber;
+    private string[] treasureName = {"Treasure1","Treasure2","Treasure3","Treasure4","Treasure5"};
 
     public GameObject chestPromptPanel;
+    public GameObject menuPanel;
     private Text enterKeyPrompt;
 
     private void Start()
     {
         gameInfo = this;
         enemyRobot = "Common Robot";
-        treasure = new int [] {1,1,1,1,1};
+        treasureNumber = new int [] {1,1,1,1,1};
     }
 
     void Awake()
@@ -49,9 +51,13 @@ public class OverworldGameController : MonoBehaviour {
 
     public bool openChest(int chestNum)
     {
-        if (treasure[chestNum] == 1)
+        if (treasureNumber[chestNum] == 1)
         {
-            treasure[chestNum] = 0;
+            treasureNumber[chestNum] = 0;
+
+            //Make this treasure available in the menu
+            menuPanel.GetComponent<MenuController>().ActivateToolInMenu(treasureName[chestNum-1]);
+
             return true;
         }
 
@@ -63,7 +69,7 @@ public class OverworldGameController : MonoBehaviour {
     //may not need this
     public bool hasWeapon(int chestNum_in)
     {
-        if (treasure[chestNum_in] == 0)
+        if (treasureNumber[chestNum_in] == 0)
             return true;
         return false;
     }
