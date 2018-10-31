@@ -37,7 +37,7 @@ public class OverworldGameController : MonoBehaviour {
         isBoss = false;
         selectedTools = new List<GameObject>();
         selectedTools.Add(wrench);
-        currentWeapon = "wrench";
+        currentWeapon = "bigBomb";
         treasureNumber = new int [] {1,1,1,1,1};
     }
 
