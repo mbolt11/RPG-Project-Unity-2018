@@ -10,7 +10,15 @@ public class WrenchObliteration : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
     {
-        Destroy(gameObject, MaxLifeTime);
+        Debug.Log(gameObject.name);
+        if (gameObject.name != "hammer(Clone)")
+        {
+            Destroy(gameObject, MaxLifeTime);
+        }
+        else
+        {
+            Debug.Log("wont be destroyed");
+        }
 	}
 
     private void OnTriggerEnter(Collider other)

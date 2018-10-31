@@ -24,6 +24,8 @@ public class OverworldGameController : MonoBehaviour {
     public GameObject bigBomb;
     public GameObject bomb;
 
+    private string currentWeapon;
+
 
     private void Start()
     {
@@ -31,6 +33,7 @@ public class OverworldGameController : MonoBehaviour {
         enemyRobot = "Common Robot";
         selectedTools = new List<GameObject>();
         selectedTools.Add(wrench);
+        currentWeapon = "wrench";
         treasureNumber = new int [] {1,1,1,1,1};
     }
 
@@ -145,5 +148,11 @@ public class OverworldGameController : MonoBehaviour {
         }
 
         Debug.Log(express);
+    }
+
+    //returns a string of the weapon currently equiped in Fix-It
+    public string getCurrentWeapon()
+    {
+        return currentWeapon;
     }
 }

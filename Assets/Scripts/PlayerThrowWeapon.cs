@@ -2,11 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerThrowParts : MonoBehaviour {
+public class PlayerThrowWeapon : MonoBehaviour {
 
-    public Rigidbody wrench;
     public Transform weaponSpawn;
     public float velocity;
+
+    private Rigidbody wrench;
+    private Rigidbody bomb;
+    private Rigidbody bigBomb;
+
+    private string selectedWeapon;
+    private Rigidbody weaponInstance;
 
     public GameObject playerArm;
     private Transform armtransform;
@@ -21,6 +27,11 @@ public class PlayerThrowParts : MonoBehaviour {
 	void Start ()
     {
         fireButton = "Fire1";
+        selectedWeapon = "wrench";
+
+        wrench = OverworldGameController.gameInfo.wrench.GetComponent<Rigidbody>();
+        bomb = OverworldGameController.gameInfo.bomb.GetComponent<Rigidbody>();
+        bigBomb = OverworldGameController.gameInfo.bigBomb.GetComponent<Rigidbody>();
 
         //Get the transform of the player's arm for later
         armtransform = playerArm.GetComponent<Transform>();
@@ -37,6 +48,11 @@ public class PlayerThrowParts : MonoBehaviour {
         }
     }
 
+    public void changeWeapon(string newWeapon)
+    {
+        selectedWeapon = newWeapon;
+    }
+
     private void Fire()
     {
         //Move the player's arm to show him throwing
@@ -45,9 +61,23 @@ public class PlayerThrowParts : MonoBehaviour {
         armtransform.localPosition = throwPos;
         armtransform.localRotation = throwRot;
 
-        //Throw the wrench
-        Rigidbody wrenchInstance = Instantiate(wrench, weaponSpawn.position, weaponSpawn.rotation) as Rigidbody;
-        wrenchInstance.velocity = velocity * weaponSpawn.forward;
+        //Create Weapon
+        Rigidbody weaponInstance;
+        switch (selectedWeapon)
+        {
+            case "bomb":
+                weaponInstance = Instantiate(bomb, weaponSpawn.position, weaponSpawn.rotation) as Rigidbody;
+                break;
+            case "bigBomb":
+                weaponInstance = Instantiate(bigBomb, weaponSpawn.position, weaponSpawn.rotation) as Rigidbody;
+                break;
+            default:
+                weaponInstance = Instantiate(wrench, weaponSpawn.position, weaponSpawn.rotation) as Rigidbody;
+                break;
+        }
+
+        //throw the weapon
+        weaponInstance.velocity = velocity * weaponSpawn.forward;
         fired = false;
 
         //ResetArm the arm position after throwing

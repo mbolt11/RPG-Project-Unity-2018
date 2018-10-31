@@ -58,8 +58,8 @@ public class CustomGrid : MonoBehaviour
         }
         else
         {
-            GameObject fix = GameObject.Find("Fix-It Robot");
-            Debug.Log("Trying to assign child" + fix);
+            //GameObject fix = GameObject.Find("Fix-It Robot");
+            //Debug.Log("Trying to assign child" + fix);
             robot = GameObject.Find("Fix-It Robot").transform.GetChild(0);
         }
     }
