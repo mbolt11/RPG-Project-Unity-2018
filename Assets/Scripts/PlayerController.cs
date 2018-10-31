@@ -134,6 +134,8 @@ public class PlayerController : MonoBehaviour
                 GameObject.Find("GameController").GetComponent<OverworldGameController>().getSingleton().setEnemyRobot("Outside Robot");
             }
 
+            OverworldGameController.gameInfo.setBossStatus(other.gameObject.GetComponent<RobotController>().isBoss);
+
             //Safety check that scene has not loaded already
             if (!loaded)
             {

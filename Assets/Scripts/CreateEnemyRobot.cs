@@ -35,7 +35,11 @@ public class CreateEnemyRobot : MonoBehaviour {
         {
             robotInstance = Instantiate(OutsideRobot, start, target) as Rigidbody;
             robotInstance.transform.parent = GameObject.Find("Fix-It Robot").transform;
-        }        
+        }
         
+        if(gameInfo.getBossStatus())
+        {
+            robotInstance.GetComponentInChildren<Renderer>().material.color = new Color(.83f, .69f, .22f, 1f);
+        }
 	}
 }

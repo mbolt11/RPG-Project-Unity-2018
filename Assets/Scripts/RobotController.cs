@@ -8,6 +8,7 @@ public class RobotController : MonoBehaviour
     //Get the robot's main body cube
     public GameObject robotBody;
 
+    [HideInInspector]
     public bool isBoss;
 
     // Use this for initialization
@@ -25,11 +26,13 @@ public class RobotController : MonoBehaviour
         //If we are in the Fix It World
         else
         {
-            if(isBoss)
-            {
-                robotBody.transform.GetComponent<Renderer>().material.color = new Color(212f, 175f, 55f, 1f);
-            }
             GetComponent<RobotThrowsParts>().enabled = true;
+        }
+
+        //color robot if it's a boss
+        if (isBoss)
+        {
+            robotBody.transform.GetComponent<Renderer>().material.color = new Color(.83f, .69f, .22f, 1f);
         }
     }
 
@@ -49,6 +52,7 @@ public class RobotController : MonoBehaviour
             if(isBoss)
             {
                 //DROP A TOOL HERE
+                Debug.Log("Drop a Tool");
             }
         }
     }

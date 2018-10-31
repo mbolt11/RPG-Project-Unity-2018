@@ -9,6 +9,7 @@ public class OverworldGameController : MonoBehaviour {
     private static bool created = false;
 
     private string enemyRobot;
+    private bool isBoss;
     private int[] treasureNumber;
 
     //For keeping track of the tools
@@ -33,6 +34,7 @@ public class OverworldGameController : MonoBehaviour {
     {
         gameInfo = this;
         enemyRobot = "Common Robot";
+        isBoss = false;
         selectedTools = new List<GameObject>();
         selectedTools.Add(wrench);
         currentWeapon = "wrench";
@@ -55,6 +57,16 @@ public class OverworldGameController : MonoBehaviour {
     public OverworldGameController getSingleton()
     {
         return gameInfo;
+    }
+
+    public void setBossStatus(bool isBoss)
+    {
+        this.isBoss = isBoss;
+    }
+
+    public bool getBossStatus()
+    {
+        return isBoss;
     }
 
     public void setEnemyRobot(string enemyName)
