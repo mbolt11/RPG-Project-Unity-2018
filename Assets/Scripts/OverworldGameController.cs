@@ -10,16 +10,27 @@ public class OverworldGameController : MonoBehaviour {
 
     private string enemyRobot;
     private int[] treasureNumber;
-    private string[] treasureName = {"Treasure1","Treasure2","Treasure3","Treasure4","Treasure5"};
-
+    //"Big Bomb" needs come from a boss
+    private string[] treasureName = {"Hammer","Oil","Bomb"};
+    //private GameObject[] selectedTools;
+    private List<GameObject> selectedTools;
     public GameObject chestPromptPanel;
     public GameObject menuPanel;
     private Text enterKeyPrompt;
+
+    public GameObject hammer;
+    public GameObject oil;
+    public GameObject wrench;
+    public GameObject bigBomb;
+    public GameObject bomb;
+
 
     private void Start()
     {
         gameInfo = this;
         enemyRobot = "Common Robot";
+        selectedTools = new List<GameObject>();
+        selectedTools.Add(wrench);
         treasureNumber = new int [] {1,1,1,1,1};
     }
 
@@ -88,5 +99,51 @@ public class OverworldGameController : MonoBehaviour {
     public string getEnemyID()
     {
         return enemyRobot;
+    }
+
+    //add chosen item to selectedTools array
+    public void addTool(string toolName)
+    {
+        if (selectedTools.Count < 4)
+        {
+            switch (toolName)
+            {
+                case "wrench":
+                    selectedTools.Add(wrench);
+                    break;
+                case "hammer":
+                    selectedTools.Add(hammer);
+                    break;
+                case "oil":
+                    selectedTools.Add(oil);
+                    break;
+                case "bigBomb":
+                    selectedTools.Add(bigBomb);
+                    break;
+                case "bomb":
+                    selectedTools.Add(bomb);
+                    break;
+            }
+        }
+    }
+
+    public void removeTool(string toolName)
+    {
+        for(int i = 0; i < selectedTools.Count; i++)
+        {
+            if (selectedTools[i].name == toolName)
+                selectedTools.RemoveAt(i);
+        }
+    }
+
+    public void printSelectedTools()
+    {
+        string express = "";
+        for (int i = 0; i < selectedTools.Count; i++)
+        {
+            express += selectedTools[i].name + " ";
+        }
+
+        Debug.Log(express);
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class MenuController : MonoBehaviour {
 
-    public GameObject[] tools;
+    public GameObject[] tools; //UI elements
     private int toolcounter = 1;
 
     // Use this for initialization
