@@ -10,14 +10,16 @@ public class OverworldGameController : MonoBehaviour {
 
     private string enemyRobot;
     private int[] treasureNumber;
-    //"Big Bomb" needs come from a boss
-    private string[] treasureName = {"Hammer","Oil","Bomb"};
-    //private GameObject[] selectedTools;
+
+    //For keeping track of the tools
+    private string[] treasureName = {"Hammer","Oil","Bomb"};//"Big Bomb" needs come from a boss
     private List<GameObject> selectedTools;
+   
     public GameObject chestPromptPanel;
     public GameObject menuPanel;
     private Text enterKeyPrompt;
 
+    //To access the actual tool prefabs
     public GameObject hammer;
     public GameObject oil;
     public GameObject wrench;
@@ -107,7 +109,7 @@ public class OverworldGameController : MonoBehaviour {
     //add chosen item to selectedTools array
     public void addTool(string toolName)
     {
-        if (selectedTools.Count < 4)
+        if(selectedTools.Count < 4)
         {
             switch (toolName)
             {
@@ -128,6 +130,7 @@ public class OverworldGameController : MonoBehaviour {
                     break;
             }
         }
+        printSelectedTools();
     }
 
     public void removeTool(string toolName)
@@ -137,6 +140,7 @@ public class OverworldGameController : MonoBehaviour {
             if (selectedTools[i].name == toolName)
                 selectedTools.RemoveAt(i);
         }
+        printSelectedTools();
     }
 
     public void printSelectedTools()

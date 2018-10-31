@@ -11,6 +11,7 @@ ModelImporter:
     3300000: OilCan3
     4300000: OilCan3
     11100000: //RootNode
+    2186277476908879412: ImportLogs
   externalObjects:
   - first:
       type: UnityEngine:Material
