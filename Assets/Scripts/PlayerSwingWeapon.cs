@@ -40,21 +40,16 @@ public class PlayerSwingWeapon : MonoBehaviour {
         if (selectedWeapon == "Hammer")
         {
             weaponInstance = Instantiate(hammer, hammerSpawn.position, hammerSpawn.rotation);
-            Debug.Log("hammer made");
         }
         else if (selectedWeapon == "Oil")
             weaponInstance = Instantiate(oil, oilSpawn.position, oilSpawn.rotation);
         else
             Debug.Log("script enabled when not hammer or oil? " + selectedWeapon);
 
-        //Vector3 scaledOil = weaponInstance.transform.localScale;
         if (weaponInstance != null)
             weaponInstance.transform.parent = armtransform;
         else
             Debug.Log("Swingweapon error");
-
-        //if(selectedWeapon == "oil")
-            //weaponInstance.transform.localScale = scaledOil;
     }
 
     // Update is called once per frame
@@ -62,7 +57,6 @@ public class PlayerSwingWeapon : MonoBehaviour {
     {
         if (Input.GetButtonUp(fireButton) && !swinging)
         {
-            //Fire the wrench
             swinging = true;
             Fire();
         }

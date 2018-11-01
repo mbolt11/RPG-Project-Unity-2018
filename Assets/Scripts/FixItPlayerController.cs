@@ -30,6 +30,11 @@ public class FixItPlayerController : MonoBehaviour
             Destroy(other.gameObject);
             SceneManager.LoadScene("Overworld");
         }
+        //reduce health of the player
+        else if (other.tag == "Oil Spill")
+        {
+            Destroy(other.gameObject);
+        }
     }
 
 }

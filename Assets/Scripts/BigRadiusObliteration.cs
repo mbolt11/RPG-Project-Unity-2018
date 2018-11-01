@@ -38,6 +38,7 @@ public class BigRadiusObliteration : MonoBehaviour
     }
     */
 
+    //This is a good idea for the big bomb for future reference
     //After a certain amount of time, bomb will explode
     private IEnumerator Explosion()
     {

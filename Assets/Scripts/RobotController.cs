@@ -43,14 +43,16 @@ public class RobotController : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //If the robot gets hit by a tool/weapon, it turns green to indicate it is fixed
-        if (other.tag == "Wrench" || other.tag == "Hammer" || other.tag == "Oil Spill" || other.tag == "Bomb" || other.tag == "BigBomb")
+        if (other.tag == "Wrench" || other.tag == "Oil Spill" || other.tag == "Bomb" || other.tag == "BigBomb")
         {
             //Change the color
             explosionParticles.Play();
             robotBody.transform.GetComponent<Renderer>().material.color = Color.green;
             Destroy(other.gameObject);
 
-            //stop throwing parts
+            //reduce health accordingly 
+
+            //stop throwing parts ONLY IF DEAD
             GetComponent<RobotThrowsParts>().enabled = false;
 
             //check if boss
