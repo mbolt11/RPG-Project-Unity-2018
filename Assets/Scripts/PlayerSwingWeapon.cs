@@ -26,7 +26,7 @@ public class PlayerSwingWeapon : MonoBehaviour {
     void Start()
     {
         fireButton = "Fire1";
-        selectedWeapon = "oil";
+        selectedWeapon = OverworldGameController.gameInfo.getCurrentWeapon();
 
         //Get the transform of the player's arm for later
         armtransform = playerArm.GetComponent<Transform>();
@@ -36,9 +36,9 @@ public class PlayerSwingWeapon : MonoBehaviour {
         hammer = OverworldGameController.gameInfo.Hammer;
         oil = OverworldGameController.gameInfo.Oil;
 
-        if(selectedWeapon == "hammer")
+        if(selectedWeapon == "Hammer")
             weaponInstance = Instantiate(hammer, hammerSpawn.position, hammerSpawn.rotation);
-        else
+        else if(selectedWeapon == "Oil")
             weaponInstance = Instantiate(oil, oilSpawn.position, oilSpawn.rotation);
 
         //Vector3 scaledOil = weaponInstance.transform.localScale;

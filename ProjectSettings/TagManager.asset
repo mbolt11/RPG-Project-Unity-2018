@@ -12,6 +12,10 @@ TagManager:
   - OutsidePart
   - Villager
   - Chest
+  - Hammer
+  - Oil
+  - Bomb
+  - BigBomb
   layers:
   - Default
   - TransparentFX

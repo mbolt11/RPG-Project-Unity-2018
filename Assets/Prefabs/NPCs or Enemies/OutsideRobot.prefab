@@ -643,6 +643,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   robotBody: {fileID: 1391852604604748}
+  BigBomb: {fileID: 100000, guid: 7665215c8eddc0a44a216110cdeced13, type: 2}
+  isBoss: 0
 --- !u!135 &135261534094900878
 SphereCollider:
   m_ObjectHideFlags: 1

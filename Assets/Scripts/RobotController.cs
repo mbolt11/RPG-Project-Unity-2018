@@ -7,6 +7,7 @@ public class RobotController : MonoBehaviour
 {
     //Get the robot's main body cube
     public GameObject robotBody;
+    public GameObject BigBomb;
 
     [HideInInspector]
     public bool isBoss;
@@ -49,9 +50,10 @@ public class RobotController : MonoBehaviour
             GetComponent<RobotThrowsParts>().enabled = false;
 
             //check if boss
-            if(isBoss)
+            if(OverworldGameController.gameInfo.getBossStatus())
             {
                 //DROP A TOOL HERE
+                Instantiate(BigBomb, new Vector3(4.5f, 0, 4.5f), Quaternion.identity);
                 Debug.Log("Drop a Tool");
             }
         }

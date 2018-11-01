@@ -13,8 +13,10 @@ public class OverworldGameController : MonoBehaviour {
     private int[] treasureNumber;
 
     //For keeping track of the tools
-    private string[] treasureName = {"Hammer","Oil","Bomb"};//"Big Bomb" needs come from a boss
-    private List<GameObject> selectedTools;
+    private string[] treasureName = {"Hammer","Oil","Bomb"};//"Big Bomb" needs to come from a boss
+
+    [HideInInspector]
+    public List<GameObject> selectedTools;
    
     public GameObject chestPromptPanel;
     public GameObject menuPanel;
@@ -44,7 +46,7 @@ public class OverworldGameController : MonoBehaviour {
         isBoss = false;
         selectedTools = new List<GameObject>();
         selectedTools.Add(Wrench);
-        currentWeapon = "bigBomb";
+        currentWeapon = "Wrench";
         treasureNumber = new int [] {1,1,1,1,1};
     }
 
@@ -52,7 +54,7 @@ public class OverworldGameController : MonoBehaviour {
     {
         if (!created)
         {
-            DontDestroyOnLoad(this.gameObject);
+            DontDestroyOnLoad(gameObject);
             created = true;
         }
 
@@ -155,7 +157,12 @@ public class OverworldGameController : MonoBehaviour {
         }
         if(togglecount%2==1)
         {
-            AddTool(weapon);
+            //Try to add weapon, will return false if player has 4 tools already
+            //prompting toggle to be turned back off
+            if(!AddTool(weapon))
+            {
+                label.GetComponentInParent<Toggle>().isOn = false;
+            }
         }
         else
         {
@@ -163,7 +170,7 @@ public class OverworldGameController : MonoBehaviour {
         }
     }
     //add chosen item to selectedTools array
-    public void AddTool(string toolName)
+    public bool AddTool(string toolName)
     {
         if(selectedTools.Count < 4)
         {
@@ -185,9 +192,12 @@ public class OverworldGameController : MonoBehaviour {
                     selectedTools.Add(Bomb);
                     break;
             }
+            Debug.Log("List after add:\n");
+            printSelectedTools();
+            return true;
         }
-        Debug.Log("List after add:\n");
-        printSelectedTools();
+        Debug.Log("Already Had Four Items");
+        return false;
     }
 
     public void RemoveTool(string toolName)
@@ -212,9 +222,14 @@ public class OverworldGameController : MonoBehaviour {
         Debug.Log(express);
     }
 
-    //returns a string of the weapon currently equiped in Fix-It
+    //returns a string of the weapon currently equipped in Fix-It
     public string getCurrentWeapon()
     {
         return currentWeapon;
+    }
+
+    public void setCurrentWeapon(string weaponIn)
+    {
+        currentWeapon = weaponIn;
     }
 }

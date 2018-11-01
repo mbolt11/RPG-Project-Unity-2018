@@ -78,11 +78,11 @@ public class PlayerThrowWeapon : MonoBehaviour {
         //Create Weapon
         switch (selectedWeapon)
         {
-            case "bomb":
+            case "Bomb":
                 Rigidbody weaponInstance = Instantiate(bomb, weaponSpawn.position, weaponSpawn.rotation) as Rigidbody;
                 weaponInstance.velocity = bombVelocity * weaponSpawn.forward;
                 break;
-            case "bigBomb":
+            case "BigBomb":
                 Transform weaponInstance2 = Instantiate(bigBomb, weaponSpawn.position, weaponSpawn.rotation);
                 break;
             default:
@@ -113,10 +113,10 @@ public class PlayerThrowWeapon : MonoBehaviour {
     {
         switch (selectedWeapon)
         {
-            case "bomb":
+            case "Bomb":
                 weaponSpawn = bombPos;
                 break;
-            case "bigBomb":
+            case "BigBomb":
                 weaponSpawn = bigBombPos;
                 break;
             default:

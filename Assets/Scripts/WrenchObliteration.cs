@@ -11,7 +11,7 @@ public class WrenchObliteration : MonoBehaviour {
 	void Start () 
     {
         Debug.Log(gameObject.name);
-        if (gameObject.name != "hammer(Clone)")
+        if (gameObject.name != "Hammer(Clone)")
         {
             Destroy(gameObject, MaxLifeTime);
         }

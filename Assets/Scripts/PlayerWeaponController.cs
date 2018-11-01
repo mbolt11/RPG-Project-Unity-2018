@@ -16,7 +16,7 @@ public class PlayerWeaponController : MonoBehaviour
         }
         else
         {
-            currentWeapon = "wrench";
+            currentWeapon = "Wrench";
         }
 
         enableCorrectScripts();
@@ -32,7 +32,7 @@ public class PlayerWeaponController : MonoBehaviour
 
     private void enableCorrectScripts()
     {
-        if (currentWeapon == "hammer" || currentWeapon == "oil")
+        if (currentWeapon == "Hammer" || currentWeapon == "Oil")
         {
             GetComponent<PlayerSwingWeapon>().enabled = true;
             GetComponent<PlayerThrowWeapon>().enabled = false;
