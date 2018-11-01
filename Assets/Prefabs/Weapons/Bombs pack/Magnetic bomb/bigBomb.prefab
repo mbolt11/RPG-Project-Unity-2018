@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 3300000}
   - component: {fileID: 2300000}
   - component: {fileID: 6400000}
-  - component: {fileID: 114722167467052110}
+  - component: {fileID: 64263698566801718}
+  - component: {fileID: 114883818033030270}
   m_Layer: 0
   m_Name: BigBomb
   m_TagString: BigBomb
@@ -130,7 +131,21 @@ Transform:
   m_Father: {fileID: 400000}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
---- !u!114 &114722167467052110
+--- !u!64 &64263698566801718
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300002, guid: 88720c0ca8f538540b915600977b8560, type: 3}
+--- !u!114 &114883818033030270
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -138,11 +153,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 041fb32bec8ae6944a45c7cda6d9f082, type: 3}
+  m_Script: {fileID: 11500000, guid: 7ef0f327ba5276948bc1c84c6e63b79a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   MaxLifeTime: 4
-  ObliterationParticles: {fileID: 198002687798107866}
 --- !u!198 &198002687798107866
 ParticleSystem:
   m_ObjectHideFlags: 1

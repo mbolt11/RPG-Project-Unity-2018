@@ -31,6 +31,7 @@ public class RobotController : MonoBehaviour
         }
 
         //color robot if it's a boss
+        //health or movement should be different in the future
         if (isBoss)
         {
             robotBody.transform.GetComponent<Renderer>().material.color = new Color(.83f, .69f, .22f, 1f);

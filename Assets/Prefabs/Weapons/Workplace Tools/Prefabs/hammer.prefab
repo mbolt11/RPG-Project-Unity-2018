@@ -57,6 +57,7 @@ GameObject:
   - component: {fileID: 4000014103337076}
   - component: {fileID: 136814570146369548}
   - component: {fileID: 114215449281295898}
+  - component: {fileID: 136867368863233628}
   m_Layer: 0
   m_Name: Hammer
   m_TagString: Hammer
@@ -114,7 +115,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000014031835130}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -6.782836, y: 1.7956927, z: 7.141387}
   m_LocalScale: {x: 3, y: 5, z: 3}
   m_Children:
   - {fileID: 4000010109778834}
@@ -274,6 +275,19 @@ CapsuleCollider:
   m_Height: 1.0911494
   m_Direction: 2
   m_Center: {x: -0.0070076515, y: -0.004229286, z: 0.020693481}
+--- !u!136 &136867368863233628
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000014031835130}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.08541148
+  m_Height: 1.091149
+  m_Direction: 2
+  m_Center: {x: -0.007007651, y: -0.004229286, z: 0.02069348}
 --- !u!198 &198128621890561048
 ParticleSystem:
   m_ObjectHideFlags: 1

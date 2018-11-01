@@ -44,7 +44,8 @@ GameObject:
   - component: {fileID: 400004}
   - component: {fileID: 6400000}
   - component: {fileID: 54827737900993078}
-  - component: {fileID: 114303636975722912}
+  - component: {fileID: 64892877294363610}
+  - component: {fileID: 114916294767185256}
   m_Layer: 0
   m_Name: Bomb
   m_TagString: Bomb
@@ -186,7 +187,7 @@ MeshCollider:
   m_GameObject: {fileID: 100004}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 1
   m_CookingOptions: 14
@@ -248,7 +249,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &114303636975722912
+--- !u!64 &64892877294363610
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100004}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300002, guid: d6d6a960df51c5446a739eb62d37348b, type: 3}
+--- !u!114 &114916294767185256
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -256,11 +271,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 100004}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 041fb32bec8ae6944a45c7cda6d9f082, type: 3}
+  m_Script: {fileID: 11500000, guid: 7ef0f327ba5276948bc1c84c6e63b79a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   MaxLifeTime: 3
-  ObliterationParticles: {fileID: 198552065911064300}
 --- !u!198 &198552065911064300
 ParticleSystem:
   m_ObjectHideFlags: 1

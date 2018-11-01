@@ -29,6 +29,7 @@ GameObject:
   - component: {fileID: 54803731482457752}
   - component: {fileID: 136018643851969658}
   - component: {fileID: 114904308106207470}
+  - component: {fileID: 136434479441651294}
   m_Layer: 0
   m_Name: Wrench
   m_TagString: Wrench
@@ -499,6 +500,19 @@ CapsuleCollider:
   m_Height: 2.7646294
   m_Direction: 1
   m_Center: {x: -0.023312926, y: 1.2436314, z: 0.14778924}
+--- !u!136 &136434479441651294
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &136870810516983266
 CapsuleCollider:
   m_ObjectHideFlags: 1
