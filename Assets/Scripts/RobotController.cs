@@ -53,8 +53,7 @@ public class RobotController : MonoBehaviour
             if (OverworldGameController.gameInfo.getBossStatus())
             {
                 //DROP A TOOL HERE
-                Instantiate(BigBomb, new Vector3(4.5f, 0, 4.5f), Quaternion.identity);
-                Debug.Log("Drop a Tool");
+                Instantiate(BigBomb, Vector3.zero, Quaternion.identity);
             }
         }
     }

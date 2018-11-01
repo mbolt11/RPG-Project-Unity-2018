@@ -38,6 +38,9 @@ public class OverworldGameController : MonoBehaviour {
 
     private string currentWeapon;
 
+    //boolean flag for if boss has been fixed
+    public bool bossFixed = false;
+
 
     private void Start()
     {
@@ -46,9 +49,7 @@ public class OverworldGameController : MonoBehaviour {
         isBoss = false;
         selectedTools = new List<GameObject>();
         selectedTools.Add(Wrench);
-        selectedTools.Add(Hammer);
-        selectedTools.Add(Oil);
-        selectedTools.Add(Bomb);
+
         currentWeapon = "Wrench";
         treasureNumber = new int [] {1,1,1,1,1};
     }
@@ -64,6 +65,15 @@ public class OverworldGameController : MonoBehaviour {
         enterKeyPrompt = chestPromptPanel.GetComponentInChildren<Text>();
         enterKeyPrompt.text = "Enter Key Prompt";
         chestPromptPanel.SetActive(false);
+    }
+
+    void Update()
+    {
+        if (bossFixed)
+        {
+            menuPanel.GetComponent<MenuController>().ActivateToolInMenu("BigBomb");
+            bossFixed = false;
+        }
     }
 
     public OverworldGameController getSingleton()

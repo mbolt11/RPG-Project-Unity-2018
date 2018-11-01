@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FixItPlayerController : MonoBehaviour
 {
     public GameObject playerBody;
+    public GameObject bossPanel;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -17,6 +19,16 @@ public class FixItPlayerController : MonoBehaviour
         {
             //Debug.Log("part hit");
             playerBody.transform.GetComponent<Renderer>().material.color = Color.yellow;
+        }
+        else if(other.tag=="BigBomb")
+        {
+            //show a message?
+            bossPanel.SetActive(true);
+            OverworldGameController.gameInfo.AddTool("BigBomb");
+            OverworldGameController.gameInfo.bossFixed = true;
+
+            Destroy(other.gameObject);
+            SceneManager.LoadScene("Overworld");
         }
     }
 
