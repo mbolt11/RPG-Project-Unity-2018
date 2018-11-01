@@ -32,7 +32,7 @@ GameObject:
   - component: {fileID: 65403537597091570}
   - component: {fileID: 114162412384199790}
   m_Layer: 0
-  m_Name: OilA
+  m_Name: Oil
   m_TagString: Oil
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
