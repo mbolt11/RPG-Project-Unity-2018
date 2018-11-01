@@ -31,6 +31,7 @@ public class PlayerThrowWeapon : MonoBehaviour {
 	void OnEnable ()
     {
         fireButton = "Fire1";
+        //selectedWeapon = "";
         selectedWeapon = OverworldGameController.gameInfo.getCurrentWeapon();
 
         wrench = OverworldGameController.gameInfo.Wrench.GetComponent<Rigidbody>();
@@ -59,8 +60,11 @@ public class PlayerThrowWeapon : MonoBehaviour {
 
     public void changeWeapon(string newWeapon)
     {
+        Debug.Log("Changing throwing weapons");
         //delete old weapons
-        PlayerWeaponController.Instance.deleteOldWeapons();
+        //PlayerWeaponController.Instance.deleteOldWeapons();
+
+        //Debug.Log("changed Transform");
 
         //set to new weapon
         selectedWeapon = newWeapon;
@@ -80,10 +84,11 @@ public class PlayerThrowWeapon : MonoBehaviour {
         {
             case "Bomb":
                 Rigidbody weaponInstance = Instantiate(bomb, weaponSpawn.position, weaponSpawn.rotation) as Rigidbody;
+                Debug.Log("made bomb");
                 weaponInstance.velocity = bombVelocity * weaponSpawn.forward;
                 break;
             case "BigBomb":
-                Transform weaponInstance2 = Instantiate(bigBomb, weaponSpawn.position, weaponSpawn.rotation);
+                Instantiate(bigBomb, weaponSpawn.position, weaponSpawn.rotation);
                 break;
             default:
                 Rigidbody weaponInstance3 = Instantiate(wrench, weaponSpawn.position, weaponSpawn.rotation) as Rigidbody;

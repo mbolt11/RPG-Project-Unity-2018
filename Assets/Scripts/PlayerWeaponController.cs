@@ -46,8 +46,9 @@ public class PlayerWeaponController : MonoBehaviour
 
     public void changeWeaponType()
     {
+        Debug.Log("changing weapon types");
         //destroy any lingering exiting weapons
-        deleteOldWeapons();
+        //deleteOldWeapons();
 
         //set the new current weapon
         currentWeapon = OverworldGameController.gameInfo.getCurrentWeapon();
@@ -58,8 +59,9 @@ public class PlayerWeaponController : MonoBehaviour
 
     public void resetSwingWeaponScript()
     {
+        Debug.Log("changing swing weapon");
         //delete old weapon ?? Not sure if this will work
-        deleteOldWeapons();
+        //deleteOldWeapons();
 
         //set correct current weapon
         currentWeapon = OverworldGameController.gameInfo.getCurrentWeapon();
@@ -72,10 +74,6 @@ public class PlayerWeaponController : MonoBehaviour
     public void deleteOldWeapons()
     {
         currentWeapon = OverworldGameController.gameInfo.getCurrentWeapon();
-
-        while (GameObject.FindWithTag(currentWeapon) != null)
-        {
-            Destroy(GameObject.FindWithTag(currentWeapon));
-        }
+        Destroy(GameObject.FindGameObjectWithTag(currentWeapon));
     }
 }

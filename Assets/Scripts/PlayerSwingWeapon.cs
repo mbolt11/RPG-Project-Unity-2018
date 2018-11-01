@@ -23,7 +23,7 @@ public class PlayerSwingWeapon : MonoBehaviour {
     private Quaternion currentarmrot;
 
     // Use this for initialization
-    void Start()
+    void OnEnable()
     {
         fireButton = "Fire1";
         selectedWeapon = OverworldGameController.gameInfo.getCurrentWeapon();
@@ -36,13 +36,21 @@ public class PlayerSwingWeapon : MonoBehaviour {
         hammer = OverworldGameController.gameInfo.Hammer;
         oil = OverworldGameController.gameInfo.Oil;
 
-        if(selectedWeapon == "Hammer")
+        if (selectedWeapon == "Hammer")
+        {
             weaponInstance = Instantiate(hammer, hammerSpawn.position, hammerSpawn.rotation);
-        else if(selectedWeapon == "Oil")
+            Debug.Log("hammer made");
+        }
+        else if (selectedWeapon == "Oil")
             weaponInstance = Instantiate(oil, oilSpawn.position, oilSpawn.rotation);
+        else
+            Debug.Log("script enabled when not hammer or oil? " + selectedWeapon);
 
         //Vector3 scaledOil = weaponInstance.transform.localScale;
-        weaponInstance.transform.parent = armtransform;
+        if (weaponInstance != null)
+            weaponInstance.transform.parent = armtransform;
+        else
+            Debug.Log("Swingweapon error");
 
         //if(selectedWeapon == "oil")
             //weaponInstance.transform.localScale = scaledOil;

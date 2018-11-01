@@ -11,7 +11,7 @@ public class WrenchObliteration : MonoBehaviour {
 	void Start () 
     {
         Debug.Log(gameObject.name);
-        if (gameObject.name != "Hammer(Clone)")
+        if (gameObject.tag != "Hammer" && gameObject.tag != "Oil")
         {
             Destroy(gameObject, MaxLifeTime);
         }

@@ -16,6 +16,11 @@ TagManager:
   - Oil
   - Bomb
   - BigBomb
+  - bomb
+  - bigBomb
+  - oil
+  - hammer
+  - wrench
   layers:
   - Default
   - TransparentFX
