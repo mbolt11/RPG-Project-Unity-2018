@@ -40,7 +40,7 @@ public class RobotController : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //If a wrench hits the robot, it turns green to indicate it is fixed
-        if (other.tag == "Wrench")
+        if (other.tag == "Wrench" || other.tag == "Hammer" || other.tag == "Bomb" || other.tag == "BigBomb")
         {
             //Change the color
             robotBody.transform.GetComponent<Renderer>().material.color = Color.green;
@@ -50,7 +50,7 @@ public class RobotController : MonoBehaviour
             GetComponent<RobotThrowsParts>().enabled = false;
 
             //check if boss
-            if(OverworldGameController.gameInfo.getBossStatus())
+            if (OverworldGameController.gameInfo.getBossStatus())
             {
                 //DROP A TOOL HERE
                 Instantiate(BigBomb, new Vector3(4.5f, 0, 4.5f), Quaternion.identity);
