@@ -50,6 +50,9 @@ public class OverworldGameController : MonoBehaviour {
         selectedTools = new List<GameObject>();
         selectedTools.Add(Wrench);
 
+        //For testing
+        selectedTools.Add(Oil);
+
         currentWeapon = "Wrench";
         treasureNumber = new int [] {1,1,1,1,1};
     }

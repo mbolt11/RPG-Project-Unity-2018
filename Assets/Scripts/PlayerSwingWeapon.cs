@@ -8,6 +8,7 @@ public class PlayerSwingWeapon : MonoBehaviour {
     private GameObject oil;
     public Transform hammerSpawn;
     public Transform oilSpawn;
+    public GameObject oilSpill;
     //public float velocity;
 
     private string selectedWeapon;
@@ -75,8 +76,14 @@ public class PlayerSwingWeapon : MonoBehaviour {
         armtransform.localPosition = throwPos;
         armtransform.localRotation = throwRot;
             
-        //moving the arm should swing the hammer
+        //moving the arm should swing the hammer (and oilcan?)
         swinging = false;
+
+        //Make the oilcan spill
+        if(selectedWeapon == "Oil")
+        {
+            OilSpill();
+        }
 
         //ResetArm the arm position after throwing
         StartCoroutine("ResetArm");
@@ -91,5 +98,41 @@ public class PlayerSwingWeapon : MonoBehaviour {
         Quaternion readyRot = Quaternion.Euler(armtransform.localRotation.x - 180, armtransform.localRotation.y, armtransform.localRotation.z - 150);
         armtransform.localPosition = readyPos;
         armtransform.localRotation = readyRot;
+    }
+
+    //For the oil spill functionality
+    void OilSpill()
+    {
+        Vector3 spillLocation;
+
+        //The player is facing North
+        if(transform.forward.z > .5)
+        {
+            spillLocation = new Vector3(transform.position.x, 0.1f, transform.position.z + 2);
+        }
+        //The player is facing South
+        else if(transform.forward.z < -.5)
+        {
+            spillLocation = new Vector3(transform.position.x, 0.1f, transform.position.z - 2);
+        }
+        //The player is facing East
+        else if(transform.forward.x > .5)
+        {
+            spillLocation = new Vector3(transform.position.x + 2, 0.1f, transform.position.z);
+        }
+        //The player is facing West
+        else
+        {
+            spillLocation = new Vector3(transform.position.x - 2, 0.1f, transform.position.z);
+        }
+
+        if(spillLocation.x >= -8 && spillLocation.x <= 6)
+        {
+            if(spillLocation.z >= -6 && spillLocation.z <= 8)
+            {
+                Instantiate(oilSpill, spillLocation, Quaternion.identity);
+            }
+        }
+
     }
 }
