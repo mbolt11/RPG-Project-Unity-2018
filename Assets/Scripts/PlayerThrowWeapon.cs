@@ -31,7 +31,6 @@ public class PlayerThrowWeapon : MonoBehaviour {
 	void OnEnable ()
     {
         fireButton = "Fire1";
-        //selectedWeapon = "";
         selectedWeapon = OverworldGameController.gameInfo.getCurrentWeapon();
 
         wrench = OverworldGameController.gameInfo.Wrench.GetComponent<Rigidbody>();

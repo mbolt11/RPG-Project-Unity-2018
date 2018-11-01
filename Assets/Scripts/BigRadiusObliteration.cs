@@ -13,10 +13,11 @@ public class BigRadiusObliteration : MonoBehaviour
     void Start()
     {
         Debug.Log(gameObject.name);
-        Destroy(gameObject, MaxLifeTime);
+        StartCoroutine(Explosion());
     }
 
-    //need to collect all colliders within radius of zone collider as well
+    /* I am trying a different method than this. The bomb will "explode" after a certain amount of time
+
     //first thing the normal collider touches causes a blast
     private void OnTriggerEnter(Collider other)
     {
@@ -34,5 +35,21 @@ public class BigRadiusObliteration : MonoBehaviour
         }
 
         //Destroy.
+    }
+    */
+
+    //After a certain amount of time, bomb will explode
+    private IEnumerator Explosion()
+    {
+        yield return new WaitForSeconds(MaxLifeTime);
+
+        //Enable the collider for the explosion zone
+        GetComponent<BoxCollider>().enabled = true;
+
+        //Put a particle effect here
+
+        //Destroy the big bomb
+        Destroy(gameObject);
+
     }
 }

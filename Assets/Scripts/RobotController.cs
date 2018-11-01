@@ -40,7 +40,7 @@ public class RobotController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //If a wrench hits the robot, it turns green to indicate it is fixed
+        //If the robot gets hit by a tool/weapon, it turns green to indicate it is fixed
         if (other.tag == "Wrench" || other.tag == "Hammer" || other.tag == "Oil Spill" || other.tag == "Bomb" || other.tag == "BigBomb")
         {
             //Change the color
