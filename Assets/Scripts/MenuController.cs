@@ -7,9 +7,19 @@ public class MenuController : MonoBehaviour {
 
     public GameObject[] tools; //UI elements
     private int toolcounter = 1;
+    private bool created;
 
-    // Use this for initialization
-	void Start () 
+    void Awake()
+    {
+        if (!created)
+        {
+            DontDestroyOnLoad(gameObject);
+            created = true;
+        }
+    }
+
+        // Use this for initialization
+        void Start () 
     {
         gameObject.SetActive(false);
 

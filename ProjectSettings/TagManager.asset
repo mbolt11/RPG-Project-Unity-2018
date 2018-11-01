@@ -22,6 +22,7 @@ TagManager:
   - hammer
   - wrench
   - Oil Spill
+  - Canvas
   layers:
   - Default
   - TransparentFX

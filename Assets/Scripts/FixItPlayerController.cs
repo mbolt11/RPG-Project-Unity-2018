@@ -24,11 +24,23 @@ public class FixItPlayerController : MonoBehaviour
         {
             //show a message?
             bossPanel.SetActive(true);
-            //OverworldGameController.gameInfo.AddTool("BigBomb");
-            //OverworldGameController.gameInfo.bossFixed = true;
+            OverworldGameController.gameInfo.bossFixed = true;
 
             Destroy(other.gameObject);
-            SceneManager.LoadScene("Overworld");
+
+            //code in progress
+            /*SceneManager.LoadScene("Overworld");
+
+            //set canvas childs to active
+            GameObject canvas = GameObject.FindGameObjectWithTag("Canvas");
+            
+            for(int i = 1; i < 7; i++)
+            {
+                canvas.transform.GetChild(i).gameObject.SetActive(true);
+                Debug.Log(canvas.transform.GetChild(i).gameObject.name);
+            }
+
+            OverworldGameController.gameInfo.AddTool("BigBomb");*/
         }
         //reduce health of the player
         else if (other.tag == "Oil Spill")
