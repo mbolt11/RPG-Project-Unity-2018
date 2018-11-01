@@ -21,11 +21,18 @@ public class OverworldGameController : MonoBehaviour {
     private Text enterKeyPrompt;
 
     //To access the actual tool prefabs
-    public GameObject hammer;
-    public GameObject oil;
-    public GameObject wrench;
-    public GameObject bigBomb;
-    public GameObject bomb;
+    public GameObject Hammer;
+    public GameObject Oil;
+    public GameObject Wrench;
+    public GameObject BigBomb;
+    public GameObject Bomb;
+
+    //Toggle counts for each weapon 
+    private int wrenchToggleCount = 0;
+    private int hammerToggleCount = 1;
+    private int oilToggleCount = 1;
+    private int bombToggleCount = 1;
+    private int bigBombToggleCount = 1;
 
     private string currentWeapon;
 
@@ -36,7 +43,7 @@ public class OverworldGameController : MonoBehaviour {
         enemyRobot = "Common Robot";
         isBoss = false;
         selectedTools = new List<GameObject>();
-        selectedTools.Add(wrench);
+        selectedTools.Add(Wrench);
         currentWeapon = "bigBomb";
         treasureNumber = new int [] {1,1,1,1,1};
     }
@@ -118,40 +125,79 @@ public class OverworldGameController : MonoBehaviour {
         return enemyRobot;
     }
 
+    public void ChooseFunction(GameObject label)
+    {
+        string weapon = label.GetComponent<Text>().text;
+        int togglecount = 0;
+
+        switch(weapon)
+        {
+            case "Wrench":
+                togglecount = wrenchToggleCount;
+                wrenchToggleCount++;
+                break;
+            case "Hammer":
+                togglecount = hammerToggleCount;
+                hammerToggleCount++;
+                break;
+            case "Oil":
+                togglecount = oilToggleCount;
+                oilToggleCount++;
+                break;
+            case "Bomb":
+                togglecount = bombToggleCount;
+                bombToggleCount++;
+                break;
+            case "BigBomb":
+                togglecount = bigBombToggleCount;
+                bigBombToggleCount++;
+                break;
+        }
+        if(togglecount%2==1)
+        {
+            AddTool(weapon);
+        }
+        else
+        {
+            RemoveTool(weapon);
+        }
+    }
     //add chosen item to selectedTools array
-    public void addTool(string toolName)
+    public void AddTool(string toolName)
     {
         if(selectedTools.Count < 4)
         {
             switch (toolName)
             {
-                case "wrench":
-                    selectedTools.Add(wrench);
+                case "Wrench":
+                    selectedTools.Add(Wrench);
                     break;
-                case "hammer":
-                    selectedTools.Add(hammer);
+                case "Hammer":
+                    selectedTools.Add(Hammer);
                     break;
-                case "oil":
-                    selectedTools.Add(oil);
+                case "Oil":
+                    selectedTools.Add(Oil);
                     break;
-                case "bigBomb":
-                    selectedTools.Add(bigBomb);
+                case "BigBomb":
+                    selectedTools.Add(BigBomb);
                     break;
-                case "bomb":
-                    selectedTools.Add(bomb);
+                case "Bomb":
+                    selectedTools.Add(Bomb);
                     break;
             }
         }
+        Debug.Log("List after add:\n");
         printSelectedTools();
     }
 
-    public void removeTool(string toolName)
+    public void RemoveTool(string toolName)
     {
         for(int i = 0; i < selectedTools.Count; i++)
         {
             if (selectedTools[i].name == toolName)
                 selectedTools.RemoveAt(i);
         }
+        Debug.Log("List after removal:\n");
         printSelectedTools();
     }
 

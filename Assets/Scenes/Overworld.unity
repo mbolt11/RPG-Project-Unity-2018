@@ -219,10 +219,21 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 508728365}
+        m_MethodName: ChooseFunction
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1988905671}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_IsOn: 1
+  m_IsOn: 0
 --- !u!1 &13579836
 GameObject:
   m_ObjectHideFlags: 0
@@ -3466,7 +3477,6 @@ GameObject:
   m_Component:
   - component: {fileID: 382646922}
   - component: {fileID: 382646923}
-  - component: {fileID: 382646924}
   m_Layer: 5
   m_Name: Wrench Toggle
   m_TagString: Untagged
@@ -3535,57 +3545,21 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 508728365}
+        m_MethodName: ChooseFunction
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1456665413}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_IsOn: 1
---- !u!114 &382646924
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 382646921}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 9
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 508728365}
-          m_MethodName: addTool
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: '"wrench"'
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  - eventID: 10
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 508728365}
-          m_MethodName: removeTool
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: '"wrench"'
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  delegates: []
 --- !u!1 &387144238
 GameObject:
   m_ObjectHideFlags: 0
@@ -5011,11 +4985,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chestPromptPanel: {fileID: 748442125}
   menuPanel: {fileID: 2003118736}
-  hammer: {fileID: 1000014031835130, guid: ebcc6d962399b194e8f25886f0cd0762, type: 2}
-  oil: {fileID: 100002, guid: 18a7fa198e95cf3478837a4698d1d7c9, type: 2}
-  wrench: {fileID: 100002, guid: 1fb1789d2762cb048a60b81e759db9fa, type: 2}
-  bigBomb: {fileID: 100000, guid: 7665215c8eddc0a44a216110cdeced13, type: 2}
-  bomb: {fileID: 100004, guid: a72885e93c1e4c5449d8f2a4888f2ed7, type: 2}
+  Hammer: {fileID: 1000014031835130, guid: ebcc6d962399b194e8f25886f0cd0762, type: 2}
+  Oil: {fileID: 100002, guid: 18a7fa198e95cf3478837a4698d1d7c9, type: 2}
+  Wrench: {fileID: 100002, guid: 1fb1789d2762cb048a60b81e759db9fa, type: 2}
+  BigBomb: {fileID: 100000, guid: 7665215c8eddc0a44a216110cdeced13, type: 2}
+  Bomb: {fileID: 100004, guid: a72885e93c1e4c5449d8f2a4888f2ed7, type: 2}
 --- !u!4 &508728366
 Transform:
   m_ObjectHideFlags: 0
@@ -5566,10 +5540,21 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 508728365}
+        m_MethodName: ChooseFunction
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 13579836}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_IsOn: 1
+  m_IsOn: 0
 --- !u!1001 &550072412
 Prefab:
   m_ObjectHideFlags: 0
@@ -6022,10 +6007,21 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 508728365}
+        m_MethodName: ChooseFunction
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 766448007}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_IsOn: 1
+  m_IsOn: 0
 --- !u!1 &573687243
 GameObject:
   m_ObjectHideFlags: 0
@@ -8954,10 +8950,21 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 508728365}
+        m_MethodName: ChooseFunction
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 350736705}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_IsOn: 1
+  m_IsOn: 0
 --- !u!1001 &825834834
 Prefab:
   m_ObjectHideFlags: 0
@@ -10672,10 +10679,21 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 508728365}
+        m_MethodName: ChooseFunction
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1562513843}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_IsOn: 1
+  m_IsOn: 0
 --- !u!1 &1001089300
 GameObject:
   m_ObjectHideFlags: 0
@@ -10815,10 +10833,21 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 508728365}
+        m_MethodName: ChooseFunction
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 755791885}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_IsOn: 1
+  m_IsOn: 0
 --- !u!4 &1023476878 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4502735606228086, guid: a1dea7a54df964f8885227b455af7cfc,
@@ -12011,10 +12040,21 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 508728365}
+        m_MethodName: ChooseFunction
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 222467083}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_IsOn: 1
+  m_IsOn: 0
 --- !u!1001 &1159649326
 Prefab:
   m_ObjectHideFlags: 0
@@ -15995,10 +16035,21 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 508728365}
+        m_MethodName: ChooseFunction
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 448600046}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_IsOn: 1
+  m_IsOn: 0
 --- !u!1001 &1606307009
 Prefab:
   m_ObjectHideFlags: 0
@@ -18255,10 +18306,21 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 508728365}
+        m_MethodName: ChooseFunction
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1914718554}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_IsOn: 1
+  m_IsOn: 0
 --- !u!1001 &1885475004
 Prefab:
   m_ObjectHideFlags: 0

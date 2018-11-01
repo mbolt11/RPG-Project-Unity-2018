@@ -33,9 +33,9 @@ public class PlayerThrowWeapon : MonoBehaviour {
         fireButton = "Fire1";
         selectedWeapon = OverworldGameController.gameInfo.getCurrentWeapon();
 
-        wrench = OverworldGameController.gameInfo.wrench.GetComponent<Rigidbody>();
-        bomb = OverworldGameController.gameInfo.bomb.GetComponent<Rigidbody>();
-        bigBomb = OverworldGameController.gameInfo.bigBomb.GetComponent<Transform>();
+        wrench = OverworldGameController.gameInfo.Wrench.GetComponent<Rigidbody>();
+        bomb = OverworldGameController.gameInfo.Bomb.GetComponent<Rigidbody>();
+        bigBomb = OverworldGameController.gameInfo.BigBomb.GetComponent<Transform>();
 
         //Get the transform of the player's arm for later
         armtransform = playerArm.GetComponent<Transform>();

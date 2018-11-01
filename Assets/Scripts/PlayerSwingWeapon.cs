@@ -33,8 +33,8 @@ public class PlayerSwingWeapon : MonoBehaviour {
 
         //create the hammer
         //probrably will want to make hammer a child of the arm
-        hammer = OverworldGameController.gameInfo.hammer;
-        oil = OverworldGameController.gameInfo.oil;
+        hammer = OverworldGameController.gameInfo.Hammer;
+        oil = OverworldGameController.gameInfo.Oil;
 
         if(selectedWeapon == "hammer")
             weaponInstance = Instantiate(hammer, hammerSpawn.position, hammerSpawn.rotation);
