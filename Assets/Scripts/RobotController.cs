@@ -9,6 +9,8 @@ public class RobotController : MonoBehaviour
     public GameObject robotBody;
     public GameObject BigBomb;
 
+    public ParticleSystem explosionParticles;
+
     [HideInInspector]
     public bool isBoss;
 
@@ -44,6 +46,7 @@ public class RobotController : MonoBehaviour
         if (other.tag == "Wrench" || other.tag == "Hammer" || other.tag == "Oil Spill" || other.tag == "Bomb" || other.tag == "BigBomb")
         {
             //Change the color
+            explosionParticles.Play();
             robotBody.transform.GetComponent<Renderer>().material.color = Color.green;
             Destroy(other.gameObject);
 

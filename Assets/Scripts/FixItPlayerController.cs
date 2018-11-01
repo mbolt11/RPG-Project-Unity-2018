@@ -24,8 +24,8 @@ public class FixItPlayerController : MonoBehaviour
         {
             //show a message?
             bossPanel.SetActive(true);
-            OverworldGameController.gameInfo.AddTool("BigBomb");
-            OverworldGameController.gameInfo.bossFixed = true;
+            //OverworldGameController.gameInfo.AddTool("BigBomb");
+            //OverworldGameController.gameInfo.bossFixed = true;
 
             Destroy(other.gameObject);
             SceneManager.LoadScene("Overworld");

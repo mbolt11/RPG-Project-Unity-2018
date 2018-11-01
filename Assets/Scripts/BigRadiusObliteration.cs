@@ -6,13 +6,13 @@ public class BigRadiusObliteration : MonoBehaviour
 {
 
     public float MaxLifeTime;
-    //public ParticleSystem bombParticles;
-    //public ParticleSystem bigBombPartices;
+    public ParticleSystem explosionParticles;
 
     // Use this for initialization
     void Start()
     {
         Debug.Log(gameObject.name);
+        GetComponent<BoxCollider>().enabled = false;
         StartCoroutine(Explosion());
     }
 
@@ -43,10 +43,13 @@ public class BigRadiusObliteration : MonoBehaviour
     {
         yield return new WaitForSeconds(MaxLifeTime);
 
+        Debug.Log("Exploding");
+
         //Enable the collider for the explosion zone
         GetComponent<BoxCollider>().enabled = true;
+        explosionParticles.Play();
 
-        //Put a particle effect here
+        yield return new WaitForSeconds(1);
 
         //Destroy the big bomb
         Destroy(gameObject);

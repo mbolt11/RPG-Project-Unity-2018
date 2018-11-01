@@ -87,7 +87,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100004}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.08, y: 0, z: 2.08}
+  m_LocalPosition: {x: -0.08, y: 3.42, z: 2.08}
   m_LocalScale: {x: 0.005, y: 0.005, z: 0.005}
   m_Children:
   - {fileID: 400002}
@@ -262,7 +262,7 @@ Transform:
   m_GameObject: {fileID: 1847327631014932}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 400004}
   m_RootOrder: 3
@@ -345,10 +345,10 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100004}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 1, z: 2}
+  m_Size: {x: 700, y: 200, z: 700}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114916294767185256
 MonoBehaviour:
@@ -362,6 +362,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxLifeTime: 3
+  explosionParticles: {fileID: 198552065911064300}
 --- !u!136 &136149586865843718
 CapsuleCollider:
   m_ObjectHideFlags: 1
