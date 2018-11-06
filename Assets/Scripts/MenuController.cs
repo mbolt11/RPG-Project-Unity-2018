@@ -9,17 +9,14 @@ public class MenuController : MonoBehaviour {
     private int toolcounter = 1;
     private bool created;
 
-    void Awake()
+    //This calls the function in OverworldGameController to initialize the gameobjects when the scene is reloaded
+    private void Awake()
     {
-        if (!created)
-        {
-            DontDestroyOnLoad(gameObject);
-            created = true;
-        }
+        OverworldGameController.gameInfo.InitializeGameObjects();
     }
 
-        // Use this for initialization
-        void Start () 
+    // Use this for initialization
+    void Start () 
     {
         gameObject.SetActive(false);
 

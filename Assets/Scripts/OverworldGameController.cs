@@ -18,8 +18,8 @@ public class OverworldGameController : MonoBehaviour {
     [HideInInspector]
     public List<GameObject> selectedTools;
    
-    public GameObject chestPromptPanel;
-    public GameObject menuPanel;
+    private GameObject chestPromptPanel;
+    private GameObject menuPanel;
     private Text enterKeyPrompt;
 
     //To access the actual tool prefabs
@@ -41,6 +41,7 @@ public class OverworldGameController : MonoBehaviour {
     //boolean flag for if boss has been fixed
     public bool bossFixed = false;
 
+    private bool newSceneLoaded = false;
 
     private void Start()
     {
@@ -61,10 +62,24 @@ public class OverworldGameController : MonoBehaviour {
             DontDestroyOnLoad(gameObject);
             created = true;
         }
+        else if(created)
+        {
+            Destroy(gameObject);
+        }
+
+        //Initialize gameobjects when the game starts
+        InitializeGameObjects();
 
         enterKeyPrompt = chestPromptPanel.GetComponentInChildren<Text>();
         enterKeyPrompt.text = "Enter Key Prompt";
         chestPromptPanel.SetActive(false);
+    }
+
+    //Initialize menu panel and chest prompt panel
+    public void InitializeGameObjects()
+    {
+        menuPanel = GameObject.FindWithTag("Canvas").transform.GetChild(6).gameObject;
+        chestPromptPanel = GameObject.FindWithTag("Canvas").transform.GetChild(2).gameObject;
     }
 
     public OverworldGameController getSingleton()
@@ -123,7 +138,6 @@ public class OverworldGameController : MonoBehaviour {
 
     public void EnterKeyTextDisappear()
     {
-        Debug.Log(chestPromptPanel);
         chestPromptPanel.SetActive(false);
     }
 
@@ -236,5 +250,20 @@ public class OverworldGameController : MonoBehaviour {
     public void setCurrentWeapon(string weaponIn)
     {
         currentWeapon = weaponIn;
+    }
+
+    public void sceneLoading()
+    {
+        newSceneLoaded = true;
+    }
+
+    public void finishedLoading()
+    {
+        newSceneLoaded = false;
+    }
+
+    public bool isSceneLoading()
+    {
+        return newSceneLoaded;
     }
 }

@@ -4984,8 +4984,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedTools: []
-  chestPromptPanel: {fileID: 748442125}
-  menuPanel: {fileID: 2003118736}
   Hammer: {fileID: 1000014031835130, guid: ebcc6d962399b194e8f25886f0cd0762, type: 2}
   Oil: {fileID: 100002, guid: 18a7fa198e95cf3478837a4698d1d7c9, type: 2}
   Wrench: {fileID: 100002, guid: 1fb1789d2762cb048a60b81e759db9fa, type: 2}

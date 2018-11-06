@@ -7,7 +7,12 @@ public class FixItPlayerController : MonoBehaviour
 {
     public GameObject playerBody;
     public GameObject bossPanel;
+    private bool touchPickup;
 
+    private void Start()
+    {
+        touchPickup = false;
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "CommonPart")
@@ -22,14 +27,19 @@ public class FixItPlayerController : MonoBehaviour
         }
         else if(other.tag=="BigBomb")
         {
-            //show a message?
-            bossPanel.SetActive(true);
-            OverworldGameController.gameInfo.bossFixed = true;
+            if(!touchPickup)
+            {
+                touchPickup = true;
+                //show a message?
+                bossPanel.SetActive(true);
+                OverworldGameController.gameInfo.bossFixed = true;
 
-            Destroy(other.gameObject);
+                Destroy(other.gameObject);
 
-            //code in progress
-            SceneManager.LoadScene("Overworld");
+                //code in progress
+                OverworldGameController.gameInfo.sceneLoading();
+                SceneManager.LoadScene("Overworld");
+            }
         }
         //reduce health of the player
         else if (other.tag == "Oil Spill")
