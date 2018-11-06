@@ -59,7 +59,7 @@ public class PlayerThrowWeapon : MonoBehaviour {
 
     public void changeWeapon(string newWeapon)
     {
-        Debug.Log("Changing throwing weapons");
+        //Debug.Log("Changing throwing weapons");
         //delete old weapons
         //PlayerWeaponController.Instance.deleteOldWeapons();
 

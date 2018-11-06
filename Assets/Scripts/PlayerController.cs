@@ -77,8 +77,8 @@ public class PlayerController : MonoBehaviour
         //destroy chest if player opens it
         if (Input.GetKeyDown(KeyCode.Return) && chestInRange)
         {
-            if (OverworldGameController.gameInfo.openChest(chestNumber))
-                Destroy(chest);
+            OverworldGameController.gameInfo.openChest(chestNumber);
+            Destroy(chest);
             chestInRange = false;
         }
 
@@ -141,8 +141,6 @@ public class PlayerController : MonoBehaviour
             {
                 userCamera.GetComponent<TransitionScript>().StartTransition();
                 StartCoroutine(WaitFor()); //wait for 3 seconds
-                
-                //userCamera.GetComponent<TransitionScript>().EndTransition();
             }
         }
 

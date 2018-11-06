@@ -5,19 +5,20 @@ using UnityEngine.UI;
 
 public class OverworldGameController : MonoBehaviour {
 
+    //For singleton
     public static OverworldGameController gameInfo;
     private static bool created = false;
 
-    private string enemyRobot;
-    private bool isBoss;
-    private int[] treasureNumber;
-
     //For keeping track of the tools
-    private string[] treasureName = {"Hammer","Oil","Bomb"};//"Big Bomb" needs to come from a boss
+    private string[] treasureName = {"Hammer","Oil","Bomb"};
+    public string[] toolsfound;
+    public int numToolsFound;
 
+    //The tools that are currently checked and need to be taken to the Fit It world
     [HideInInspector]
     public List<GameObject> selectedTools;
    
+    //Canvas elements (intitialized in InitializeGameObjects which is called in Awake of MenuController
     private GameObject chestPromptPanel;
     private GameObject menuPanel;
     private Text enterKeyPrompt;
@@ -36,38 +37,44 @@ public class OverworldGameController : MonoBehaviour {
     private int bombToggleCount = 1;
     private int bigBombToggleCount = 1;
 
+    //Current enemy type and tool/weapon type
+    private string enemyRobot;
     private string currentWeapon;
 
-    //boolean flag for if boss has been fixed
+    //Boolean flags for boss robots
+    private bool isBoss;
     public bool bossFixed = false;
-
-    private bool newSceneLoaded = false;
 
     private void Start()
     {
-        enemyRobot = "Common Robot";
-        isBoss = false;
-        selectedTools = new List<GameObject>();
-        selectedTools.Add(Wrench);
+        //At the beginning of the game, the tools menu has only wrench and it is selected
+        toolsfound = new string[10];
+        toolsfound[0] = "Wrench";
+        numToolsFound = 1;
 
+
+        //Defaults for entering Fix-it world
+        enemyRobot = "Common Robot";
         currentWeapon = "Wrench";
-        treasureNumber = new int [] {1,1,1,1,1};
+        isBoss = false;
     }
 
     void Awake()
     {
+        //Creates the singleton
         if (!created)
         {
             gameInfo = this;
             DontDestroyOnLoad(gameObject);
             created = true;
         }
+        //Destroys the extra copy when returning to Overworld
         else if(created)
         {
             Destroy(gameObject);
         }
 
-        //Initialize gameobjects when the game starts
+        //Initialize canvas gameobjects when the game starts
         InitializeGameObjects();
 
         enterKeyPrompt = chestPromptPanel.GetComponentInChildren<Text>();
@@ -87,6 +94,7 @@ public class OverworldGameController : MonoBehaviour {
         return gameInfo;
     }
 
+    //For yellow "boss robots"
     public void setBossStatus(bool isBoss)
     {
         this.isBoss = isBoss;
@@ -105,29 +113,16 @@ public class OverworldGameController : MonoBehaviour {
             enemyRobot = enemyName;
     }
 
-    public bool openChest(int chestNum)
+    public void openChest(int chestNum)
     {
-        if (treasureNumber[chestNum] == 1)
-        {
-            treasureNumber[chestNum] = 0;
+        //Add this tool to the toolsfound array
+        toolsfound[numToolsFound] = treasureName[chestNum - 1];
 
-            //Make this treasure available in the menu
-            menuPanel.GetComponent<MenuController>().ActivateToolInMenu(treasureName[chestNum-1]);
+        //Make this treasure available in the menu
+        menuPanel.GetComponent<MenuController>().ActivateToolInMenu(treasureName[chestNum-1],numToolsFound);
 
-            return true;
-        }
-
-        else
-            return false;
-    }
-
-    //check if player has the weapon they are trying to equip
-    //may not need this
-    public bool hasWeapon(int chestNum_in)
-    {
-        if (treasureNumber[chestNum_in] == 0)
-            return true;
-        return false;
+        //Increment the total number of tools found so far
+        numToolsFound++;
     }
 
     public void EnterKeyTextAppear()
@@ -146,31 +141,36 @@ public class OverworldGameController : MonoBehaviour {
         return enemyRobot;
     }
 
-    public void ChooseFunction(GameObject label)
+    public void ChooseFunction(Toggle theToggle)
     {
-        string weapon = label.GetComponent<Text>().text;
+        string weapon = theToggle.GetComponentInChildren<Text>().text;
         int togglecount = 0;
 
         switch(weapon)
         {
             case "Wrench":
                 togglecount = wrenchToggleCount;
+                Debug.Log("Wrench: " + togglecount);
                 wrenchToggleCount++;
                 break;
             case "Hammer":
                 togglecount = hammerToggleCount;
+                Debug.Log("Hammer: " + togglecount);
                 hammerToggleCount++;
                 break;
             case "Oil":
                 togglecount = oilToggleCount;
+                Debug.Log("Oil: " + togglecount);
                 oilToggleCount++;
                 break;
             case "Bomb":
                 togglecount = bombToggleCount;
+                Debug.Log("Bomb: " + togglecount);
                 bombToggleCount++;
                 break;
-            case "BigBomb":
+            case "Big Bomb":
                 togglecount = bigBombToggleCount;
+                Debug.Log("Big Bomb: " + togglecount);
                 bigBombToggleCount++;
                 break;
         }
@@ -180,7 +180,7 @@ public class OverworldGameController : MonoBehaviour {
             //prompting toggle to be turned back off
             if(!AddTool(weapon))
             {
-                label.GetComponentInParent<Toggle>().isOn = false;
+                theToggle.isOn = false;
             }
         }
         else
@@ -204,7 +204,7 @@ public class OverworldGameController : MonoBehaviour {
                 case "Oil":
                     selectedTools.Add(Oil);
                     break;
-                case "BigBomb":
+                case "Big Bomb":
                     selectedTools.Add(BigBomb);
                     break;
                 case "Bomb":
@@ -241,6 +241,19 @@ public class OverworldGameController : MonoBehaviour {
         Debug.Log(express);
     }
 
+    //To be called when entering play mode and returning to the Overworld
+    public void initializeSelectedTools()
+    {
+        wrenchToggleCount = 0;
+        hammerToggleCount = 1;
+        oilToggleCount = 1;
+        bombToggleCount = 1;
+        bigBombToggleCount = 1;
+
+        selectedTools = new List<GameObject>();
+        selectedTools.Add(Wrench);
+    }
+
     //returns a string of the weapon currently equipped in Fix-It
     public string getCurrentWeapon()
     {
@@ -250,20 +263,5 @@ public class OverworldGameController : MonoBehaviour {
     public void setCurrentWeapon(string weaponIn)
     {
         currentWeapon = weaponIn;
-    }
-
-    public void sceneLoading()
-    {
-        newSceneLoaded = true;
-    }
-
-    public void finishedLoading()
-    {
-        newSceneLoaded = false;
-    }
-
-    public bool isSceneLoading()
-    {
-        return newSceneLoaded;
     }
 }

@@ -30,14 +30,13 @@ public class FixItPlayerController : MonoBehaviour
             if(!touchPickup)
             {
                 touchPickup = true;
-                //show a message?
+
+                //Show a message which says that you have acquired the big bomb and set the flag
                 bossPanel.SetActive(true);
                 OverworldGameController.gameInfo.bossFixed = true;
 
+                //Destory bomb and load overworld
                 Destroy(other.gameObject);
-
-                //code in progress
-                OverworldGameController.gameInfo.sceneLoading();
                 SceneManager.LoadScene("Overworld");
             }
         }

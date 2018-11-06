@@ -42,17 +42,15 @@ public class BigRadiusObliteration : MonoBehaviour
     //After a certain amount of time, bomb will explode
     private IEnumerator Explosion()
     {
+        //Wait a certain amount of time before the bomb explodes
         yield return new WaitForSeconds(MaxLifeTime);
-
-        Debug.Log("Exploding");
 
         //Enable the collider for the explosion zone
         GetComponent<BoxCollider>().enabled = true;
         explosionParticles.Play();
 
+        //Wait and then destroy the bomb
         yield return new WaitForSeconds(1);
-
-        //Destroy the big bomb
         Destroy(gameObject);
 
     }
