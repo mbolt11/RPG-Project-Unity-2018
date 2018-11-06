@@ -29,18 +29,7 @@ public class FixItPlayerController : MonoBehaviour
             Destroy(other.gameObject);
 
             //code in progress
-            /*SceneManager.LoadScene("Overworld");
-
-            //set canvas childs to active
-            GameObject canvas = GameObject.FindGameObjectWithTag("Canvas");
-            
-            for(int i = 1; i < 7; i++)
-            {
-                canvas.transform.GetChild(i).gameObject.SetActive(true);
-                Debug.Log(canvas.transform.GetChild(i).gameObject.name);
-            }
-
-            OverworldGameController.gameInfo.AddTool("BigBomb");*/
+            SceneManager.LoadScene("Overworld");
         }
         //reduce health of the player
         else if (other.tag == "Oil Spill")

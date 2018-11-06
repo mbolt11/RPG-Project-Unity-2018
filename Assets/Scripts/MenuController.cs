@@ -31,6 +31,15 @@ public class MenuController : MonoBehaviour {
         }
     }
 
+    private void OnEnable()
+    {
+        if (OverworldGameController.gameInfo.bossFixed)
+        {
+            ActivateToolInMenu("BigBomb");
+            OverworldGameController.gameInfo.bossFixed = false;
+        }
+    }
+
     //Add to menu when new tool is acquired
     public void ActivateToolInMenu(string toolname)
     {

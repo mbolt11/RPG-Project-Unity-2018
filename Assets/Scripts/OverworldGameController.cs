@@ -44,7 +44,6 @@ public class OverworldGameController : MonoBehaviour {
 
     private void Start()
     {
-        gameInfo = this;
         enemyRobot = "Common Robot";
         isBoss = false;
         selectedTools = new List<GameObject>();
@@ -58,6 +57,7 @@ public class OverworldGameController : MonoBehaviour {
     {
         if (!created)
         {
+            gameInfo = this;
             DontDestroyOnLoad(gameObject);
             created = true;
         }
@@ -65,15 +65,6 @@ public class OverworldGameController : MonoBehaviour {
         enterKeyPrompt = chestPromptPanel.GetComponentInChildren<Text>();
         enterKeyPrompt.text = "Enter Key Prompt";
         chestPromptPanel.SetActive(false);
-    }
-
-    void Update()
-    {
-        if (bossFixed)
-        {
-            menuPanel.GetComponent<MenuController>().ActivateToolInMenu("BigBomb");
-            bossFixed = false;
-        }
     }
 
     public OverworldGameController getSingleton()
@@ -132,6 +123,7 @@ public class OverworldGameController : MonoBehaviour {
 
     public void EnterKeyTextDisappear()
     {
+        Debug.Log(chestPromptPanel);
         chestPromptPanel.SetActive(false);
     }
 
