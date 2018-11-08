@@ -82,7 +82,12 @@ public class RobotController : MonoBehaviour
                 }
                 else
                 {
-                    //Should show a message and go back to overworld here
+                    if (!OverworldGameController.gameInfo.isSceneLoading())
+                    {
+                        GameObject.FindGameObjectWithTag("GamePieces").transform.GetChild(0).gameObject.GetComponent<FixItPlayerController>().setRobotPanel(true);
+                        //code in progress
+                        OverworldGameController.gameInfo.changeScene();
+                    }
                 }
             }
         }

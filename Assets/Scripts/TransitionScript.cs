@@ -8,20 +8,25 @@ public class TransitionScript : MonoBehaviour {
     public int panelNum;
     public bool down;
     private Animator anim;
-    
-	// Use this for initialization
-	void Start () {
+
+    // Use this for initialization
+    void Start()
+    {
         Time.timeScale = 1;
         anim = transitionPanel.GetComponent<Animator>();
+        //Debug.Log(anim);
         if (down)
             EndTransition();
         else
             anim.enabled = false;
-	}
+    }
 
     public void StartTransition()
     {
         string animationName = "TransitionAnimSlideIn" + panelNum;
+        //Debug.Log(anim);
+        //Debug.Log(transitionPanel.GetComponent<Animator>());
+        anim = transitionPanel.GetComponent<Animator>();
         anim.enabled = true;
         anim.Play(animationName);
         down = true;
@@ -31,7 +36,9 @@ public class TransitionScript : MonoBehaviour {
     public void EndTransition()
     {
         string animationName = "TransitionAnimSlideIn" + panelNum;
+        anim = transitionPanel.GetComponent<Animator>();
         anim.enabled = true;
+
         //Debug.Log("end animation should happen");
         //Debug.Log(animationName);
         anim.Play(animationName);

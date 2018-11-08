@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class OverworldGameController : MonoBehaviour {
 
@@ -45,6 +46,11 @@ public class OverworldGameController : MonoBehaviour {
     //Boolean flags for boss robots
     private bool isBoss;
     public bool bossFixed = false;
+
+    private bool sceneLoading = false;
+    private int sceneNumber;
+    //reference to the main camera
+    private GameObject userCamera;
 
     private void Start()
     {
@@ -264,5 +270,73 @@ public class OverworldGameController : MonoBehaviour {
     public void setCurrentWeapon(string weaponIn)
     {
         currentWeapon = weaponIn;
+    }
+
+    public void sceneIsLoading()
+    {
+        sceneLoading = true;
+    }
+
+    public void finishedLoading()
+    {
+        sceneLoading = false;
+    }
+
+    public bool isSceneLoading()
+    {
+        return sceneLoading;
+    }
+
+    public int changeSceneNum()
+    {
+        Debug.Log(sceneNumber);
+        sceneNumber++;
+
+        if (sceneNumber > 1)
+            sceneNumber = 0;
+
+        return sceneNumber;
+    }
+
+    public void changeScene()
+    {
+        sceneIsLoading();
+        findPlayerCamera();
+
+        //Debug.Log("Before switch" + sceneNumber);
+        sceneNumber++;
+
+        if (sceneNumber > 1)
+        {
+            sceneNumber = 0;
+        }
+        //Debug.Log("after switch" + sceneNumber);
+
+        //Debug.Log("camera " + userCamera);
+        userCamera.GetComponent<TransitionScript>().StartTransition();
+        StartCoroutine(WaitFor());
+    }
+
+    IEnumerator WaitFor()
+    {
+        yield return new WaitForSeconds(3);
+
+        //Load the fix it scene
+        SceneManager.LoadScene(sceneNumber);
+        finishedLoading();
+    }
+
+    public void findPlayerCamera()
+    {
+        if (sceneNumber == 0)
+        {
+            //userCamera = GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).gameObject;
+            userCamera = GameObject.FindGameObjectWithTag("MainCamera");
+        }
+        else
+        {
+            //userCamera = GameObject.FindGameObjectWithTag("GamePieces").transform.GetChild(0).GetChild(2).gameObject;
+            userCamera = GameObject.FindGameObjectWithTag("MainCamera");
+        }
     }
 }

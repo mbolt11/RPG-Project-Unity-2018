@@ -25,6 +25,7 @@ TagManager:
   - Canvas
   - MenuPanel
   - ChestPromptPanel
+  - GamePieces
   layers:
   - Default
   - TransparentFX

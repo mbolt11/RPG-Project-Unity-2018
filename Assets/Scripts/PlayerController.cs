@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -137,11 +136,16 @@ public class PlayerController : MonoBehaviour
             OverworldGameController.gameInfo.setBossStatus(other.gameObject.GetComponent<RobotController>().isBoss);
 
             //Safety check that scene has not loaded already
-            if (!loaded)
+            //is this needed??
+            if (!OverworldGameController.gameInfo.isSceneLoading())
+            {
+                OverworldGameController.gameInfo.changeScene();
+            }
+            /*if (!loaded)
             {
                 userCamera.GetComponent<TransitionScript>().StartTransition();
                 StartCoroutine(WaitFor()); //wait for 3 seconds
-            }
+            }*/
         }
 
         //Record if the player is within the radius of a villager
@@ -177,13 +181,5 @@ public class PlayerController : MonoBehaviour
         {
             chestInRange = false;
         }
-    }
-
-    IEnumerator WaitFor()
-    {
-        yield return new WaitForSeconds(3);
-
-        //Load the fix it scene
-        SceneManager.LoadScene(1);
     }
 }

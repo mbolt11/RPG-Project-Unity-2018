@@ -7,6 +7,7 @@ public class FixItPlayerController : MonoBehaviour
 {
     public GameObject playerBody;
     public GameObject bossPanel;
+    public GameObject robotPanel;
     private bool touchPickup;
     private Health HealthScript;
 
@@ -46,7 +47,10 @@ public class FixItPlayerController : MonoBehaviour
 
                 //Destory bomb and load overworld
                 Destroy(other.gameObject);
-                SceneManager.LoadScene("Overworld");
+                //code in progress
+                if (!OverworldGameController.gameInfo.isSceneLoading())
+                    OverworldGameController.gameInfo.changeScene();
+                //SceneManager.LoadScene("Overworld");
             }
         }
     }
@@ -62,5 +66,10 @@ public class FixItPlayerController : MonoBehaviour
 
             //Return to Overworld
         }
+    }
+
+    public void setRobotPanel(bool status)
+    {
+        robotPanel.SetActive(true);
     }
 }
