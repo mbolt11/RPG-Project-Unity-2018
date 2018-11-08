@@ -5,21 +5,26 @@ using UnityEngine.SceneManagement;
 
 public class RobotController : MonoBehaviour
 {
-    //Get the robot's main body cube
     public GameObject robotBody;
     public GameObject BigBomb;
-
     public ParticleSystem explosionParticles;
 
     [HideInInspector]
     public bool isBoss;
 
+    private Health HealthScript;
+
     // Use this for initialization
     void Start()
     {
+        //Various setup things
         Scene currentScene = SceneManager.GetActiveScene();
+
+        //This sets random bosses?
         int rand = Random.Range(0, 4);
         isBoss = rand == 0 ? true : false;
+
+        HealthScript = GetComponentInParent<Health>();
 
         //If we are in the overworld
         if(currentScene.name == "Overworld")
@@ -32,8 +37,8 @@ public class RobotController : MonoBehaviour
             GetComponent<RobotThrowsParts>().enabled = true;
         }
 
-        //color robot if it's a boss
-        //health or movement should be different in the future
+        //Color robot if it's a boss
+        //Health or movement should be different in the future
         if (isBoss)
         {
             robotBody.transform.GetComponent<Renderer>().material.color = new Color(.83f, .69f, .22f, 1f);
@@ -42,24 +47,43 @@ public class RobotController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //If the robot gets hit by a tool/weapon, it turns green to indicate it is fixed
+        //When the robot gets hit by a tool/weapon
         if (other.tag == "Wrench" || other.tag == "Oil Spill" || other.tag == "Bomb" || other.tag == "BigBomb")
         {
-            //Change the color
+            //Play explosion and destroy tool
             explosionParticles.Play();
-            robotBody.transform.GetComponent<Renderer>().material.color = Color.green;
             Destroy(other.gameObject);
 
-            //reduce health accordingly 
-
-            //stop throwing parts ONLY IF DEAD
-            GetComponent<RobotThrowsParts>().enabled = false;
-
-            //check if boss
+            //Reduce health of robot.. can update this to be different for different kinds of weapons in the future
+            //Boss is harder to beat than other robots
             if (OverworldGameController.gameInfo.getBossStatus())
             {
-                //DROP A TOOL HERE
-                Instantiate(BigBomb, Vector3.zero, Quaternion.identity);
+                HealthScript.TakeDamage(5);
+            }
+            else
+            {
+                HealthScript.TakeDamage(10);
+            }
+
+            //When health reaches 0, the robot is dead
+            if (HealthScript.Dead)
+            {
+                //Change robot color to green to indicate fixed
+                robotBody.transform.GetComponent<Renderer>().material.color = Color.green;
+
+                //Stop throwing parts
+                GetComponent<RobotThrowsParts>().enabled = false;
+
+                //Check if boss
+                if (OverworldGameController.gameInfo.getBossStatus())
+                {
+                    //Drop a tool here
+                    Instantiate(BigBomb, Vector3.zero, Quaternion.identity);
+                }
+                else
+                {
+                    //Should show a message and go back to overworld here
+                }
             }
         }
     }

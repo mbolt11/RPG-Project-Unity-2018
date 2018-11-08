@@ -6,8 +6,9 @@ public class FixItCommonRobotMovement : MonoBehaviour {
 
     public GameObject playerbody;
     public GameObject playerTarget;
-    private Renderer pbrenderer;
+
     private Transform pttransform;
+    private Health HealthScript;
 
     private bool panleft;
     private int frames;
@@ -20,7 +21,8 @@ public class FixItCommonRobotMovement : MonoBehaviour {
         frames = 60;
 
         pttransform = playerTarget.GetComponent<Transform>();
-        pbrenderer = playerbody.GetComponent<Renderer>();
+
+        HealthScript = playerbody.GetComponentInParent<Health>();
     }
 	
 	// Update is called once per frame
@@ -49,7 +51,7 @@ public class FixItCommonRobotMovement : MonoBehaviour {
                     //If the player is in the way, it takes damage
                     else
                     {
-                        PlayerTakeDamage(pbrenderer);
+                        HealthScript.TakeDamage(10);
                     }
 
                     //If robot has reached the edge, switch directions
@@ -78,7 +80,7 @@ public class FixItCommonRobotMovement : MonoBehaviour {
                     //If the player is in the way, it takes damage
                     else
                     {
-                        PlayerTakeDamage(pbrenderer);
+                        HealthScript.TakeDamage(10);
                     }
 
                     //If robot has reached the edge, switch directions
@@ -90,27 +92,5 @@ public class FixItCommonRobotMovement : MonoBehaviour {
             }
             frames = 0;
         }
-    }
-
-    void PlayerTakeDamage(Renderer playerbodyrenderer)
-    {
-        //Change the player's body color to show damage
-        float newR = playerbodyrenderer.material.color.r + 0.25f;
-        if (newR > 1)
-        {
-            newR = 1;
-        }
-        float newG = playerbodyrenderer.material.color.g - 0.13f;
-        if (newG < 0)
-        {
-            newG = 0;
-        }
-        float newB = playerbodyrenderer.material.color.b - 0.2f;
-        if (newB < 0)
-        {
-            newB = 0;
-        }
-        Color change = new Color(newR, newG, newB, 1);
-        playerbodyrenderer.material.color = change;
     }
 }

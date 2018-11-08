@@ -8,23 +8,32 @@ public class FixItPlayerController : MonoBehaviour
     public GameObject playerBody;
     public GameObject bossPanel;
     private bool touchPickup;
+    private Health HealthScript;
 
     private void Start()
     {
         touchPickup = false;
+        HealthScript = GetComponent<Health>();
     }
+
     private void OnTriggerEnter(Collider other)
     {
+        //For player taking damage
         if (other.tag == "CommonPart")
         {
-            //Debug.Log("part hit");
-            playerBody.transform.GetComponent<Renderer>().material.color = Color.red;
+            HealthScript.TakeDamage(10);
         }
         else if (other.tag == "OutsidePart")
         {
-            //Debug.Log("part hit");
-            playerBody.transform.GetComponent<Renderer>().material.color = Color.yellow;
+            HealthScript.TakeDamage(20);
         }
+        else if (other.tag == "Oil Spill")
+        {
+            HealthScript.TakeDamage(10);
+            Destroy(other.gameObject);
+        }
+
+        //For picking up the big bomb and leaving the fix it world
         else if(other.tag=="BigBomb")
         {
             if(!touchPickup)
@@ -40,11 +49,18 @@ public class FixItPlayerController : MonoBehaviour
                 SceneManager.LoadScene("Overworld");
             }
         }
-        //reduce health of the player
-        else if (other.tag == "Oil Spill")
-        {
-            Destroy(other.gameObject);
-        }
     }
 
+    private void Update()
+    {
+        if(HealthScript.Dead)
+        {
+            //Color the player red to indicate death
+            playerBody.transform.GetComponent<Renderer>().material.color = Color.red;
+
+            //Show a message?
+
+            //Return to Overworld
+        }
+    }
 }

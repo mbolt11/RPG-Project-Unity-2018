@@ -7,13 +7,13 @@ public class FixItOutsideRobotMovement : MonoBehaviour
 
     public GameObject playerbody;
     public GameObject playerTarget;
-    private Renderer pbrenderer;
     private Transform pttransform;
 
     private int frames;
     private int movesPerSide;
     private int currIndex;
     private Transform currRobot;
+    private Health HealthScript;
 
 
     void Start()
@@ -26,7 +26,8 @@ public class FixItOutsideRobotMovement : MonoBehaviour
         currRobot = GameObject.Find("Fix-It Robot").GetComponentInChildren<Transform>();
 
         pttransform = playerTarget.GetComponent<Transform>();
-        pbrenderer = playerbody.GetComponent<Renderer>();
+
+        HealthScript = playerbody.GetComponentInParent<Health>();
     }
 
     // Update is called once per frame
@@ -64,7 +65,7 @@ public class FixItOutsideRobotMovement : MonoBehaviour
                 //If the player is in the way, it takes damage
                 else
                 {
-                    PlayerTakeDamage(pbrenderer);
+                    HealthScript.TakeDamage(10);
                     movesPerSide--;
                 }
 
@@ -85,7 +86,7 @@ public class FixItOutsideRobotMovement : MonoBehaviour
                 //If the player is in the way, it takes damage
                 else
                 {
-                    PlayerTakeDamage(pbrenderer);
+                    HealthScript.TakeDamage(10);
                     movesPerSide--;
                 }
             }
@@ -105,7 +106,7 @@ public class FixItOutsideRobotMovement : MonoBehaviour
                 //If the player is in the way, it takes damage
                 else
                 {
-                    PlayerTakeDamage(pbrenderer);
+                    HealthScript.TakeDamage(10);
                     movesPerSide--;
                 }
             }
@@ -125,7 +126,7 @@ public class FixItOutsideRobotMovement : MonoBehaviour
                 //If the player is in the way, it takes damage
                 else
                 {
-                    PlayerTakeDamage(pbrenderer);
+                    HealthScript.TakeDamage(10);
                     movesPerSide--;
                 }
             }
@@ -133,27 +134,5 @@ public class FixItOutsideRobotMovement : MonoBehaviour
             frames = 0;
             movesPerSide++;
         }
-    }
-
-    void PlayerTakeDamage(Renderer playerbodyrenderer)
-    {
-        //Change the player's body color to show damage
-        float newR = playerbodyrenderer.material.color.r + 0.25f;
-        if (newR > 1)
-        {
-            newR = 1;
-        }
-        float newG = playerbodyrenderer.material.color.g - 0.13f;
-        if (newG < 0)
-        {
-            newG = 0;
-        }
-        float newB = playerbodyrenderer.material.color.b - 0.2f;
-        if (newB < 0)
-        {
-            newB = 0;
-        }
-        Color change = new Color(newR, newG, newB, 1);
-        playerbodyrenderer.material.color = change;
     }
 }

@@ -8,10 +8,7 @@ public class FixItPlayerMovement : MonoBehaviour
     public GameObject robotTarget;
     private Rigidbody rb;
     private Transform rtTransform;
-
-    //For body coloring
-    public GameObject playerbody;
-    private Renderer pbrenderer;
+    private Health HealthScript;
 
     private void Start()
     {
@@ -25,7 +22,9 @@ public class FixItPlayerMovement : MonoBehaviour
         //Get the player rigidbody and the player collision script
         rb = player.GetComponent<Rigidbody>();
         rtTransform = robotTarget.GetComponent<Transform>();
-        pbrenderer = playerbody.GetComponent<Renderer>();
+
+        //Get the health script
+        HealthScript = player.GetComponent<Health>();
     }
 
     // Move the player target by increments of 2 on button down
@@ -53,7 +52,7 @@ public class FixItPlayerMovement : MonoBehaviour
                 //If player will run into robot
                 else
                 {
-                    PlayerTakeDamage(pbrenderer);
+                    HealthScript.TakeDamage(10);
                 }
             }
             //Rotate the way the player is facing toward front
@@ -82,7 +81,7 @@ public class FixItPlayerMovement : MonoBehaviour
                 //If player will run into robot
                 else
                 {
-                    PlayerTakeDamage(pbrenderer);
+                    HealthScript.TakeDamage(10);
                 }
             }
             //Rotate the way the player is facing toward the left
@@ -111,7 +110,7 @@ public class FixItPlayerMovement : MonoBehaviour
                 //If player will run into robot
                 else
                 {
-                    PlayerTakeDamage(pbrenderer);
+                    HealthScript.TakeDamage(10);
                 }
             }
             //Rotate the way the player is facing toward back
@@ -140,34 +139,12 @@ public class FixItPlayerMovement : MonoBehaviour
                 //If player will run into robot
                 else
                 {
-                    PlayerTakeDamage(pbrenderer);
+                    HealthScript.TakeDamage(10);
                 }
             }
             //Rotate the way the player is facing toward the right
             rb.rotation = Quaternion.Euler(0f, 90f, 0f);
         }
-    }
-
-    void PlayerTakeDamage(Renderer playerbodyrenderer)
-    {
-        //Change the player's body color to show damage
-        float newR = playerbodyrenderer.material.color.r + 0.25f;
-        if (newR > 1)
-        {
-            newR = 1;
-        }
-        float newG = playerbodyrenderer.material.color.g - 0.13f;
-        if (newG < 0)
-        {
-            newG = 0;
-        }
-        float newB = playerbodyrenderer.material.color.b - 0.2f;
-        if (newB < 0)
-        {
-            newB = 0;
-        }
-        Color change = new Color(newR, newG, newB, 1);
-        playerbodyrenderer.material.color = change;
     }
 }
 
