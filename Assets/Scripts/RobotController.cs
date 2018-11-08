@@ -79,6 +79,7 @@ public class RobotController : MonoBehaviour
                 {
                     //Drop a tool here
                     Instantiate(BigBomb, Vector3.zero, Quaternion.identity);
+                    OverworldGameController.gameInfo.bossFixed = true;
                 }
                 else
                 {

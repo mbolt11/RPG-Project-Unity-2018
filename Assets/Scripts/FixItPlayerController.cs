@@ -35,7 +35,7 @@ public class FixItPlayerController : MonoBehaviour
         }
 
         //For picking up the big bomb and leaving the fix it world
-        else if(other.tag=="BigBomb")
+        else if(other.tag=="BigBomb" && OverworldGameController.gameInfo.bossFixed)
         {
             if(!touchPickup)
             {
@@ -43,7 +43,6 @@ public class FixItPlayerController : MonoBehaviour
 
                 //Show a message which says that you have acquired the big bomb and set the flag
                 bossPanel.SetActive(true);
-                OverworldGameController.gameInfo.bossFixed = true;
 
                 //Destory bomb and load overworld
                 Destroy(other.gameObject);
