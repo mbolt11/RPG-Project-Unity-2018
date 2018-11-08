@@ -4993,6 +4993,7 @@ MonoBehaviour:
   Wrench: {fileID: 100002, guid: 1fb1789d2762cb048a60b81e759db9fa, type: 2}
   BigBomb: {fileID: 100000, guid: 7665215c8eddc0a44a216110cdeced13, type: 2}
   Bomb: {fileID: 100004, guid: a72885e93c1e4c5449d8f2a4888f2ed7, type: 2}
+  Villager: {fileID: 1374705863890260, guid: 8ae454e87a2a8b64b87cd1412e07bccb, type: 2}
   bossFixed: 0
 --- !u!4 &508728366
 Transform:

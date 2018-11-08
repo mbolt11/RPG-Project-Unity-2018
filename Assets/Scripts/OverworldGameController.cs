@@ -9,9 +9,6 @@ public class OverworldGameController : MonoBehaviour {
     public static OverworldGameController gameInfo;
     private static bool created = false;
 
-    //for keeping track of villager positions
-    public GameObject[] villagers;
-
     //For keeping track of the tools
     private string[] treasureName = {"Hammer","Oil","Bomb"};
     public string[] toolsfound;
@@ -32,6 +29,7 @@ public class OverworldGameController : MonoBehaviour {
     public GameObject Wrench;
     public GameObject BigBomb;
     public GameObject Bomb;
+    public GameObject Villager;
 
     //Toggle counts for each weapon 
     private int wrenchToggleCount = 0;
@@ -54,9 +52,6 @@ public class OverworldGameController : MonoBehaviour {
         toolsfound = new string[10];
         toolsfound[0] = "Wrench";
         numToolsFound = 1;
-
-        //store villagers in array
-        villagers = GameObject.FindGameObjectsWithTag("Villager");
 
         //Defaults for entering Fix-it world
         enemyRobot = "Common Robot";
@@ -92,6 +87,7 @@ public class OverworldGameController : MonoBehaviour {
     {
         menuPanel = GameObject.FindWithTag("Canvas").transform.GetChild(6).gameObject;
         chestPromptPanel = GameObject.FindWithTag("Canvas").transform.GetChild(2).gameObject;
+
     }
 
     public OverworldGameController getSingleton()
