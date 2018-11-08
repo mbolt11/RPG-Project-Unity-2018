@@ -20,16 +20,16 @@ public class RobotController : MonoBehaviour
         //Various setup things
         Scene currentScene = SceneManager.GetActiveScene();
 
-        //This sets random bosses?
-        int rand = Random.Range(0, 4);
-        isBoss = rand == 0 ? true : false;
-
         HealthScript = GetComponentInParent<Health>();
 
         //If we are in the overworld
         if(currentScene.name == "Overworld")
         {
             GetComponent<RobotThrowsParts>().enabled = false;
+
+            //This randomly assigns bosses
+            int rand = Random.Range(0, 4);
+            isBoss = rand == 0 ? true : false;
         }
         //If we are in the Fix It World
         else
