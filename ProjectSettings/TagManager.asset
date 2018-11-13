@@ -26,6 +26,7 @@ TagManager:
   - MenuPanel
   - ChestPromptPanel
   - GamePieces
+  - Wall
   layers:
   - Default
   - TransparentFX

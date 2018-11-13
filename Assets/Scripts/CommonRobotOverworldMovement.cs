@@ -16,6 +16,7 @@ public class CommonRobotOverworldMovement : MonoBehaviour
     {
         frames = 0;
         robotRB = GetComponent<Rigidbody>();
+        StartCoroutine(RandomWait());
 	}
 	
 	// Update is called once per frame
@@ -23,20 +24,22 @@ public class CommonRobotOverworldMovement : MonoBehaviour
     {
         frames++;
 
-        if (frames <= 100)
+        if (frames <= 50)
         {
             Vector3 movement = transform.forward * Time.deltaTime * commonRobotSpeed;
             robotRB.MovePosition(robotRB.position + movement);
         }
-        else if (frames > 100)
+        else if (frames > 50)
         {
             if (transform.rotation.y < 45)
             {
-                transform.Rotate(new Vector3(0, 45, 0));
+                robotRB.MoveRotation(Quaternion.Euler(0, 45, 0));
+                StartCoroutine(RandomWait());
             }
             else
             {
-                transform.Rotate(new Vector3(0, -45, 0));
+                robotRB.MoveRotation(Quaternion.Euler(0, -45, 0));
+                StartCoroutine(RandomWait());
             }
                 
             turns++;
@@ -44,12 +47,26 @@ public class CommonRobotOverworldMovement : MonoBehaviour
         }
 
         //After the robot has turned and moved 3 times, its movement pattern is done
-        if(turns > 3)
+        if(turns > 4)
         {
             //Call a method which creates a new robot instatiation somewhere?
 
             //Destory this robot
             Destroy(gameObject);
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Wall")
+        {
+            transform.Rotate(new Vector3(0, 180, 0));
+        }
+    }
+
+    private IEnumerator RandomWait()
+    {
+        int waittime = Random.Range(0, 3);
+        yield return new WaitForSeconds(waittime);
     }
 }
