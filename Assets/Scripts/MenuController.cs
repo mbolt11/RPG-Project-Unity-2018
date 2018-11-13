@@ -19,6 +19,16 @@ public class MenuController : MonoBehaviour
     {
         gameObject.SetActive(false);
 
+        //If coming back after beating boss robot, add Big Bomb to menu
+        if (OverworldGameController.gameInfo.bossFixed)
+        {
+            OverworldGameController.gameInfo.bossFixed = false;
+
+            //Will not work for all pickups-- must remember to add each pickup to the toolsfound array
+            OverworldGameController.gameInfo.toolsfound[OverworldGameController.gameInfo.numToolsFound] = "Big Bomb";
+            OverworldGameController.gameInfo.numToolsFound++;
+        }
+
         //When the Overworld loads, initialize the menu panel with the amount of tools that have be acquired so far
         for (int i = 0; i < OverworldGameController.gameInfo.numToolsFound; i++)
         {
@@ -32,16 +42,6 @@ public class MenuController : MonoBehaviour
         //Set/Reset the toggle counts and selectedTools list to correspond with the initialized menu
         OverworldGameController.gameInfo.initializeSelectedTools();
 
-        //If coming back after beating boss robot, add Big Bomb to menu
-        if (OverworldGameController.gameInfo.bossFixed)
-        {
-            ActivateToolInMenu("Big Bomb",OverworldGameController.gameInfo.numToolsFound);
-            OverworldGameController.gameInfo.bossFixed = false;
-
-            //Will not work for all pickups-- must remember to add each pickup to the toolsfound array
-            OverworldGameController.gameInfo.toolsfound[OverworldGameController.gameInfo.numToolsFound] = "Big Bomb";
-            OverworldGameController.gameInfo.numToolsFound++;
-        }
     }
 
     //Add to menu on initialization/when new tool is acquired

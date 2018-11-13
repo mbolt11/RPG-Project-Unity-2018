@@ -10,14 +10,7 @@ public class PlayerWeaponController : MonoBehaviour
     // Use this for initialization
     void Awake()
     {
-        if (GameObject.Find("GameController") != false)
-        {
-            currentWeapon = OverworldGameController.gameInfo.getCurrentWeapon();
-        }
-        else
-        {
-            currentWeapon = "Wrench";
-        }
+        currentWeapon = OverworldGameController.gameInfo.getCurrentWeapon();
 
         enableCorrectScripts();
     }

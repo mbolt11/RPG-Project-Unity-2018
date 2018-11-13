@@ -25,7 +25,9 @@ public class RobotController : MonoBehaviour
         //If we are in the overworld
         if(currentScene.name == "Overworld")
         {
+            //Enable/disable appropriate scripts
             GetComponent<RobotThrowsParts>().enabled = false;
+            GetComponent<CommonRobotOverworldMovement>().enabled = true;
 
             //This randomly assigns bosses
             int rand = Random.Range(0, 4);
@@ -34,7 +36,9 @@ public class RobotController : MonoBehaviour
         //If we are in the Fix It World
         else
         {
+            //Enable/disable appropriate scripts
             GetComponent<RobotThrowsParts>().enabled = true;
+            GetComponent<CommonRobotOverworldMovement>().enabled = false;
         }
 
         //Color robot if it's a boss
@@ -48,11 +52,14 @@ public class RobotController : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //When the robot gets hit by a tool/weapon
-        if (other.tag == "Wrench" || other.tag == "Oil Spill" || other.tag == "Bomb" || other.tag == "BigBomb")
+        if (other.tag == "Wrench" || other.tag == "Hammer" || other.tag == "Oil Spill" || other.tag == "Bomb" || other.tag == "BigBomb")
         {
-            //Play explosion and destroy tool
-            explosionParticles.Play();
-            Destroy(other.gameObject);
+            //If this is a bomb, play the explosion and destroy it
+            if (other.tag == "Bomb" || other.tag == "BigBomb") 
+            {
+                explosionParticles.Play();
+                Destroy(other.gameObject);
+            }
 
             //Reduce health of robot.. can update this to be different for different kinds of weapons in the future
             //Boss is harder to beat than other robots

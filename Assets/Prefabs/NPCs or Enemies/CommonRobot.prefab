@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 4502735606228086}
   - component: {fileID: 114708502832586826}
   - component: {fileID: 114213185566760922}
+  - component: {fileID: 114718851164643860}
   - component: {fileID: 54564686275160648}
   - component: {fileID: 65275900011038786}
   - component: {fileID: 65739575409956808}
@@ -500,3 +501,15 @@ MonoBehaviour:
   explosionParticles: {fileID: 198729553717381116, guid: 393e07ab90910d84983ea3a8a26e737f,
     type: 2}
   isBoss: 0
+--- !u!114 &114718851164643860
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1497239384764936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa120c8d9eb6347aea1f4694710c4fc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  commonRobotSpeed: 5

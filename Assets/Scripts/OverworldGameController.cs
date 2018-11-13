@@ -61,7 +61,7 @@ public class OverworldGameController : MonoBehaviour {
 
         //Defaults for entering Fix-it world
         enemyRobot = "Common Robot";
-        currentWeapon = "Wrench";
+        currentWeapon = selectedTools[0].name;
         isBoss = false;
     }
 
@@ -232,7 +232,17 @@ public class OverworldGameController : MonoBehaviour {
         {
             if (selectedTools[i].name == toolName)
                 selectedTools.RemoveAt(i);
+
+            //Big bomb has a different case because the string has a space
+            if(toolName == "Big Bomb" && selectedTools[i].name == "BigBomb")
+            {
+                selectedTools.RemoveAt(i);
+            }
         }
+
+        //Update the current weapon selected when you first enter fix-it
+        currentWeapon = selectedTools[0].name;
+
         Debug.Log("List after removal:\n");
         printSelectedTools();
     }
