@@ -4808,6 +4808,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpeed: 7
+  playerWalkSpeed: 5
+  playerRunSpeed: 10
   playerTurnSpeed: 200
   userCamera: {fileID: 678251538}
   villager: {fileID: 1374705863890260, guid: 8ae454e87a2a8b64b87cd1412e07bccb, type: 2}
@@ -4824,7 +4826,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 116
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!4 &494611795
 Transform:

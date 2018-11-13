@@ -27,7 +27,7 @@ public class RobotController : MonoBehaviour
         {
             //Enable/disable appropriate scripts
             GetComponent<RobotThrowsParts>().enabled = false;
-            GetComponent<CommonRobotOverworldMovement>().enabled = true;
+            //GetComponent<CommonRobotOverworldMovement>().enabled = true;
 
             //This randomly assigns bosses
             int rand = Random.Range(0, 4);

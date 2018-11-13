@@ -61,7 +61,10 @@ public class OverworldGameController : MonoBehaviour {
 
         //Defaults for entering Fix-it world
         enemyRobot = "Common Robot";
-        currentWeapon = selectedTools[0].name;
+        if (selectedTools.Count > 0)
+            currentWeapon = selectedTools[0].name;
+        else
+            currentWeapon = "Wrench";
         isBoss = false;
     }
 

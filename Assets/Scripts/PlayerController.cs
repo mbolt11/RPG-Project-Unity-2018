@@ -5,9 +5,9 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     //player forward/backward speed
-    public float playerSpeed = 5f;
+    public float playerSpeed, playerWalkSpeed = 5f, playerRunSpeed = 10f;
 
-    //player turn speed, should be 15 * playerSpeed
+    //player turn speed
     public float playerTurnSpeed;
 
     //Singleton
@@ -16,9 +16,6 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
     private float moveInput;
     private float turnInput;
-
-    //Keeps track of if we have loaded the fixing scene yet
-    private bool loaded = false;
 
     //reference to the main camera
     public GameObject userCamera;
@@ -38,6 +35,7 @@ public class PlayerController : MonoBehaviour
         //store the rigidbody component
         rb = GetComponent<Rigidbody>();
         playerTurnSpeed = 50f;
+        playerSpeed = playerWalkSpeed;
 
         //Instantiate the script singleton
         if (Instance != null && Instance != this)
@@ -94,6 +92,15 @@ public class PlayerController : MonoBehaviour
         {
             OverworldGameController.gameInfo.EnterKeyTextDisappear();
         }
+
+        if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
+        {
+            playerSpeed = playerRunSpeed;
+        }
+        else if(Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyUp(KeyCode.RightShift))
+        {
+            playerSpeed = playerWalkSpeed;
+        }
     }
 
     //physics code
@@ -101,6 +108,12 @@ public class PlayerController : MonoBehaviour
     {
         TurnPlayer();
         MovePlayer();
+        
+        //jump if space is pressed down
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            rb.AddForce(0, 25f, 0, ForceMode.Impulse);
+        }
     }
 
     //Move player Forward/Backward
@@ -126,11 +139,11 @@ public class PlayerController : MonoBehaviour
         {
             if(other.tag == "Common Robot")
             {
-                GameObject.Find("GameController").GetComponent<OverworldGameController>().getSingleton().setEnemyRobot("Common Robot");
+                OverworldGameController.gameInfo.setEnemyRobot("Common Robot");
             }
             else if(other.tag == "Outside Robot")
             {
-                GameObject.Find("GameController").GetComponent<OverworldGameController>().getSingleton().setEnemyRobot("Outside Robot");
+                OverworldGameController.gameInfo.setEnemyRobot("Outside Robot");
             }
 
             OverworldGameController.gameInfo.setBossStatus(other.gameObject.GetComponent<RobotController>().isBoss);
@@ -141,11 +154,6 @@ public class PlayerController : MonoBehaviour
             {
                 OverworldGameController.gameInfo.changeScene();
             }
-            /*if (!loaded)
-            {
-                userCamera.GetComponent<TransitionScript>().StartTransition();
-                StartCoroutine(WaitFor()); //wait for 3 seconds
-            }*/
         }
 
         //Record if the player is within the radius of a villager
