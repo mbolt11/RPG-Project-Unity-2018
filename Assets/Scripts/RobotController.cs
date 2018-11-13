@@ -38,7 +38,7 @@ public class RobotController : MonoBehaviour
         {
             //Enable/disable appropriate scripts
             GetComponent<RobotThrowsParts>().enabled = true;
-            GetComponent<CommonRobotOverworldMovement>().enabled = false;
+            GetComponent<OverworldRobotMovement>().enabled = false;
         }
 
         //Color robot if it's a boss
