@@ -27,6 +27,7 @@ TagManager:
   - ChestPromptPanel
   - GamePieces
   - Wall
+  - BossZone
   layers:
   - Default
   - TransparentFX

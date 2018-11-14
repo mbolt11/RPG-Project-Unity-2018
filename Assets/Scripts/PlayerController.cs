@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
     private GameObject chest;
     private bool chestInRange = false;
     private int chestNumber;
+    private bool inBossZone = false;
 
     // Use this for initialization
     void Start()
@@ -170,6 +171,12 @@ public class PlayerController : MonoBehaviour
             chestInRange = true;
             chestNumber = int.Parse(other.name.Substring(other.tag.Length, 1));
         }
+
+        if (other.tag == "BossZone" && !inBossZone)
+        {
+            inBossZone = true;
+            Debug.Log("entered zone:" + other.name);
+        }
     }
 
     public string getVillagerName()
@@ -189,5 +196,16 @@ public class PlayerController : MonoBehaviour
         {
             chestInRange = false;
         }
+
+        if (other.tag == "BossZone" && inBossZone)
+        {
+            inBossZone = false;
+            Debug.Log("exit zone");
+        }
+    }
+
+    public bool playerInBossZone()
+    {
+        return inBossZone;
     }
 }
