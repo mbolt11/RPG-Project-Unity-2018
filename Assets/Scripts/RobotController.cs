@@ -85,7 +85,7 @@ public class RobotController : MonoBehaviour
                 OverworldGameController.gameInfo.RobotDefeated();
 
                 //Check if boss
-                if (OverworldGameController.gameInfo.getBossStatus())
+                if (OverworldGameController.gameInfo.getBossStatus() && !OverworldGameController.gameInfo.bossFixed)
                 {
                     //Drop a tool here
                     Instantiate(BigBomb, Vector3.zero, Quaternion.identity);
