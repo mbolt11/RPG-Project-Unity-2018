@@ -54,8 +54,8 @@ public class RobotController : MonoBehaviour
         //When the robot gets hit by a tool/weapon
         if (other.tag == "Wrench" || other.tag == "Hammer" || other.tag == "Oil Spill" || other.tag == "Bomb" || other.tag == "BigBomb")
         {
-            //If this is a bomb, play the explosion and destroy it
-            if (other.tag == "Bomb" || other.tag == "BigBomb") 
+            //If this is a bomb or wrench, play the explosion and destroy it
+            if (other.tag == "Bomb" || other.tag == "BigBomb" || other.tag == "Wrench") 
             {
                 explosionParticles.Play();
                 Destroy(other.gameObject);
@@ -80,6 +80,9 @@ public class RobotController : MonoBehaviour
 
                 //Stop throwing parts
                 GetComponent<RobotThrowsParts>().enabled = false;
+
+                //Add this robot to the list of robots that have been defeated
+                OverworldGameController.gameInfo.RobotDefeated();
 
                 //Check if boss
                 if (OverworldGameController.gameInfo.getBossStatus())

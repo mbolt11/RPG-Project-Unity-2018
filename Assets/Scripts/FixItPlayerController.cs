@@ -64,6 +64,8 @@ public class FixItPlayerController : MonoBehaviour
             //Show a message?
 
             //Return to Overworld
+            if (!OverworldGameController.gameInfo.isSceneLoading())
+                OverworldGameController.gameInfo.changeScene();
         }
     }
 

@@ -2,16 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewRobotInstantiation : MonoBehaviour {
-
+public class NewRobotInstantiation : MonoBehaviour 
+{
     //The locations were the new robots will be placed
     public GameObject[] spots;
+
     private int counter;
 
     // Use this for initialization
     void Start ()
     {
         counter = 0;
+
+        //Disable the robots that have been beaten
+        for (int i = 0; i < OverworldGameController.gameInfo.robotsBeaten.Count; i++)
+        {
+            string todeactivate = OverworldGameController.gameInfo.robotsBeaten[i];
+            Destroy(GameObject.Find(todeactivate));
+        }
 	}
 	
     //Method to be called by OverworldRobotMovement script when a robot is destroyed

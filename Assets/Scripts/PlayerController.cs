@@ -144,6 +144,9 @@ public class PlayerController : MonoBehaviour
             //Save the player's position for when they come back
             OverworldGameController.gameInfo.playerlocation = transform.position;
 
+            //Save this robot's name
+            OverworldGameController.gameInfo.robotHitName = other.name;
+
             //Set the correct type of enemy when entering the fix-it
             if(other.tag == "Common Robot")
             {
@@ -182,7 +185,7 @@ public class PlayerController : MonoBehaviour
         if (other.tag == "BossZone" && !inBossZone)
         {
             inBossZone = true;
-            Debug.Log("entered zone:" + other.name);
+            //Debug.Log("entered zone:" + other.name);
         }
     }
 
@@ -207,7 +210,7 @@ public class PlayerController : MonoBehaviour
         if (other.tag == "BossZone" && inBossZone)
         {
             inBossZone = false;
-            Debug.Log("exit zone");
+            //Debug.Log("exit zone");
         }
     }
 

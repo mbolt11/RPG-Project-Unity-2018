@@ -58,6 +58,10 @@ public class OverworldGameController : MonoBehaviour {
     //To save player Overworld location
     public Vector3 playerlocation;
 
+    [HideInInspector]
+    public string robotHitName;
+    public List<string> robotsBeaten = new List<string>();
+
     private void Start()
     {
         //At the beginning of the game, the tools menu has only wrench and it is selected
@@ -363,5 +367,11 @@ public class OverworldGameController : MonoBehaviour {
             //userCamera = GameObject.FindGameObjectWithTag("GamePieces").transform.GetChild(0).GetChild(2).gameObject;
             userCamera = GameObject.FindGameObjectWithTag("MainCamera");
         }
+    }
+
+    public void RobotDefeated()
+    {
+        //Takes the name of the robot most recently hit in the overworld and adds it to the list
+        robotsBeaten.Add(robotHitName);
     }
 }

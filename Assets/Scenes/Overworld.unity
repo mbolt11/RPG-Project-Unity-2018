@@ -1329,7 +1329,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 675952106}
+    m_TransformParent: {fileID: 231654249}
     m_Modifications:
     - target: {fileID: 4502735606228086, guid: a1dea7a54df964f8885227b455af7cfc, type: 2}
       propertyPath: m_LocalPosition.x
@@ -1361,11 +1361,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4502735606228086, guid: a1dea7a54df964f8885227b455af7cfc, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1497239384764936, guid: a1dea7a54df964f8885227b455af7cfc, type: 2}
       propertyPath: m_Name
-      value: CommonRobot2 (11)
+      value: CommonRobot (7)
       objectReference: {fileID: 0}
     - target: {fileID: 1497239384764936, guid: a1dea7a54df964f8885227b455af7cfc, type: 2}
       propertyPath: m_TagString
@@ -1518,7 +1518,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 675952106}
+    m_TransformParent: {fileID: 231654249}
     m_Modifications:
     - target: {fileID: 4330062051658292, guid: c5c51e74adc60e04cb226a2395a578e9, type: 2}
       propertyPath: m_LocalPosition.x
@@ -1550,11 +1550,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4330062051658292, guid: c5c51e74adc60e04cb226a2395a578e9, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1860691001590296, guid: c5c51e74adc60e04cb226a2395a578e9, type: 2}
       propertyPath: m_Name
-      value: OutsideRobot (11)
+      value: OutsideRobot (1)
       objectReference: {fileID: 0}
     - target: {fileID: 4330062051658292, guid: c5c51e74adc60e04cb226a2395a578e9, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -1750,7 +1750,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1484716032}
+    m_TransformParent: {fileID: 231654249}
     m_Modifications:
     - target: {fileID: 4330062051658292, guid: c5c51e74adc60e04cb226a2395a578e9, type: 2}
       propertyPath: m_LocalPosition.x
@@ -1782,7 +1782,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4330062051658292, guid: c5c51e74adc60e04cb226a2395a578e9, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1860691001590296, guid: c5c51e74adc60e04cb226a2395a578e9, type: 2}
       propertyPath: m_Name
@@ -2105,7 +2105,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1729436413}
+    m_TransformParent: {fileID: 231654249}
     m_Modifications:
     - target: {fileID: 4330062051658292, guid: c5c51e74adc60e04cb226a2395a578e9, type: 2}
       propertyPath: m_LocalPosition.x
@@ -2121,7 +2121,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4330062051658292, guid: c5c51e74adc60e04cb226a2395a578e9, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4330062051658292, guid: c5c51e74adc60e04cb226a2395a578e9, type: 2}
       propertyPath: m_LocalRotation.y
@@ -2137,11 +2137,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4330062051658292, guid: c5c51e74adc60e04cb226a2395a578e9, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1860691001590296, guid: c5c51e74adc60e04cb226a2395a578e9, type: 2}
       propertyPath: m_Name
-      value: OutsideRobot (9)
+      value: OutsideRobot (5)
       objectReference: {fileID: 0}
     - target: {fileID: 4330062051658292, guid: c5c51e74adc60e04cb226a2395a578e9, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -2192,14 +2192,23 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1484716032}
-  - {fileID: 1121098362}
-  - {fileID: 675952106}
-  - {fileID: 1820629346}
-  - {fileID: 1729436413}
-  - {fileID: 244210204}
-  - {fileID: 2102314432}
-  - {fileID: 811990261}
+  - {fileID: 1282750815}
+  - {fileID: 1668038105}
+  - {fileID: 1472352001}
+  - {fileID: 365360973}
+  - {fileID: 584401074}
+  - {fileID: 769397662}
+  - {fileID: 933625096}
+  - {fileID: 1023476878}
+  - {fileID: 303707992}
+  - {fileID: 991370188}
+  - {fileID: 2065900784}
+  - {fileID: 565109230}
+  - {fileID: 319620522}
+  - {fileID: 49189744}
+  - {fileID: 1797223333}
+  - {fileID: 1471842741}
+  - {fileID: 512191631}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2305,36 +2314,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4394780146633582, guid: b2ddf177a4c5ca840a2007883a6db59e,
     type: 2}
   m_PrefabInternal: {fileID: 238977852}
---- !u!1 &244210203
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 244210204}
-  m_Layer: 0
-  m_Name: East Bridge Enemies
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &244210204
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 244210203}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1668038105}
-  - {fileID: 1472352001}
-  m_Father: {fileID: 231654249}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &248328015
 Prefab:
   m_ObjectHideFlags: 0
@@ -2540,7 +2519,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 2102314432}
+    m_TransformParent: {fileID: 231654249}
     m_Modifications:
     - target: {fileID: 4330062051658292, guid: c5c51e74adc60e04cb226a2395a578e9, type: 2}
       propertyPath: m_LocalPosition.x
@@ -2572,7 +2551,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4330062051658292, guid: c5c51e74adc60e04cb226a2395a578e9, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1860691001590296, guid: c5c51e74adc60e04cb226a2395a578e9, type: 2}
       propertyPath: m_Name
@@ -3798,7 +3777,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 811990261}
+    m_TransformParent: {fileID: 231654249}
     m_Modifications:
     - target: {fileID: 4330062051658292, guid: c5c51e74adc60e04cb226a2395a578e9, type: 2}
       propertyPath: m_LocalPosition.x
@@ -3814,7 +3793,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4330062051658292, guid: c5c51e74adc60e04cb226a2395a578e9, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4330062051658292, guid: c5c51e74adc60e04cb226a2395a578e9, type: 2}
       propertyPath: m_LocalRotation.y
@@ -3830,7 +3809,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4330062051658292, guid: c5c51e74adc60e04cb226a2395a578e9, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1860691001590296, guid: c5c51e74adc60e04cb226a2395a578e9, type: 2}
       propertyPath: m_Name
@@ -4297,7 +4276,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1121098362}
+    m_TransformParent: {fileID: 231654249}
     m_Modifications:
     - target: {fileID: 4330062051658292, guid: c5c51e74adc60e04cb226a2395a578e9, type: 2}
       propertyPath: m_LocalPosition.x
@@ -4329,11 +4308,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4330062051658292, guid: c5c51e74adc60e04cb226a2395a578e9, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 1860691001590296, guid: c5c51e74adc60e04cb226a2395a578e9, type: 2}
       propertyPath: m_Name
-      value: OutsideRobot (13)
+      value: OutsideRobot (9)
       objectReference: {fileID: 0}
     - target: {fileID: 54811896247620542, guid: c5c51e74adc60e04cb226a2395a578e9,
         type: 2}
@@ -4735,6 +4714,8 @@ MonoBehaviour:
   Villager: {fileID: 1374705863890260, guid: 8ae454e87a2a8b64b87cd1412e07bccb, type: 2}
   bossFixed: 0
   playerlocation: {x: 0, y: 0, z: 0}
+  robotHitName: 
+  robotsBeaten: []
 --- !u!4 &508728366
 Transform:
   m_ObjectHideFlags: 0
@@ -6404,36 +6385,6 @@ Transform:
   - {fileID: 1260196441}
   m_Father: {fileID: 141782433}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &675952105
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 675952106}
-  m_Layer: 0
-  m_Name: NorthWest Bridge Enemies
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &675952106
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 675952105}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 933625096}
-  - {fileID: 303707992}
-  m_Father: {fileID: 231654249}
-  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &678251538
 GameObject:
@@ -8347,7 +8298,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1121098362}
+    m_TransformParent: {fileID: 231654249}
     m_Modifications:
     - target: {fileID: 4330062051658292, guid: c5c51e74adc60e04cb226a2395a578e9, type: 2}
       propertyPath: m_LocalPosition.x
@@ -8379,11 +8330,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4330062051658292, guid: c5c51e74adc60e04cb226a2395a578e9, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 1860691001590296, guid: c5c51e74adc60e04cb226a2395a578e9, type: 2}
       propertyPath: m_Name
-      value: OutsideRobot (14)
+      value: OutsideRobot (7)
       objectReference: {fileID: 0}
     - target: {fileID: 4330062051658292, guid: c5c51e74adc60e04cb226a2395a578e9, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -8409,36 +8360,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5c51e74adc60e04cb226a2395a578e9, type: 2}
   m_IsPrefabAsset: 0
---- !u!1 &811990260
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 811990261}
-  m_Layer: 0
-  m_Name: North Bridge Enemies
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &811990261
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 811990260}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 991370188}
-  - {fileID: 2065900784}
-  m_Father: {fileID: 231654249}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &812899909
 GameObject:
   m_ObjectHideFlags: 0
@@ -9335,7 +9256,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1121098362}
+    m_TransformParent: {fileID: 231654249}
     m_Modifications:
     - target: {fileID: 4502735606228086, guid: a1dea7a54df964f8885227b455af7cfc, type: 2}
       propertyPath: m_LocalPosition.x
@@ -9367,11 +9288,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4502735606228086, guid: a1dea7a54df964f8885227b455af7cfc, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1497239384764936, guid: a1dea7a54df964f8885227b455af7cfc, type: 2}
       propertyPath: m_Name
-      value: CommonRobot2 (13)
+      value: CommonRobot (6)
       objectReference: {fileID: 0}
     - target: {fileID: 1497239384764936, guid: a1dea7a54df964f8885227b455af7cfc, type: 2}
       propertyPath: m_TagString
@@ -10642,7 +10563,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 244210204}
+    m_TransformParent: {fileID: 231654249}
     m_Modifications:
     - target: {fileID: 4502735606228086, guid: a1dea7a54df964f8885227b455af7cfc, type: 2}
       propertyPath: m_LocalPosition.x
@@ -10674,11 +10595,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4502735606228086, guid: a1dea7a54df964f8885227b455af7cfc, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1497239384764936, guid: a1dea7a54df964f8885227b455af7cfc, type: 2}
       propertyPath: m_Name
-      value: CommonRobot2 (3)
+      value: CommonRobot (3)
       objectReference: {fileID: 0}
     - target: {fileID: 1497239384764936, guid: a1dea7a54df964f8885227b455af7cfc, type: 2}
       propertyPath: m_TagString
@@ -11251,37 +11172,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4395045176784062, guid: ca81948ea9bc7ad4187b6dc663e7270a,
     type: 2}
   m_PrefabInternal: {fileID: 1118109567}
---- !u!1 &1121098361
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1121098362}
-  m_Layer: 0
-  m_Name: SouthWest Bridge Enemies
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1121098362
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1121098361}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1797223333}
-  - {fileID: 512191631}
-  - {fileID: 769397662}
-  m_Father: {fileID: 231654249}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1126645005
 Prefab:
   m_ObjectHideFlags: 0
@@ -12076,7 +11966,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 811990261}
+    m_TransformParent: {fileID: 231654249}
     m_Modifications:
     - target: {fileID: 4330062051658292, guid: c5c51e74adc60e04cb226a2395a578e9, type: 2}
       propertyPath: m_LocalPosition.x
@@ -12108,7 +11998,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4330062051658292, guid: c5c51e74adc60e04cb226a2395a578e9, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1860691001590296, guid: c5c51e74adc60e04cb226a2395a578e9, type: 2}
       propertyPath: m_Name
@@ -12118,6 +12008,14 @@ Prefab:
         type: 2}
       propertyPath: m_IsKinematic
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4330062051658292, guid: c5c51e74adc60e04cb226a2395a578e9, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4330062051658292, guid: c5c51e74adc60e04cb226a2395a578e9, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5c51e74adc60e04cb226a2395a578e9, type: 2}
@@ -14705,36 +14603,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1481211445}
   m_CullTransparentMesh: 0
---- !u!1 &1484716031
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1484716032}
-  m_Layer: 0
-  m_Name: West Bridge Enemies
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1484716032
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1484716031}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 565109230}
-  - {fileID: 365360973}
-  m_Father: {fileID: 231654249}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1499457071
 Prefab:
   m_ObjectHideFlags: 0
@@ -14791,7 +14659,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1820629346}
+    m_TransformParent: {fileID: 231654249}
     m_Modifications:
     - target: {fileID: 4330062051658292, guid: c5c51e74adc60e04cb226a2395a578e9, type: 2}
       propertyPath: m_LocalPosition.x
@@ -14823,11 +14691,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4330062051658292, guid: c5c51e74adc60e04cb226a2395a578e9, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 1860691001590296, guid: c5c51e74adc60e04cb226a2395a578e9, type: 2}
       propertyPath: m_Name
-      value: OutsideRobot (15)
+      value: OutsideRobot (6)
       objectReference: {fileID: 0}
     - target: {fileID: 4330062051658292, guid: c5c51e74adc60e04cb226a2395a578e9, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -16550,42 +16418,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4986571034500240, guid: afd0fb88d86c6514c939605260be1a55,
     type: 2}
   m_PrefabInternal: {fileID: 1699775915}
---- !u!1 &1729436412
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1729436413}
-  m_Layer: 0
-  m_Name: NorthEast Bridge Enemies
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1729436413
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1729436412}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 319620522}
-  - {fileID: 584401074}
-  m_Father: {fileID: 231654249}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1729803692
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1729436413}
+    m_TransformParent: {fileID: 231654249}
     m_Modifications:
     - target: {fileID: 4502735606228086, guid: a1dea7a54df964f8885227b455af7cfc, type: 2}
       propertyPath: m_LocalPosition.x
@@ -16617,11 +16455,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4502735606228086, guid: a1dea7a54df964f8885227b455af7cfc, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1497239384764936, guid: a1dea7a54df964f8885227b455af7cfc, type: 2}
       propertyPath: m_Name
-      value: CommonRobot2 (9)
+      value: CommonRobot (5)
       objectReference: {fileID: 0}
     - target: {fileID: 1497239384764936, guid: a1dea7a54df964f8885227b455af7cfc, type: 2}
       propertyPath: m_TagString
@@ -16876,7 +16714,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1484716032}
+    m_TransformParent: {fileID: 231654249}
     m_Modifications:
     - target: {fileID: 4502735606228086, guid: a1dea7a54df964f8885227b455af7cfc, type: 2}
       propertyPath: m_LocalPosition.x
@@ -16908,11 +16746,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4502735606228086, guid: a1dea7a54df964f8885227b455af7cfc, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1497239384764936, guid: a1dea7a54df964f8885227b455af7cfc, type: 2}
       propertyPath: m_Name
-      value: CommonRobot2 (8)
+      value: CommonRobot (4)
       objectReference: {fileID: 0}
     - target: {fileID: 1497239384764936, guid: a1dea7a54df964f8885227b455af7cfc, type: 2}
       propertyPath: m_TagString
@@ -17121,36 +16959,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4986571034500240, guid: 222576d79db6a63498a4026365867fbf,
     type: 2}
   m_PrefabInternal: {fileID: 1817325744}
---- !u!1 &1820629345
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1820629346}
-  m_Layer: 0
-  m_Name: SouthEast Bridge Enemies
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1820629346
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1820629345}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1023476878}
-  - {fileID: 49189744}
-  m_Father: {fileID: 231654249}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1820985702
 GameObject:
   m_ObjectHideFlags: 0
@@ -17768,7 +17576,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 244210204}
+    m_TransformParent: {fileID: 231654249}
     m_Modifications:
     - target: {fileID: 4502735606228086, guid: a1dea7a54df964f8885227b455af7cfc, type: 2}
       propertyPath: m_LocalPosition.x
@@ -17800,11 +17608,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4502735606228086, guid: a1dea7a54df964f8885227b455af7cfc, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1497239384764936, guid: a1dea7a54df964f8885227b455af7cfc, type: 2}
       propertyPath: m_Name
-      value: CommonRobot2 (2)
+      value: CommonRobot (2)
       objectReference: {fileID: 0}
     - target: {fileID: 1497239384764936, guid: a1dea7a54df964f8885227b455af7cfc, type: 2}
       propertyPath: m_TagString
@@ -18217,7 +18025,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 2102314432}
+    m_TransformParent: {fileID: 231654249}
     m_Modifications:
     - target: {fileID: 4502735606228086, guid: a1dea7a54df964f8885227b455af7cfc, type: 2}
       propertyPath: m_LocalPosition.x
@@ -18233,7 +18041,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4502735606228086, guid: a1dea7a54df964f8885227b455af7cfc, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4502735606228086, guid: a1dea7a54df964f8885227b455af7cfc, type: 2}
       propertyPath: m_LocalRotation.y
@@ -18284,7 +18092,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1820629346}
+    m_TransformParent: {fileID: 231654249}
     m_Modifications:
     - target: {fileID: 4502735606228086, guid: a1dea7a54df964f8885227b455af7cfc, type: 2}
       propertyPath: m_LocalPosition.x
@@ -18316,11 +18124,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4502735606228086, guid: a1dea7a54df964f8885227b455af7cfc, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1497239384764936, guid: a1dea7a54df964f8885227b455af7cfc, type: 2}
       propertyPath: m_Name
-      value: CommonRobot (2)
+      value: CommonRobot (8)
       objectReference: {fileID: 0}
     - target: {fileID: 4502735606228086, guid: a1dea7a54df964f8885227b455af7cfc, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -19587,36 +19395,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2092248214}
   m_CullTransparentMesh: 0
---- !u!1 &2102314431
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2102314432}
-  m_Layer: 0
-  m_Name: South Bridge Enemies
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2102314432
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2102314431}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1282750815}
-  - {fileID: 1471842741}
-  m_Father: {fileID: 231654249}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2104623798
 GameObject:
   m_ObjectHideFlags: 0
