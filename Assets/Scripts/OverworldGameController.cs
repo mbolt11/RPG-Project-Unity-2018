@@ -12,6 +12,7 @@ public class OverworldGameController : MonoBehaviour {
 
     //For keeping track of the tools
     private string[] treasureName = {"Hammer","Oil","Bomb"};
+    private List<string> treasuresOpened = new List<string>();
     public string[] toolsfound;
     public int numToolsFound;
 
@@ -47,10 +48,15 @@ public class OverworldGameController : MonoBehaviour {
     private bool isBoss;
     public bool bossFixed = false;
 
+    //For scene loading
     private bool sceneLoading = false;
     private int sceneNumber;
-    //reference to the main camera
+
+    //Reference to the main camera
     private GameObject userCamera;
+
+    //To save player Overworld location
+    public Vector3 playerlocation;
 
     private void Start()
     {
@@ -66,6 +72,9 @@ public class OverworldGameController : MonoBehaviour {
         else
             currentWeapon = "Wrench";
         isBoss = false;
+
+        //At the start of the game the player is at 3, 0, -3
+        playerlocation = new Vector3(3, 0, -3);
     }
 
     void Awake()
@@ -85,17 +94,23 @@ public class OverworldGameController : MonoBehaviour {
 
         //Initialize canvas gameobjects when the game starts
         InitializeGameObjects();
+    }
 
+    //This method gets called by awake function of MenuController so that it happens every time you enter the overworld
+    public void InitializeGameObjects()
+    {
+        //Initialize canvas panels/objects
+        menuPanel = GameObject.FindWithTag("Canvas").transform.GetChild(6).gameObject;
+        chestPromptPanel = GameObject.FindWithTag("Canvas").transform.GetChild(2).gameObject;
         enterKeyPrompt = chestPromptPanel.GetComponentInChildren<Text>();
         enterKeyPrompt.text = "Enter Key Prompt";
         chestPromptPanel.SetActive(false);
-    }
 
-    //Initialize menu panel and chest prompt panel
-    public void InitializeGameObjects()
-    {
-        menuPanel = GameObject.FindWithTag("Canvas").transform.GetChild(6).gameObject;
-        chestPromptPanel = GameObject.FindWithTag("Canvas").transform.GetChild(2).gameObject;
+        //Make sure that only the chests that have been opened are deactivated
+        for (int i = 0; i < treasuresOpened.Count; i++)
+        {
+            GameObject.Find(treasuresOpened[i]).SetActive(false);
+        }
 
     }
 
@@ -125,8 +140,10 @@ public class OverworldGameController : MonoBehaviour {
 
     public void openChest(int chestNum)
     {
-        //Add this tool to the toolsfound array
+        //Add this tool to the toolsfound array and add chest to treasuresOpened array
         toolsfound[numToolsFound] = treasureName[chestNum - 1];
+        string chestname = "Chest" + chestNum;
+        treasuresOpened.Add(chestname);
 
         //Make this treasure available in the menu
         menuPanel.GetComponent<MenuController>().ActivateToolInMenu(treasureName[chestNum-1],numToolsFound);
@@ -160,27 +177,22 @@ public class OverworldGameController : MonoBehaviour {
         {
             case "Wrench":
                 togglecount = wrenchToggleCount;
-                Debug.Log("Wrench: " + togglecount);
                 wrenchToggleCount++;
                 break;
             case "Hammer":
                 togglecount = hammerToggleCount;
-                Debug.Log("Hammer: " + togglecount);
                 hammerToggleCount++;
                 break;
             case "Oil":
                 togglecount = oilToggleCount;
-                Debug.Log("Oil: " + togglecount);
                 oilToggleCount++;
                 break;
             case "Bomb":
                 togglecount = bombToggleCount;
-                Debug.Log("Bomb: " + togglecount);
                 bombToggleCount++;
                 break;
             case "Big Bomb":
                 togglecount = bigBombToggleCount;
-                Debug.Log("Big Bomb: " + togglecount);
                 bigBombToggleCount++;
                 break;
         }

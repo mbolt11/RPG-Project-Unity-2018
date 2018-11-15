@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4572,7 +4572,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 494611792}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 33.53, y: 0.03, z: -3.2}
+  m_LocalPosition: {x: 3, y: 0, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1869769805}
@@ -4734,6 +4734,7 @@ MonoBehaviour:
   Bomb: {fileID: 100004, guid: a72885e93c1e4c5449d8f2a4888f2ed7, type: 2}
   Villager: {fileID: 1374705863890260, guid: 8ae454e87a2a8b64b87cd1412e07bccb, type: 2}
   bossFixed: 0
+  playerlocation: {x: 0, y: 0, z: 0}
 --- !u!4 &508728366
 Transform:
   m_ObjectHideFlags: 0

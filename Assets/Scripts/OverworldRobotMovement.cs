@@ -171,7 +171,7 @@ public class OverworldRobotMovement : MonoBehaviour
             //frames = 0;
             backItUp = true;
             exitTrigger = false;
-            Debug.Log(name + " turned around");
+            //Debug.Log(name + " turned around");
         }
     }
 

@@ -47,6 +47,9 @@ public class PlayerController : MonoBehaviour
         {
             Instance = this;
         }
+
+        //Put the player at the correct overworld location
+        transform.position = OverworldGameController.gameInfo.playerlocation;
     }
 
     private void Update()
@@ -138,6 +141,10 @@ public class PlayerController : MonoBehaviour
         //If the player collides with a Robot, go to the fixing scene
         if (other.tag == "Common Robot" || other.tag == "Outside Robot")
         {
+            //Save the player's position for when they come back
+            OverworldGameController.gameInfo.playerlocation = transform.position;
+
+            //Set the correct type of enemy when entering the fix-it
             if(other.tag == "Common Robot")
             {
                 OverworldGameController.gameInfo.setEnemyRobot("Common Robot");
