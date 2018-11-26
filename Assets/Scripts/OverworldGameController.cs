@@ -4,8 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class OverworldGameController : MonoBehaviour {
-
+public class OverworldGameController : MonoBehaviour 
+{
     //For singleton
     public static OverworldGameController gameInfo;
     private static bool created = false;
@@ -47,6 +47,7 @@ public class OverworldGameController : MonoBehaviour {
     //Boolean flags for boss robots
     private bool isBoss;
     public bool bossFixed = false;
+    public bool bombAdded = false;
 
     //For scene loading
     private bool sceneLoading = false;
@@ -127,6 +128,10 @@ public class OverworldGameController : MonoBehaviour {
     public void setBossStatus(bool isBoss)
     {
         this.isBoss = isBoss;
+        if (isBoss)
+            Debug.Log("This is a boss robot");
+        else
+            Debug.Log("Not a boss robot");
     }
 
     public bool getBossStatus()
@@ -288,6 +293,7 @@ public class OverworldGameController : MonoBehaviour {
 
         selectedTools = new List<GameObject>();
         selectedTools.Add(Wrench);
+        currentWeapon = "Wrench";
     }
 
     //returns a string of the weapon currently equipped in Fix-It

@@ -20,9 +20,10 @@ public class MenuController : MonoBehaviour
         gameObject.SetActive(false);
 
         //If coming back after beating boss robot, add Big Bomb to menu
-        if (OverworldGameController.gameInfo.bossFixed)
+        if (OverworldGameController.gameInfo.bossFixed && !OverworldGameController.gameInfo.bombAdded)
         {
-            OverworldGameController.gameInfo.bossFixed = false;
+            //OverworldGameController.gameInfo.bossFixed = false;
+            OverworldGameController.gameInfo.bombAdded = true;
 
             //Will not work for all pickups-- must remember to add each pickup to the toolsfound array
             OverworldGameController.gameInfo.toolsfound[OverworldGameController.gameInfo.numToolsFound] = "Big Bomb";
