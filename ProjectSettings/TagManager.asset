@@ -28,6 +28,7 @@ TagManager:
   - GamePieces
   - Wall
   - BossZone
+  - BBPickUp
   layers:
   - Default
   - TransparentFX

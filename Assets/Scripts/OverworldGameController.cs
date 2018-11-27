@@ -265,7 +265,8 @@ public class OverworldGameController : MonoBehaviour
         }
 
         //Update the current weapon selected when you first enter fix-it
-        currentWeapon = selectedTools[0].name;
+        if(selectedTools.Count > 0)
+            currentWeapon = selectedTools[0].name;
 
         Debug.Log("List after removal:\n");
         printSelectedTools();

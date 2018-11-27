@@ -564,7 +564,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   robotBody: {fileID: 1391852604604748}
-  BigBomb: {fileID: 100000, guid: 7665215c8eddc0a44a216110cdeced13, type: 2}
+  BBPickUp: {fileID: 100000, guid: c914b97df9bcd8942b2b67505cda9b87, type: 2}
   explosionParticles: {fileID: 198729553717381116, guid: 393e07ab90910d84983ea3a8a26e737f,
     type: 2}
   isBoss: 0

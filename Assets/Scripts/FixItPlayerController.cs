@@ -35,7 +35,7 @@ public class FixItPlayerController : MonoBehaviour
         }
 
         //For picking up the big bomb and leaving the fix it world
-        else if(other.tag=="BigBomb" && OverworldGameController.gameInfo.bossFixed)
+        else if(other.tag=="BBPickUp" && OverworldGameController.gameInfo.bossFixed)
         {
             if(!touchPickup)
             {

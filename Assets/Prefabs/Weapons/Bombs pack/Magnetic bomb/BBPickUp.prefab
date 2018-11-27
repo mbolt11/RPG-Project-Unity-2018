@@ -12,11 +12,9 @@ GameObject:
   - component: {fileID: 2300000}
   - component: {fileID: 6400000}
   - component: {fileID: 64263698566801718}
-  - component: {fileID: 114883818033030270}
-  - component: {fileID: 65901868419614458}
   m_Layer: 0
-  m_Name: BigBomb
-  m_TagString: BigBomb
+  m_Name: BBPickUp
+  m_TagString: BBPickUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -232,31 +230,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &65901868419614458
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 900, y: 100, z: 900}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114883818033030270
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ef0f327ba5276948bc1c84c6e63b79a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MaxLifeTime: 4
-  explosionParticles: {fileID: 198002687798107866}
 --- !u!198 &198002687798107866
 ParticleSystem:
   m_ObjectHideFlags: 1

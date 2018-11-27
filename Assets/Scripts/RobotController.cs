@@ -6,17 +6,20 @@ using UnityEngine.SceneManagement;
 public class RobotController : MonoBehaviour
 {
     public GameObject robotBody;
-    public GameObject BigBomb;
+    public GameObject BBPickUp;
     public ParticleSystem explosionParticles;
 
     [HideInInspector]
     public bool isBoss;
 
     private Health HealthScript;
+    private bool firstDeath;
 
     // Use this for initialization
     void Start()
     {
+        firstDeath = false;
+
         //Various setup things
         Scene currentScene = SceneManager.GetActiveScene();
 
@@ -73,8 +76,9 @@ public class RobotController : MonoBehaviour
             }
 
             //When health reaches 0, the robot is dead
-            if (HealthScript.Dead)
+            if (HealthScript.Dead && !firstDeath)
             {
+                firstDeath = true;
                 //Change robot color to green to indicate fixed
                 robotBody.transform.GetComponent<Renderer>().material.color = Color.green;
 
@@ -89,7 +93,7 @@ public class RobotController : MonoBehaviour
                 {
                     Debug.Log("Defeated a boss robot");
                     //Drop a tool here
-                    Instantiate(BigBomb, Vector3.zero, Quaternion.identity);
+                    Instantiate(BBPickUp, Vector3.zero, Quaternion.identity);
                     OverworldGameController.gameInfo.bossFixed = true;
                 }
                 else
