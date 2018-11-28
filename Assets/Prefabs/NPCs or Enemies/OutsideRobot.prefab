@@ -124,6 +124,8 @@ GameObject:
   - component: {fileID: 114533863804246530}
   - component: {fileID: 54811896247620542}
   - component: {fileID: 135261534094900878}
+  - component: {fileID: 65955200074042348}
+  - component: {fileID: 135257210716450066}
   m_Layer: 0
   m_Name: OutsideRobot
   m_TagString: Outside Robot
@@ -167,8 +169,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1860691001590296}
-  m_LocalRotation: {x: -0, y: 0.095845714, z: -0, w: 0.99539626}
-  m_LocalPosition: {x: -115.71, y: 0.5, z: 51.56}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 51, y: 0.5, z: -8.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4886075160347952}
@@ -180,7 +182,7 @@ Transform:
   - {fileID: 4973003256077734}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 11, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!4 &4345207241917188
 Transform:
   m_ObjectHideFlags: 1
@@ -252,13 +254,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1271301792351688}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: -0.31, y: 0.82, z: -1.31}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.31, y: 0.82, z: 1.42}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4330062051658292}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &23060345834923456
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -526,6 +528,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
+--- !u!65 &65955200074042348
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1860691001590296}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.968857, y: 0.9422798, z: 0.21294008}
+  m_Center: {x: -0.03559673, y: 0.4487238, z: 0.06432782}
 --- !u!114 &114533863804246530
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -568,6 +582,18 @@ MonoBehaviour:
   explosionParticles: {fileID: 198729553717381116, guid: 393e07ab90910d84983ea3a8a26e737f,
     type: 2}
   isBoss: 0
+--- !u!135 &135257210716450066
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1860691001590296}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.9976934
+  m_Center: {x: -0.0055924654, y: 0.52565336, z: 2.3962575e-17}
 --- !u!135 &135261534094900878
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -578,5 +604,5 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.3000546
-  m_Center: {x: 0, y: 0.7, z: 0}
+  m_Radius: 1.0111316
+  m_Center: {x: 0.0060167313, y: 0.5182884, z: -0.0017834902}

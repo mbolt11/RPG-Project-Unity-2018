@@ -28,6 +28,7 @@ public class RobotController : MonoBehaviour
         //If we are in the overworld
         if(currentScene.name == "Overworld")
         {
+            transform.localScale = new Vector3(1f, 1f, 1f);
             //Enable/disable appropriate scripts
             GetComponent<RobotThrowsParts>().enabled = false;
             //GetComponent<CommonRobotOverworldMovement>().enabled = true;
@@ -42,6 +43,7 @@ public class RobotController : MonoBehaviour
             //Enable/disable appropriate scripts
             GetComponent<RobotThrowsParts>().enabled = true;
             GetComponent<OverworldRobotMovement>().enabled = false;
+            transform.localScale = new Vector3(0.75f, 0.75f, 0.75f);
         }
 
         //Color robot if it's a boss
