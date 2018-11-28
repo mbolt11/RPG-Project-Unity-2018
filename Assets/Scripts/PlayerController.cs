@@ -78,9 +78,13 @@ public class PlayerController : MonoBehaviour
         //destroy chest if player opens it
         if (Input.GetKeyDown(KeyCode.Return) && chestInRange)
         {
-            OverworldGameController.gameInfo.openChest(chestNumber);
+            //Call OpenChest from overworld
+            string toolfound = OverworldGameController.gameInfo.OpenChest(chestNumber);
             Destroy(chest);
             chestInRange = false;
+
+            //Show the message
+            DialogueManager.Instance.ChestOpenedMessage(toolfound);
         }
 
         if (!villagerInRange)
@@ -97,6 +101,7 @@ public class PlayerController : MonoBehaviour
             OverworldGameController.gameInfo.EnterKeyTextDisappear();
         }
 
+        //Player running/walking
         if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
         {
             playerSpeed = playerRunSpeed;

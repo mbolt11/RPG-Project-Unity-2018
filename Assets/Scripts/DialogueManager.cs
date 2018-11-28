@@ -21,7 +21,7 @@ public class DialogueManager : MonoBehaviour
     private Text villagerName;
     private bool talking;
     private bool narrating;
-
+    private string[] narrative;
     private int dialogueIndex;
 
     //List of dialogue lines
@@ -225,12 +225,23 @@ public class DialogueManager : MonoBehaviour
     }
 
     //Methods for the narration
+
     //Initial Game Message
     public void BeginMessage()
     {
         narrating = true;
-        string[] narrative = new string[1];
+        narrative = new string[1];
         narrative[0] = "Welcome to Farmerville! This morning, you discovered that your dog, Fido, is missing. Try talking to some of your neighbors to see what is going on. Use WASD to move, Spacebar to jump, and hold Shift to run.";
+        AddNewDialogue(narrative);
+        dialoguePanel.SetActive(true);
+        nextPromptPanel.SetActive(true);
+    }
+
+    //Chest openend message
+    public void ChestOpenedMessage(string toolname)
+    {
+        narrating = true;
+        narrative[0] = "You discovered the " + toolname + "! You can activate it in the tools menu.";
         AddNewDialogue(narrative);
         dialoguePanel.SetActive(true);
         nextPromptPanel.SetActive(true);

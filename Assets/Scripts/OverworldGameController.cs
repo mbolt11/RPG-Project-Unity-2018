@@ -153,7 +153,7 @@ public class OverworldGameController : MonoBehaviour
             enemyRobot = enemyName;
     }
 
-    public void openChest(int chestNum)
+    public string OpenChest(int chestNum)
     {
         //Add this tool to the toolsfound array and add chest to treasuresOpened array
         toolsfound[numToolsFound] = treasureName[chestNum - 1];
@@ -165,6 +165,9 @@ public class OverworldGameController : MonoBehaviour
 
         //Increment the total number of tools found so far
         numToolsFound++;
+
+        //Return the name of the treasure found to use in the message
+        return treasureName[chestNum - 1];
     }
 
     public void EnterKeyTextAppear()

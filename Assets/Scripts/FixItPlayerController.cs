@@ -8,6 +8,7 @@ public class FixItPlayerController : MonoBehaviour
     public GameObject playerBody;
     public GameObject bossPanel;
     public GameObject robotPanel;
+    public GameObject playerDiedPanel;
     private bool touchPickup;
     private Health HealthScript;
 
@@ -62,6 +63,7 @@ public class FixItPlayerController : MonoBehaviour
             playerBody.transform.GetComponent<Renderer>().material.color = Color.red;
 
             //Show a message?
+            playerDiedPanel.SetActive(true);
 
             //Return to Overworld
             if (!OverworldGameController.gameInfo.isSceneLoading())
