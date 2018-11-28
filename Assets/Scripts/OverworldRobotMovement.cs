@@ -53,29 +53,28 @@ public class OverworldRobotMovement : MonoBehaviour
 
         frames++;
 
-        if (!GetComponent<RobotController>().isBoss)
+
+        if (frames <= 120)
         {
-            if (frames <= nextTurn)
-            {
-                Vector3 movement = transform.forward * Time.deltaTime * robotSpeed;
-                robotRB.MovePosition(robotRB.position + movement);
-            }
-            else if (frames > nextTurn)
-            {
-                once = true;
-                StartCoroutine(RandomWait());
-            }
-
-            //After the robot has turned and moved 5 times, its movement pattern is done
-            if (turns > 5)
-            {
-                //Call a method which creates a new robot instatiation
-                nriScript.CreateNewRobot(gameObject);
-
-                //Destory this robot
-                Destroy(gameObject);
-            }
+            Vector3 movement = transform.forward * Time.deltaTime * robotSpeed;
+            robotRB.MovePosition(robotRB.position + movement);
         }
+        else if (frames > 120)
+        {
+            once = true;
+            StartCoroutine(RandomWait());
+        }
+
+        //After the robot has turned and moved 5 times, its movement pattern is done
+        if (turns > 3)
+        {
+            //Call a method which creates a new robot instatiation
+            nriScript.CreateNewRobot(gameObject);
+
+            //Destory this robot
+            Destroy(gameObject);
+        }
+
 
         //move boss out of the spawn zone
         if(justMade && GetComponent<RobotController>().isBoss && frames <= 150)
@@ -183,8 +182,7 @@ public class OverworldRobotMovement : MonoBehaviour
 
     private IEnumerator RandomWait()
     {
-        int waittime = Random.Range(1, 4);
-        yield return new WaitForSeconds(waittime);
+        yield return new WaitForSeconds(1);
         backItUp = false;
         if (once)
         {
@@ -192,8 +190,6 @@ public class OverworldRobotMovement : MonoBehaviour
             if(this.tag == "Common Robot" && exitTrigger)
             {
                 //Turn the robot a random amount
-                float rotation = Random.Range(0f, 360f);
-                transform.Rotate(0, rotation, 0);
             }
 
 
@@ -218,7 +214,7 @@ public class OverworldRobotMovement : MonoBehaviour
 
             //Increment/update variables
             turns++;
-            nextTurn = Random.Range(120, 300);
+            //nextTurn = Random.Range(120, 300);
             frames = 0;
             once = false;
         }
