@@ -27,12 +27,10 @@ public class NewRobotInstantiation : MonoBehaviour
     {
         //Get the location/rotation of the new instantiation spot
         Vector3 location = spots[counter].transform.position;
+        Quaternion rotation = spots[counter].transform.rotation;
 
         //give specific robot its same y position according to its scale
         location.y = robot.transform.position.y;
-
-        float yrot = Random.Range(0f, 360f);
-        Quaternion rotation = Quaternion.Euler(0, yrot, 0);
 
         //Instantiate the robot in the given spot
         Instantiate(robot,location,rotation,transform);

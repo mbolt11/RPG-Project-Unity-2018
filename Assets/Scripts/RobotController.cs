@@ -50,6 +50,14 @@ public class RobotController : MonoBehaviour
         {
             robotBody.transform.GetComponent<Renderer>().material.color = new Color(.83f, .69f, .22f, 1f);
         }
+        else if (tag == "Common Robot")
+        {
+            robotBody.transform.GetComponent<Renderer>().material.color = new Color(1f, .033f, .0141f, 1f);
+        }
+        else if (tag == "Outside Robot")
+        {
+            robotBody.transform.GetComponent<Renderer>().material.color = new Color(0.318f, 0.585f, .0118f, 1f);
+        }
     }
 
     private void OnTriggerEnter(Collider other)

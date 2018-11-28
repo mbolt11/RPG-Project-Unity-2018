@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -842,6 +842,7 @@ GameObject:
   - component: {fileID: 106014406}
   - component: {fileID: 106014405}
   - component: {fileID: 106014404}
+  - component: {fileID: 106014407}
   m_Layer: 0
   m_Name: OW_WestWall 2
   m_TagString: Wall
@@ -916,6 +917,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 106014402}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &106014407
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 106014402}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.99999994, z: 1}
+  m_Center: {x: 0, y: -0.000000029802322, z: -0.00000023841858}
 --- !u!4 &110691077 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4867020522417708, guid: 8ae454e87a2a8b64b87cd1412e07bccb,
@@ -1033,6 +1046,7 @@ GameObject:
   - component: {fileID: 120064617}
   - component: {fileID: 120064616}
   - component: {fileID: 120064615}
+  - component: {fileID: 120064618}
   m_Layer: 0
   m_Name: OW_SouthWall 2
   m_TagString: Wall
@@ -1107,6 +1121,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 120064613}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &120064618
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 120064613}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.99999994, z: 0.99999994}
+  m_Center: {x: -0.00000011920929, y: -0.000000029802322, z: 0}
 --- !u!1 &120144022
 GameObject:
   m_ObjectHideFlags: 0
@@ -1375,6 +1401,7 @@ GameObject:
   - component: {fileID: 154906625}
   - component: {fileID: 154906624}
   - component: {fileID: 154906623}
+  - component: {fileID: 154906626}
   m_Layer: 0
   m_Name: OW_WestWall 2
   m_TagString: Wall
@@ -1449,6 +1476,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 154906621}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &154906626
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 154906621}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
+  m_Center: {x: 0.0000038146973, y: -0.000000029802322, z: 0}
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
@@ -2232,6 +2271,7 @@ GameObject:
   - component: {fileID: 302359079}
   - component: {fileID: 302359078}
   - component: {fileID: 302359077}
+  - component: {fileID: 302359080}
   m_Layer: 0
   m_Name: OW_EastWall
   m_TagString: Wall
@@ -2306,6 +2346,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 302359075}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &302359080
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 302359075}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.99999994, z: 1.0000001}
+  m_Center: {x: 0.0000038146973, y: -0.000000029802322, z: 0}
 --- !u!1001 &314910958
 Prefab:
   m_ObjectHideFlags: 0
@@ -3118,6 +3170,7 @@ GameObject:
   - component: {fileID: 387144242}
   - component: {fileID: 387144241}
   - component: {fileID: 387144240}
+  - component: {fileID: 387144243}
   m_Layer: 0
   m_Name: OW_NorthWall
   m_TagString: Wall
@@ -3192,6 +3245,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 387144238}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &387144243
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 387144238}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.99999994, z: 1}
+  m_Center: {x: 0, y: -0.000000029802322, z: 0}
 --- !u!1 &391382716
 GameObject:
   m_ObjectHideFlags: 0
@@ -3502,6 +3567,7 @@ GameObject:
   - component: {fileID: 443655428}
   - component: {fileID: 443655427}
   - component: {fileID: 443655426}
+  - component: {fileID: 443655429}
   m_Layer: 0
   m_Name: OW_EastWall 2
   m_TagString: Wall
@@ -3576,6 +3642,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 443655424}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &443655429
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 443655424}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.99999994, z: 1}
+  m_Center: {x: 0, y: -0.000000029802322, z: -0.00000011920929}
 --- !u!1 &448359741
 GameObject:
   m_ObjectHideFlags: 0
@@ -3849,6 +3927,7 @@ GameObject:
   - component: {fileID: 487049346}
   - component: {fileID: 487049345}
   - component: {fileID: 487049344}
+  - component: {fileID: 487049347}
   m_Layer: 0
   m_Name: OW_EastWall 2
   m_TagString: Wall
@@ -3923,6 +4002,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 487049342}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &487049347
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 487049342}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.99999994, y: 0.99999994, z: 1}
+  m_Center: {x: 0, y: -0.000000029802322, z: -0.00000017881393}
 --- !u!1 &489603661
 GameObject:
   m_ObjectHideFlags: 0
@@ -4021,6 +4112,7 @@ GameObject:
   - component: {fileID: 490339414}
   - component: {fileID: 490339413}
   - component: {fileID: 490339412}
+  - component: {fileID: 490339415}
   m_Layer: 0
   m_Name: OW_SouthWall
   m_TagString: Wall
@@ -4095,6 +4187,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 490339410}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &490339415
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 490339410}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000001, y: 0.99999994, z: 1}
+  m_Center: {x: 0, y: -0.000000029802322, z: 0}
 --- !u!1 &494611792
 GameObject:
   m_ObjectHideFlags: 0
@@ -4652,6 +4756,7 @@ GameObject:
   - component: {fileID: 525521942}
   - component: {fileID: 525521941}
   - component: {fileID: 525521940}
+  - component: {fileID: 525521943}
   m_Layer: 0
   m_Name: OW_WestWall
   m_TagString: Wall
@@ -4726,6 +4831,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 525521938}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &525521943
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 525521938}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.99999994, z: 1}
+  m_Center: {x: 0, y: -0.000000029802322, z: 0}
 --- !u!4 &535567320 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4363925106420328, guid: b0bbe1c1405fdce4b94cfc45f95ea84d,
@@ -5860,6 +5977,7 @@ GameObject:
   - component: {fileID: 635917827}
   - component: {fileID: 635917826}
   - component: {fileID: 635917825}
+  - component: {fileID: 635917828}
   m_Layer: 0
   m_Name: OW_WestWall 1
   m_TagString: Wall
@@ -5934,6 +6052,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 635917823}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &635917828
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 635917823}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.99999994, z: 1}
+  m_Center: {x: 0, y: -0.000000029802322, z: 0.00000011920929}
 --- !u!1001 &650641375
 Prefab:
   m_ObjectHideFlags: 0
@@ -6274,6 +6404,7 @@ GameObject:
   - component: {fileID: 690219986}
   - component: {fileID: 690219985}
   - component: {fileID: 690219984}
+  - component: {fileID: 690219987}
   m_Layer: 0
   m_Name: OW_NorthWall
   m_TagString: Wall
@@ -6348,6 +6479,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 690219982}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &690219987
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 690219982}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000001, y: 0.99999994, z: 1}
+  m_Center: {x: 0, y: -0.000000029802322, z: 0}
 --- !u!1 &699299749
 GameObject:
   m_ObjectHideFlags: 0
@@ -7207,6 +7350,7 @@ GameObject:
   - component: {fileID: 748643766}
   - component: {fileID: 748643765}
   - component: {fileID: 748643764}
+  - component: {fileID: 748643767}
   m_Layer: 0
   m_Name: OW_WestWall
   m_TagString: Wall
@@ -7281,6 +7425,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 748643762}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &748643767
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 748643762}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.99999994, z: 1.0000001}
+  m_Center: {x: 0, y: -0.000000029802322, z: 0.00000023841858}
 --- !u!1 &749719405
 GameObject:
   m_ObjectHideFlags: 0
@@ -7937,6 +8093,7 @@ GameObject:
   - component: {fileID: 812899913}
   - component: {fileID: 812899912}
   - component: {fileID: 812899911}
+  - component: {fileID: 812899914}
   m_Layer: 0
   m_Name: OW_SouthWall 2
   m_TagString: Wall
@@ -8011,6 +8168,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 812899909}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &812899914
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 812899909}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.99999994, z: 1}
+  m_Center: {x: -0.00000023841858, y: -0.000000029802322, z: 0}
 --- !u!1 &813344121
 GameObject:
   m_ObjectHideFlags: 0
@@ -8279,6 +8448,7 @@ GameObject:
   - component: {fileID: 841977640}
   - component: {fileID: 841977639}
   - component: {fileID: 841977638}
+  - component: {fileID: 841977641}
   m_Layer: 0
   m_Name: OW_WestWall 1
   m_TagString: Wall
@@ -8353,6 +8523,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 841977636}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &841977641
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 841977636}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
+  m_Center: {x: 0, y: -0.000000029802322, z: -0.00000011920929}
 --- !u!1 &861744394
 GameObject:
   m_ObjectHideFlags: 0
@@ -8439,6 +8621,7 @@ GameObject:
   - component: {fileID: 871907246}
   - component: {fileID: 871907245}
   - component: {fileID: 871907244}
+  - component: {fileID: 871907247}
   m_Layer: 0
   m_Name: OW_SouthWall 1
   m_TagString: Wall
@@ -8513,6 +8696,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 871907242}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &871907247
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 871907242}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.99999994, z: 1}
+  m_Center: {x: 0, y: -0.000000029802322, z: 0}
 --- !u!1 &890216484
 GameObject:
   m_ObjectHideFlags: 0
@@ -9436,6 +9631,7 @@ GameObject:
   - component: {fileID: 988082443}
   - component: {fileID: 988082442}
   - component: {fileID: 988082441}
+  - component: {fileID: 988082444}
   m_Layer: 0
   m_Name: OW_WestWall
   m_TagString: Wall
@@ -9510,6 +9706,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 988082439}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &988082444
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 988082439}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.99999994, z: 1}
+  m_Center: {x: 0, y: -0.000000029802322, z: 0}
 --- !u!1 &989275918
 GameObject:
   m_ObjectHideFlags: 0
@@ -9846,6 +10054,7 @@ GameObject:
   - component: {fileID: 1042942956}
   - component: {fileID: 1042942955}
   - component: {fileID: 1042942954}
+  - component: {fileID: 1042942957}
   m_Layer: 0
   m_Name: OW_NorthWall 2
   m_TagString: Wall
@@ -9920,6 +10129,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1042942952}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &1042942957
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1042942952}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.9999999, y: 0.99999994, z: 0.99999994}
+  m_Center: {x: 0.000000059604645, y: -0.000000029802322, z: -0.0000038146973}
 --- !u!1 &1044769927
 GameObject:
   m_ObjectHideFlags: 0
@@ -10649,6 +10870,7 @@ GameObject:
   - component: {fileID: 1135540601}
   - component: {fileID: 1135540600}
   - component: {fileID: 1135540599}
+  - component: {fileID: 1135540602}
   m_Layer: 0
   m_Name: OW_EastWall 1
   m_TagString: Wall
@@ -10723,6 +10945,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1135540597}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &1135540602
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1135540597}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.99999994, z: 1}
+  m_Center: {x: 0.000015258789, y: -0.000000029802322, z: 0}
 --- !u!1 &1155086319
 GameObject:
   m_ObjectHideFlags: 0
@@ -11907,6 +12141,7 @@ GameObject:
   - component: {fileID: 1223525451}
   - component: {fileID: 1223525450}
   - component: {fileID: 1223525449}
+  - component: {fileID: 1223525452}
   m_Layer: 0
   m_Name: OW_EastWall
   m_TagString: Wall
@@ -11981,6 +12216,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1223525447}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &1223525452
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1223525447}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.99999994, z: 1}
+  m_Center: {x: -0.000030517578, y: -0.000000029802322, z: 0}
 --- !u!1001 &1233687694
 Prefab:
   m_ObjectHideFlags: 0
@@ -12613,6 +12860,7 @@ GameObject:
   - component: {fileID: 1281694575}
   - component: {fileID: 1281694574}
   - component: {fileID: 1281694573}
+  - component: {fileID: 1281694576}
   m_Layer: 0
   m_Name: OW_NorthWall 1
   m_TagString: Wall
@@ -12687,6 +12935,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1281694571}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &1281694576
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1281694571}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
+  m_Center: {x: 0.000000059604645, y: -0.000000029802322, z: -0.0000038146973}
 --- !u!1 &1295774161
 GameObject:
   m_ObjectHideFlags: 0
@@ -13046,6 +13306,7 @@ GameObject:
   - component: {fileID: 1343034245}
   - component: {fileID: 1343034244}
   - component: {fileID: 1343034243}
+  - component: {fileID: 1343034246}
   m_Layer: 0
   m_Name: OW_NorthWall 2
   m_TagString: Wall
@@ -13120,6 +13381,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1343034241}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &1343034246
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1343034241}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000001, y: 0.99999994, z: 1}
+  m_Center: {x: 0, y: 0.000000029802322, z: 0}
 --- !u!1001 &1353392491
 Prefab:
   m_ObjectHideFlags: 0
@@ -13404,6 +13677,7 @@ GameObject:
   - component: {fileID: 1413738266}
   - component: {fileID: 1413738265}
   - component: {fileID: 1413738264}
+  - component: {fileID: 1413738267}
   m_Layer: 0
   m_Name: OW_SouthWall 1
   m_TagString: Wall
@@ -13478,6 +13752,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1413738262}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &1413738267
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1413738262}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.99999994, z: 0.99999994}
+  m_Center: {x: 0, y: -0.000000029802322, z: -0.0000038146973}
 --- !u!1 &1424836025
 GameObject:
   m_ObjectHideFlags: 0
@@ -13679,6 +13965,7 @@ GameObject:
   - component: {fileID: 1447348235}
   - component: {fileID: 1447348234}
   - component: {fileID: 1447348233}
+  - component: {fileID: 1447348236}
   m_Layer: 0
   m_Name: OW_SouthWall
   m_TagString: Wall
@@ -13753,6 +14040,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1447348231}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &1447348236
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1447348231}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.99999994, z: 1}
+  m_Center: {x: 0, y: -0.000000029802322, z: 0.000015258789}
 --- !u!1 &1449045199
 GameObject:
   m_ObjectHideFlags: 0
@@ -13764,6 +14063,7 @@ GameObject:
   - component: {fileID: 1449045203}
   - component: {fileID: 1449045202}
   - component: {fileID: 1449045201}
+  - component: {fileID: 1449045204}
   m_Layer: 0
   m_Name: OW_EastWall 1
   m_TagString: Wall
@@ -13838,6 +14138,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1449045199}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &1449045204
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1449045199}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.99999994, y: 0.99999994, z: 1}
+  m_Center: {x: 0.0000076293945, y: -0.000000029802322, z: 0.00000011920929}
 --- !u!1 &1456665413
 GameObject:
   m_ObjectHideFlags: 0
@@ -15192,6 +15504,7 @@ GameObject:
   - component: {fileID: 1618251635}
   - component: {fileID: 1618251634}
   - component: {fileID: 1618251633}
+  - component: {fileID: 1618251636}
   m_Layer: 0
   m_Name: OW_NorthWall 1
   m_TagString: Wall
@@ -15266,6 +15579,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1618251631}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &1618251636
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1618251631}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.99999994, z: 1}
+  m_Center: {x: 0, y: -0.000000029802322, z: 0}
 --- !u!1 &1632056243
 GameObject:
   m_ObjectHideFlags: 0
@@ -18118,6 +18443,7 @@ GameObject:
   - component: {fileID: 2058984451}
   - component: {fileID: 2058984450}
   - component: {fileID: 2058984449}
+  - component: {fileID: 2058984452}
   m_Layer: 0
   m_Name: OW_SouthWall
   m_TagString: Wall
@@ -18192,6 +18518,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2058984447}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &2058984452
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2058984447}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.99999994, z: 1}
+  m_Center: {x: 0, y: -0.000000029802322, z: 0}
 --- !u!1 &2066817216
 GameObject:
   m_ObjectHideFlags: 0
@@ -18502,6 +18840,7 @@ GameObject:
   - component: {fileID: 2088366342}
   - component: {fileID: 2088366341}
   - component: {fileID: 2088366340}
+  - component: {fileID: 2088366343}
   m_Layer: 0
   m_Name: OW_NorthWall
   m_TagString: Wall
@@ -18576,6 +18915,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2088366338}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &2088366343
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2088366338}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.99999994, z: 1}
+  m_Center: {x: -0.00000023841858, y: -0.000000029802322, z: 0}
 --- !u!1 &2092248214
 GameObject:
   m_ObjectHideFlags: 0
@@ -18846,6 +19197,7 @@ GameObject:
   - component: {fileID: 2123961327}
   - component: {fileID: 2123961326}
   - component: {fileID: 2123961325}
+  - component: {fileID: 2123961328}
   m_Layer: 0
   m_Name: OW_EastWall
   m_TagString: Wall
@@ -18920,6 +19272,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2123961323}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &2123961328
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2123961323}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.99999994, z: 1}
+  m_Center: {x: 0.0000038146973, y: -0.000000029802322, z: 0.00000023841858}
 --- !u!4 &2124386223 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4986571034500240, guid: ea0407333d5243043b8c6b80fc56b60d,
