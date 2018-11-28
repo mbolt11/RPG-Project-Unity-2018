@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DialogueManager : MonoBehaviour {
-
+public class DialogueManager : MonoBehaviour 
+{
     //Singleton
     public static DialogueManager Instance { get; set; }
 
@@ -20,6 +20,7 @@ public class DialogueManager : MonoBehaviour {
     private Text nextKeyPrompt;
     private Text villagerName;
     private bool talking;
+    private bool narrating;
 
     private int dialogueIndex;
 
@@ -29,6 +30,8 @@ public class DialogueManager : MonoBehaviour {
 	// Use this for initialization
 	void Awake ()
 	{
+        narrating = false;
+
         //Access the text box of the dialogue panel
         dialogueText = dialoguePanel.GetComponentInChildren<Text>();
         dialoguePanel.SetActive(false);
@@ -67,10 +70,15 @@ public class DialogueManager : MonoBehaviour {
         dialogueLines = new List<string>(lines.Length);
         dialogueLines.AddRange(lines);
 
-        talking = true;
+        if (narrating)
+            CreateNarration();
+        else
+        {
+            talking = true;
 
-        //Call method to create dialogue in UI
-        CreateDialogue();
+            //Call method to create dialogue in UI
+            CreateDialogue();
+        }
     }
 
     public void EnterKeyTextAppear()
@@ -144,6 +152,12 @@ public class DialogueManager : MonoBehaviour {
         EnterKeyTextDissapear();
     }
 
+    public void CreateNarration()
+    {
+        dialogueText.text = dialogueLines[dialogueIndex];
+        dialoguePanel.SetActive(true);
+    }
+
     //Method that advances the dialogue to the next line
     public void ContinueDialogue()
     {
@@ -160,6 +174,7 @@ public class DialogueManager : MonoBehaviour {
             dialoguePanel.SetActive(false);
             villagerNamePanel.SetActive(false);
             talking = false;
+            narrating = false;
         }
     }
 
@@ -184,13 +199,18 @@ public class DialogueManager : MonoBehaviour {
     //Check the key input to see if player wants to advance or go back in conversation
     private void Update()
     {
-        if (PreviousDialogueExist() && stillTalking())
+        if (PreviousDialogueExist() && (stillTalking() || narrating))
+        {
             PreviousKeyTextAppear();
+        }
         else
             PreviousKeyTextDissapear();
 
-        if (NextDialogueExist() && stillTalking())
-            NextKeyTextAppear();
+        if (NextDialogueExist() && (stillTalking() || narrating))
+        {
+            Debug.Log("next should appeeaaarrr");
+            NextKeyTextAppear(); 
+        }
         else
             NextKeyTextDissapear();
 
@@ -202,5 +222,17 @@ public class DialogueManager : MonoBehaviour {
         {
             PreviousDialogueLine();
         }
+    }
+
+    //Methods for the narration
+    //Initial Game Message
+    public void BeginMessage()
+    {
+        narrating = true;
+        string[] narrative = new string[1];
+        narrative[0] = "Welcome to Farmerville! This morning, you discovered that your dog, Fido, is missing. Try talking to some of your neighbors to see what is going on. Use WASD to move, Spacebar to jump, and hold Shift to run.";
+        AddNewDialogue(narrative);
+        dialoguePanel.SetActive(true);
+        nextPromptPanel.SetActive(true);
     }
 }

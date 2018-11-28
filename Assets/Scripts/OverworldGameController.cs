@@ -24,6 +24,7 @@ public class OverworldGameController : MonoBehaviour
     private GameObject chestPromptPanel;
     private GameObject menuPanel;
     private Text enterKeyPrompt;
+    private DialogueManager dialogueManager;
 
     //To access the actual tool prefabs
     public GameObject Hammer;
@@ -63,6 +64,25 @@ public class OverworldGameController : MonoBehaviour
     public string robotHitName;
     public List<string> robotsBeaten = new List<string>();
 
+    void Awake()
+    {
+        //Creates the singleton
+        if (!created)
+        {
+            gameInfo = this;
+            DontDestroyOnLoad(gameObject);
+            created = true;
+        }
+        //Destroys the extra copy when returning to Overworld
+        else if (created)
+        {
+            Destroy(gameObject);
+        }
+
+        //Initialize canvas gameobjects when the game starts
+        InitializeGameObjects();
+    }
+
     private void Start()
     {
         //At the beginning of the game, the tools menu has only wrench and it is selected
@@ -80,25 +100,10 @@ public class OverworldGameController : MonoBehaviour
 
         //At the start of the game the player is at 3, 0, -3
         playerlocation = new Vector3(3, 0, -3);
-    }
 
-    void Awake()
-    {
-        //Creates the singleton
-        if (!created)
-        {
-            gameInfo = this;
-            DontDestroyOnLoad(gameObject);
-            created = true;
-        }
-        //Destroys the extra copy when returning to Overworld
-        else if(created)
-        {
-            Destroy(gameObject);
-        }
+        //For the starting narration
+        dialogueManager.BeginMessage();
 
-        //Initialize canvas gameobjects when the game starts
-        InitializeGameObjects();
     }
 
     //This method gets called by awake function of MenuController so that it happens every time you enter the overworld
@@ -107,6 +112,7 @@ public class OverworldGameController : MonoBehaviour
         //Initialize canvas panels/objects
         menuPanel = GameObject.FindWithTag("Canvas").transform.GetChild(6).gameObject;
         chestPromptPanel = GameObject.FindWithTag("Canvas").transform.GetChild(2).gameObject;
+        dialogueManager = GameObject.FindGameObjectWithTag("DialogueManager").GetComponent<DialogueManager>();
         enterKeyPrompt = chestPromptPanel.GetComponentInChildren<Text>();
         enterKeyPrompt.text = "Enter Key Prompt";
         chestPromptPanel.SetActive(false);

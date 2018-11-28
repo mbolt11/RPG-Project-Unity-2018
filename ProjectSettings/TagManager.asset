@@ -29,6 +29,7 @@ TagManager:
   - Wall
   - BossZone
   - BBPickUp
+  - DialogueManager
   layers:
   - Default
   - TransparentFX
