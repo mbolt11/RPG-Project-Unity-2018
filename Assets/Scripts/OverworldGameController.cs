@@ -36,6 +36,7 @@ public class OverworldGameController : MonoBehaviour
     //Villager and big boss
     public GameObject Villager;
     public GameObject BigBoss;
+    public GameObject Fido;
 
     //Toggle counts for each weapon 
     private int wrenchToggleCount = 0;
@@ -104,6 +105,9 @@ public class OverworldGameController : MonoBehaviour
         //At the start of the game the player is at 3, 0, -3
         playerlocation = new Vector3(3, 0, -3);
 
+        //Disable Fido at the beginning of the game
+        Fido.SetActive(false);
+
         //For the starting narration
         dialogueManager.BeginMessage();
 
@@ -119,6 +123,10 @@ public class OverworldGameController : MonoBehaviour
         enterKeyPrompt = chestPromptPanel.GetComponentInChildren<Text>();
         enterKeyPrompt.text = "Enter Key Prompt";
         chestPromptPanel.SetActive(false);
+
+        //Initialize the Big Boss and Fido
+        BigBoss = GameObject.FindGameObjectWithTag("BigBoss");
+        Fido = GameObject.FindGameObjectWithTag("Fido");
 
         //Make sure that only the chests that have been opened are deactivated
         for (int i = 0; i < treasuresOpened.Count; i++)
@@ -403,9 +411,7 @@ public class OverworldGameController : MonoBehaviour
     //Method to wrap up game when Big Boss is defeated
     public void EndOfGame()
     {
-        //Instantiate Fido here
-
-
+        Fido.SetActive(true);
         dialogueManager.YouWonMessage();
     }
 }
