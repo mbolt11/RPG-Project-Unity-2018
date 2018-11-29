@@ -32,7 +32,10 @@ public class OverworldGameController : MonoBehaviour
     public GameObject Wrench;
     public GameObject BigBomb;
     public GameObject Bomb;
+
+    //Villager and big boss
     public GameObject Villager;
+    public GameObject BigBoss;
 
     //Toggle counts for each weapon 
     private int wrenchToggleCount = 0;
@@ -147,10 +150,7 @@ public class OverworldGameController : MonoBehaviour
 
     public void setEnemyRobot(string enemyName)
     {
-        if (enemyName == "Common Robot")
-            enemyRobot = enemyName;
-        else if (enemyName == "Outside Robot")
-            enemyRobot = enemyName;
+        enemyRobot = enemyName;
     }
 
     public string OpenChest(int chestNum)
@@ -165,6 +165,12 @@ public class OverworldGameController : MonoBehaviour
 
         //Increment the total number of tools found so far
         numToolsFound++;
+
+        //If all the tools have been found, make big boss show up
+        if(numToolsFound > 4)
+        {
+            EnableBigBoss();
+        }
 
         //Return the name of the treasure found to use in the message
         return treasureName[chestNum - 1];
@@ -389,5 +395,11 @@ public class OverworldGameController : MonoBehaviour
     {
         //Takes the name of the robot most recently hit in the overworld and adds it to the list
         robotsBeaten.Add(robotHitName);
+    }
+
+    //Method to enable the big boss which is called once all the tools have been acquired
+    public void EnableBigBoss()
+    {
+        BigBoss.SetActive(true);
     }
 }

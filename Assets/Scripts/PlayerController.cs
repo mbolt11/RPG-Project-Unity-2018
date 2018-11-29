@@ -144,7 +144,7 @@ public class PlayerController : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //If the player collides with a Robot, go to the fixing scene
-        if (other.tag == "Common Robot" || other.tag == "Outside Robot")
+        if (other.tag == "Common Robot" || other.tag == "Outside Robot" || other.tag == "BigBoss")
         {
             //Save the player's position for when they come back
             OverworldGameController.gameInfo.playerlocation = transform.position;
@@ -161,8 +161,15 @@ public class PlayerController : MonoBehaviour
             {
                 OverworldGameController.gameInfo.setEnemyRobot("Outside Robot");
             }
+            else if(other.tag == "BigBoss")
+            {
+                OverworldGameController.gameInfo.setEnemyRobot("BigBoss");
+            }
 
-            OverworldGameController.gameInfo.setBossStatus(other.gameObject.GetComponent<RobotController>().isBoss);
+            if(other.tag != "BigBoss")
+            {
+                OverworldGameController.gameInfo.setBossStatus(other.gameObject.GetComponent<RobotController>().isBoss);
+            }
 
             //Safety check that scene has not loaded already
             //is this needed??

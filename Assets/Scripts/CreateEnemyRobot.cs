@@ -7,6 +7,7 @@ public class CreateEnemyRobot : MonoBehaviour {
     private OverworldGameController gameInfo;
     public Rigidbody CommonRobot;
     public Rigidbody OutsideRobot;
+    public Rigidbody BigBoss;
     private Vector3 start = new Vector3(0,-1f);
     private Quaternion target = Quaternion.Euler(0,0,0);
     private string enemyID;
@@ -34,6 +35,11 @@ public class CreateEnemyRobot : MonoBehaviour {
         else if(enemyID == OutsideRobot.tag)
         {
             robotInstance = Instantiate(OutsideRobot, start, target) as Rigidbody;
+            robotInstance.transform.parent = GameObject.Find("Fix-It Robot").transform;
+        }
+        else if(enemyID == BigBoss.tag)
+        {
+            robotInstance = Instantiate(BigBoss, start, target) as Rigidbody;
             robotInstance.transform.parent = GameObject.Find("Fix-It Robot").transform;
         }
         

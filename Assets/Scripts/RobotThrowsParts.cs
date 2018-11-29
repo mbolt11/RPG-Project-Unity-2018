@@ -8,14 +8,22 @@ public class RobotThrowsParts : MonoBehaviour
     public Rigidbody cog;
     public Transform weaponSpawn;
     public float velocity;
-    public int secondsBetweenThrow;
+    private float secondsBetweenThrow;
 
-    private int framestoThrow;
+    private float framestoThrow;
     private int frames;
 
     // Use this for initialization
     void Start()
     {
+        if(tag == "BigBoss")
+        {
+            secondsBetweenThrow = 0.5f;
+        }
+        else
+        {
+            secondsBetweenThrow = 2f;
+        }
         framestoThrow = 60 * secondsBetweenThrow;
         frames = 0;
     }

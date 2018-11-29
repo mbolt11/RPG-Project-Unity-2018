@@ -208,7 +208,6 @@ public class DialogueManager : MonoBehaviour
 
         if (NextDialogueExist() && (stillTalking() || narrating))
         {
-            Debug.Log("next should appeeaaarrr");
             NextKeyTextAppear(); 
         }
         else

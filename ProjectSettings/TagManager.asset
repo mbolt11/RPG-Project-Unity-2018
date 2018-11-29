@@ -30,6 +30,7 @@ TagManager:
   - BossZone
   - BBPickUp
   - DialogueManager
+  - BigBoss
   layers:
   - Default
   - TransparentFX

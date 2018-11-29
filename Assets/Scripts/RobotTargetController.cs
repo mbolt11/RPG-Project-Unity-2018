@@ -21,7 +21,7 @@ public class RobotTargetController : MonoBehaviour {
             enemyID = "Common Robot";
         }
 
-        if(enemyID == "Common Robot")
+        if(enemyID == "Common Robot" || enemyID == "BigBoss")
         {
             GetComponent<FixItCommonRobotMovement>().enabled = true;
             GetComponent<FixItOutsideRobotMovement>().enabled = false;

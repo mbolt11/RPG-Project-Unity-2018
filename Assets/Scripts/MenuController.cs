@@ -28,6 +28,12 @@ public class MenuController : MonoBehaviour
             //Will not work for all pickups-- must remember to add each pickup to the toolsfound array
             OverworldGameController.gameInfo.toolsfound[OverworldGameController.gameInfo.numToolsFound] = "Big Bomb";
             OverworldGameController.gameInfo.numToolsFound++;
+
+            //If all the tools have been found, make big boss show up
+            if (OverworldGameController.gameInfo.numToolsFound > 4)
+            {
+                OverworldGameController.gameInfo.EnableBigBoss();
+            }
         }
 
         //When the Overworld loads, initialize the menu panel with the amount of tools that have be acquired so far
