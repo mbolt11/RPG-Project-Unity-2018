@@ -10,7 +10,7 @@ public class NewRobotInstantiation : MonoBehaviour
     private int counter;
 
     // Use this for initialization
-    void Start ()
+    void Awake ()
     {
         counter = 0;
 

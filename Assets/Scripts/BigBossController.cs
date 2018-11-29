@@ -26,7 +26,7 @@ public class BigBossController : MonoBehaviour
         else
         {
             transform.localScale = new Vector3(1, 1, 1);
-            transform.Rotate(0, 180, 0);
+            //transform.Rotate(0, 180, 0);
             //transform.position = new Vector3(transform.position.x, -.75f, transform.position.z);
         }
 
@@ -61,6 +61,7 @@ public class BigBossController : MonoBehaviour
 
                 //Add this robot to the list of robots that have been defeated
                 OverworldGameController.gameInfo.RobotDefeated();
+                OverworldGameController.gameInfo.gameOver = true;
 
                 if (!OverworldGameController.gameInfo.isSceneLoading())
                 {

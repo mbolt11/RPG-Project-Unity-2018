@@ -9,7 +9,7 @@ public class CreateEnemyRobot : MonoBehaviour {
     public Rigidbody OutsideRobot;
     public Rigidbody BigBoss;
     private Vector3 start = new Vector3(0,-1f);
-    private Quaternion target = Quaternion.Euler(0,0,0);
+    private Quaternion target = Quaternion.Euler(0,180,0);
     private string enemyID;
 
 	// Use this for initialization
@@ -43,7 +43,7 @@ public class CreateEnemyRobot : MonoBehaviour {
             robotInstance.transform.parent = GameObject.Find("Fix-It Robot").transform;
         }
         
-        if(gameInfo.getBossStatus())
+        if(gameInfo.getBossStatus() && enemyID != BigBoss.tag)
         {
             robotInstance.GetComponentInChildren<Renderer>().material.color = new Color(.83f, .69f, .22f, 1f);
         }

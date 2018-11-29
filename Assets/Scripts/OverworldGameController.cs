@@ -70,6 +70,8 @@ public class OverworldGameController : MonoBehaviour
     public string robotHitName;
     public List<string> robotsBeaten = new List<string>();
 
+    private bool endOnce = false;
+
     void Awake()
     {
         //Creates the singleton
@@ -364,21 +366,43 @@ public class OverworldGameController : MonoBehaviour
 
     public void changeScene()
     {
-        sceneIsLoading();
-        findPlayerCamera();
-
-        //Debug.Log("Before switch" + sceneNumber);
-        sceneNumber++;
-
-        if (sceneNumber > 1)
+        if(gameOver && !endOnce)
         {
-            sceneNumber = 0;
-        }
-        //Debug.Log("after switch" + sceneNumber);
+            sceneIsLoading();
+            findPlayerCamera();
 
-        //Debug.Log("camera " + userCamera);
-        userCamera.GetComponent<TransitionScript>().StartTransition();
-        StartCoroutine(WaitFor());
+            //Debug.Log("Before switch" + sceneNumber);
+            sceneNumber++;
+
+            if (sceneNumber > 1)
+            {
+                sceneNumber = 0;
+            }
+            //Debug.Log("after switch" + sceneNumber);
+
+            //Debug.Log("camera " + userCamera);
+            userCamera.GetComponent<TransitionScript>().StartTransition();
+            endOnce = true;
+            StartCoroutine(WaitFor());
+        }
+        else if(!gameOver)
+        {
+            sceneIsLoading();
+            findPlayerCamera();
+
+            //Debug.Log("Before switch" + sceneNumber);
+            sceneNumber++;
+
+            if (sceneNumber > 1)
+            {
+                sceneNumber = 0;
+            }
+            //Debug.Log("after switch" + sceneNumber);
+
+            //Debug.Log("camera " + userCamera);
+            userCamera.GetComponent<TransitionScript>().StartTransition();
+            StartCoroutine(WaitFor());
+        }
     }
 
     IEnumerator WaitFor()
