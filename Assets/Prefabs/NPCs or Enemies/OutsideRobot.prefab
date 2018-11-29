@@ -524,7 +524,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
@@ -565,7 +565,6 @@ MonoBehaviour:
   cog: {fileID: 54938243439689160, guid: 74ec0c569f1dd2744923b5ac0a7f687f, type: 2}
   weaponSpawn: {fileID: 4973003256077734}
   velocity: 20
-  secondsBetweenThrow: 2
 --- !u!114 &114837369640329500
 MonoBehaviour:
   m_ObjectHideFlags: 1
