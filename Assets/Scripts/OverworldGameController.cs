@@ -38,6 +38,7 @@ public class OverworldGameController : MonoBehaviour
     public GameObject BigBoss;
     public GameObject Fido;
     public bool bossAlive = false;
+    public bool gameOver = false;
 
     //Toggle counts for each weapon 
     private int wrenchToggleCount = 0;

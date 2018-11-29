@@ -49,6 +49,12 @@ public class MenuController : MonoBehaviour
         //Set/Reset the toggle counts and selectedTools list to correspond with the initialized menu
         OverworldGameController.gameInfo.initializeSelectedTools();
 
+        //If you are coming back after beating the boss
+        if(OverworldGameController.gameInfo.gameOver)
+        {
+            OverworldGameController.gameInfo.EndOfGame();
+        }
+
     }
 
     //Add to menu on initialization/when new tool is acquired

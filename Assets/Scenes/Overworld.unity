@@ -5175,7 +5175,7 @@ GameObject:
   - component: {fileID: 565153356}
   m_Layer: 0
   m_Name: OW_EastWall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5491,6 +5491,10 @@ Prefab:
     - target: {fileID: 1497239384764936, guid: a1dea7a54df964f8885227b455af7cfc, type: 2}
       propertyPath: m_Name
       value: CommonRobot5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1497239384764936, guid: a1dea7a54df964f8885227b455af7cfc, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1dea7a54df964f8885227b455af7cfc, type: 2}
@@ -11424,6 +11428,10 @@ Prefab:
       propertyPath: m_Name
       value: CommonRobot1
       objectReference: {fileID: 0}
+    - target: {fileID: 1497239384764936, guid: a1dea7a54df964f8885227b455af7cfc, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1dea7a54df964f8885227b455af7cfc, type: 2}
   m_IsPrefabAsset: 0
@@ -11948,6 +11956,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4330062051658292, guid: c5c51e74adc60e04cb226a2395a578e9, type: 2}
       propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1860691001590296, guid: c5c51e74adc60e04cb226a2395a578e9, type: 2}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -12826,7 +12838,7 @@ GameObject:
   - component: {fileID: 1260196442}
   m_Layer: 0
   m_Name: OW_WestWall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13979,6 +13991,10 @@ Prefab:
     - target: {fileID: 4330062051658292, guid: c5c51e74adc60e04cb226a2395a578e9, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1860691001590296, guid: c5c51e74adc60e04cb226a2395a578e9, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5c51e74adc60e04cb226a2395a578e9, type: 2}
@@ -15889,6 +15905,10 @@ Prefab:
       propertyPath: m_Name
       value: OutsideRobot4
       objectReference: {fileID: 0}
+    - target: {fileID: 1860691001590296, guid: c5c51e74adc60e04cb226a2395a578e9, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5c51e74adc60e04cb226a2395a578e9, type: 2}
   m_IsPrefabAsset: 0
@@ -16382,6 +16402,10 @@ Prefab:
     - target: {fileID: 1497239384764936, guid: a1dea7a54df964f8885227b455af7cfc, type: 2}
       propertyPath: m_Name
       value: CommonRobot3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1497239384764936, guid: a1dea7a54df964f8885227b455af7cfc, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1dea7a54df964f8885227b455af7cfc, type: 2}
@@ -18925,6 +18949,10 @@ Prefab:
     - target: {fileID: 4502735606228086, guid: a1dea7a54df964f8885227b455af7cfc, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 1497239384764936, guid: a1dea7a54df964f8885227b455af7cfc, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1dea7a54df964f8885227b455af7cfc, type: 2}

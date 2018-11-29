@@ -84,7 +84,10 @@ public class PlayerController : MonoBehaviour
             chestInRange = false;
 
             //Show the message
-            DialogueManager.Instance.ChestOpenedMessage(toolfound);
+            if(OverworldGameController.gameInfo.numToolsFound <= 4)
+            {
+                DialogueManager.Instance.ChestOpenedMessage(toolfound);
+            }
         }
 
         if (!villagerInRange)

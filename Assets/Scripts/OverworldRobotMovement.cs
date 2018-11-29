@@ -10,8 +10,6 @@ public class OverworldRobotMovement : MonoBehaviour
     private int frames;
     private int turns;
     private bool once;
-    private bool backItUp;
-    private bool exitTrigger;
 
     private GameObject newRobotsGameobject;
     private NewRobotInstantiation nriScript;
@@ -32,9 +30,6 @@ public class OverworldRobotMovement : MonoBehaviour
         {
             transform.Rotate(0, 90, 0);
         }
-
-        backItUp = false;
-        exitTrigger = true;
     }
 	
 	// Update is called once per frame
@@ -72,28 +67,20 @@ public class OverworldRobotMovement : MonoBehaviour
         {
             StartCoroutine(waitForScene());
         }
-        else if(!other.CompareTag("BossZone") && !backItUp)
+        else if (other.tag == "Wall")
         {
-            transform.Rotate(0, 180f, 0);
-            backItUp = true;
-            exitTrigger = false;
+            transform.Rotate(0, 180, 0);
+            Debug.Log("Rotated 180");
         }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.tag == "Wall")
-            exitTrigger = true;
     }
 
     private IEnumerator Wait()
     {
         yield return new WaitForSeconds(1);
-        backItUp = false;
         if (once)
         {
             //Movement pattern for common robot
-            if(this.tag == "Common Robot" && exitTrigger)
+            if(this.tag == "Common Robot")
             {
                 if(turns % 2 == 0)
                 {
@@ -112,14 +99,12 @@ public class OverworldRobotMovement : MonoBehaviour
                 //Speed up or slow down the robot every other time they turn around
                 if (turns % 2 == 0)
                 {
-                    if(exitTrigger)
-                        transform.Rotate(0, 180, 0);
+                    transform.Rotate(0, 180, 0);
                     robotSpeed *= 4;
                 }
                 else
                 {
-                    if(exitTrigger)
-                        transform.Rotate(0, 180, 0);
+                    transform.Rotate(0, 180, 0);
                     robotSpeed /= 4;
                 }
             }

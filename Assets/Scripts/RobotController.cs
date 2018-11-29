@@ -111,6 +111,11 @@ public class RobotController : MonoBehaviour
                 }
                 else
                 {
+                    //If you just defeated, indicate to do end of game stuff when back in overworld
+                    if(tag == "BigBoss")
+                    {
+                        OverworldGameController.gameInfo.gameOver = true;
+                    }
                     if (!OverworldGameController.gameInfo.isSceneLoading())
                     {
                         GameObject.FindGameObjectWithTag("GamePieces").transform.GetChild(0).gameObject.GetComponent<FixItPlayerController>().setRobotPanel(true);
