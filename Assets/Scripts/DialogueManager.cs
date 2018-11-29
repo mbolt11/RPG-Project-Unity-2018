@@ -30,7 +30,9 @@ public class DialogueManager : MonoBehaviour
 	// Use this for initialization
 	void Awake ()
 	{
+        //For narration
         narrating = false;
+        narrative = new string[2];
 
         //Access the text box of the dialogue panel
         dialogueText = dialoguePanel.GetComponentInChildren<Text>();
@@ -229,8 +231,8 @@ public class DialogueManager : MonoBehaviour
     public void BeginMessage()
     {
         narrating = true;
-        narrative = new string[1];
-        narrative[0] = "Welcome to Farmerville! This morning, you discovered that your dog, Fido, is missing. Try talking to some of your neighbors to see what is going on. Use WASD to move, Spacebar to jump, and hold Shift to run.";
+        narrative[0] = "Welcome to Farmerville! This morning, you discovered that your dog, Fido, is missing.";
+        narrative[1] = "Try talking to some of your neighbors to see what is going on. Use WASD to move, Spacebar to jump, and hold Shift to run.";
         AddNewDialogue(narrative);
         dialoguePanel.SetActive(true);
         nextPromptPanel.SetActive(true);
@@ -240,7 +242,30 @@ public class DialogueManager : MonoBehaviour
     public void ChestOpenedMessage(string toolname)
     {
         narrating = true;
-        narrative[0] = "You discovered the " + toolname + "! You can activate it in the tools menu.";
+        narrative[0] = "You discovered the " + toolname + "!";
+        narrative[1] = "You can activate it in the tools menu.";
+        AddNewDialogue(narrative);
+        dialoguePanel.SetActive(true);
+        nextPromptPanel.SetActive(true);
+    }
+
+    //Big boss enabled message
+    public void BigBossEnabledMessage()
+    {
+        narrating = true;
+        narrative[0] = "You have found all 5 tools!";
+        narrative[1] = "Now you are ready to fix the big purple boss robot.";
+        AddNewDialogue(narrative);
+        dialoguePanel.SetActive(true);
+        nextPromptPanel.SetActive(true);
+    }
+
+    //Won the game message
+    public void YouWonMessage()
+    {
+        narrating = true;
+        narrative[0] = "You defeated the boss robot! And look, there's Fido!";
+        narrative[1] = "Congratulations, you won!";
         AddNewDialogue(narrative);
         dialoguePanel.SetActive(true);
         nextPromptPanel.SetActive(true);

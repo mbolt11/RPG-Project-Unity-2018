@@ -137,10 +137,6 @@ public class OverworldGameController : MonoBehaviour
     public void setBossStatus(bool isBoss)
     {
         this.isBoss = isBoss;
-        if (isBoss)
-            Debug.Log("This is a boss robot");
-        else
-            Debug.Log("Not a boss robot");
     }
 
     public bool getBossStatus()
@@ -401,5 +397,15 @@ public class OverworldGameController : MonoBehaviour
     public void EnableBigBoss()
     {
         BigBoss.SetActive(true);
+        dialogueManager.BigBossEnabledMessage();
+    }
+
+    //Method to wrap up game when Big Boss is defeated
+    public void EndOfGame()
+    {
+        //Instantiate Fido here
+
+
+        dialogueManager.YouWonMessage();
     }
 }
