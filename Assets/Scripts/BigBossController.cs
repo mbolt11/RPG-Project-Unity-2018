@@ -8,9 +8,6 @@ public class BigBossController : MonoBehaviour
     public GameObject robotBody;
     public ParticleSystem explosionParticles;
 
-    [HideInInspector]
-    public bool isBoss;
-
     private Health HealthScript;
     private bool firstDeath;
 
@@ -20,7 +17,10 @@ public class BigBossController : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == "Overworld")
         {
-            gameObject.SetActive(false);
+            if (OverworldGameController.gameInfo.bossAlive)
+                gameObject.SetActive(true);
+            else
+                gameObject.SetActive(false);
             GetComponent<RobotThrowsParts>().enabled = false;
         }
         else
