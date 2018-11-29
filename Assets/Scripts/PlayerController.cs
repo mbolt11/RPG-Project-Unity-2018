@@ -147,7 +147,7 @@ public class PlayerController : MonoBehaviour
         if (other.tag == "Common Robot" || other.tag == "Outside Robot" || other.tag == "BigBoss")
         {
             //Save the player's position for when they come back
-            OverworldGameController.gameInfo.playerlocation = transform.position;
+            OverworldGameController.gameInfo.playerlocation = new Vector3(transform.position.x - .5f, transform.position.y, transform.position.z);
 
             //Save this robot's name
             OverworldGameController.gameInfo.robotHitName = other.name;

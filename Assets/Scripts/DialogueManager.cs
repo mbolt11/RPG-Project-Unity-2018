@@ -231,7 +231,7 @@ public class DialogueManager : MonoBehaviour
     public void BeginMessage()
     {
         narrating = true;
-        narrative[0] = "Welcome to Farmerville! This morning, you discovered that your dog, Fido, is missing.";
+        narrative[0] = "Welcome to Botville! This morning, you discovered that your dog, Fido, is missing.";
         narrative[1] = "Try talking to some of your neighbors to see what is going on. Use WASD to move, Spacebar to jump, and hold Shift to run.";
         AddNewDialogue(narrative);
         dialoguePanel.SetActive(true);

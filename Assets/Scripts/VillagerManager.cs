@@ -7,13 +7,13 @@ using Random = UnityEngine.Random;
 public class VillagerManager : MonoBehaviour 
 {
     //Arrays that hold the different things that the villagers say
-    private string[] message1 = { "Have you seen anything strange going on? I thought I saw a robot over there."};
-    private string[] message2 = { "I heard that the robotics lab shut down recently...", "Do you think anything could have gone wrong?" };
-    private string[] message3 = { "Watch out!", "Those robots are dangerous!", "They seem to be broken- one threw a screw at me!" };
-    private string[] message4 = { "Someone needs to do something about these robots.", "I thought I saw one stealing a dog."};
-    private string[] message5 = { "If you find some tools, you can use them to fix these malfunctioning robots.", "Each town around here has a specific tool", "The tools are stored in treasure chests-- let me know if you find one!" };
-    private string[] message6 = { "What? There is a robot apacolypse?", "I didn't notice." };
-    private string[] message7 = { "If you run into a robot, you have to fix it!", "I think the boss robot has your dog." };
+    private string[] message1 = { "Have you seen anything strange going on? I thought I saw a robot over there.", "I heard that the robotics lab shut down recently...", "Do you think anything could have gone wrong?"};
+    private string[] message2 = { "Watch out!", "Those robots are dangerous!", "They seem to be broken- one threw a screw at me!" };
+    private string[] message3 = { "You have a wrench in your toolkit, right?", "Maybe you can use that to fix the robots", "If you run into a robot, you can fix it.", "But be careful- they throw parts!" };
+    private string[] message4 = { "Someone needs to do something about these robots.", "I thought I saw one stealing a dog.", "This robot was bigger than the rest, and purple."};
+    private string[] message5 = { "If you find some more tools, you can use them to fix these malfunctioning robots.", "Each town around here has a specific tool", "The tools are stored in treasure chests-- let me know if you find one!" };
+    private string[] message6 = { "To eradicate this problem, someone needs to defeat the Big Purple Boss robot.", "But I wouldn't attempt that until you have collected all the tools." };
+    private string[] message7 = { "I hope you find your dog!" };
 
     private int messagecount = 1;
 
