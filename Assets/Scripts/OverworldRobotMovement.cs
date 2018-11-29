@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class OverworldRobotMovement : MonoBehaviour 
 {
-    private float robotSpeed = 2;
+    private float robotSpeed = 3;
     private Rigidbody robotRB;
     private Transform robotTran;
     private int frames;

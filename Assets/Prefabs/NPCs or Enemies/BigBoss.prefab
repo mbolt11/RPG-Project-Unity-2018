@@ -429,3 +429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d0320fc09d784833bbdd93aebc646b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robotBody: {fileID: 1775774132131334}
+  explosionParticles: {fileID: 198729553717381116, guid: 393e07ab90910d84983ea3a8a26e737f,
+    type: 2}
+  isBoss: 0

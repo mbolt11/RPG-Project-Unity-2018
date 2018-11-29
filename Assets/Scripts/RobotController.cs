@@ -16,14 +16,12 @@ public class RobotController : MonoBehaviour
     private bool firstDeath;
 
     // Use this for initialization
-    void Start()
+    void Awake()
     {
         firstDeath = false;
 
         //Various setup things
         Scene currentScene = SceneManager.GetActiveScene();
-
-        HealthScript = GetComponentInParent<Health>();
 
         //If we are in the overworld
         if(currentScene.name == "Overworld")
@@ -48,11 +46,7 @@ public class RobotController : MonoBehaviour
 
         //Color robot if it's a boss
         //Health or movement should be different in the future
-        if (isBoss)
-        {
-            robotBody.transform.GetComponent<Renderer>().material.color = new Color(.83f, .69f, .22f, 1f);
-        }
-        else if (tag == "Common Robot")
+        if (tag == "Common Robot")
         {
             robotBody.transform.GetComponent<Renderer>().material.color = new Color(1f, .033f, .0141f, 1f);
         }
@@ -60,6 +54,16 @@ public class RobotController : MonoBehaviour
         {
             robotBody.transform.GetComponent<Renderer>().material.color = new Color(0.318f, 0.585f, .0118f, 1f);
         }
+        if (isBoss)
+        {
+            Debug.Log("Should be yellow");
+            robotBody.transform.GetComponent<Renderer>().material.color = new Color(.83f, .69f, .22f, 1f);
+        }
+    }
+
+    private void Start()
+    {
+        HealthScript = GetComponentInParent<Health>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -101,7 +105,6 @@ public class RobotController : MonoBehaviour
                 //Check if boss
                 if (OverworldGameController.gameInfo.getBossStatus() && !OverworldGameController.gameInfo.bossFixed)
                 {
-                    Debug.Log("Defeated a boss robot");
                     //Drop a tool here
                     Instantiate(BBPickUp, Vector3.zero, Quaternion.identity);
                     OverworldGameController.gameInfo.bossFixed = true;
