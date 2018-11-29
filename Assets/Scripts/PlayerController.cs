@@ -119,7 +119,7 @@ public class PlayerController : MonoBehaviour
         MovePlayer();
         
         //jump if space is pressed down
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space) && Mathf.Abs(rb.position.y) < 0.1f)
         {
             rb.AddForce(0, 25f, 0, ForceMode.Impulse);
         }
