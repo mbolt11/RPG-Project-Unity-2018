@@ -37,6 +37,7 @@ public class OverworldGameController : MonoBehaviour
     public GameObject Villager;
     public GameObject BigBoss;
     public GameObject Fido;
+    private bool bossAlive = false;
 
     //Toggle counts for each weapon 
     private int wrenchToggleCount = 0;
@@ -127,6 +128,13 @@ public class OverworldGameController : MonoBehaviour
         //Initialize the Big Boss and Fido
         BigBoss = GameObject.FindGameObjectWithTag("BigBoss");
         Fido = GameObject.FindGameObjectWithTag("Fido");
+
+        //For returning to overworld if big boss has been enabled already
+        if(bossAlive)
+        {
+            BigBoss.SetActive(true);
+            Fido.SetActive(true);
+        }
 
         //Make sure that only the chests that have been opened are deactivated
         for (int i = 0; i < treasuresOpened.Count; i++)
@@ -406,12 +414,13 @@ public class OverworldGameController : MonoBehaviour
     {
         BigBoss.SetActive(true);
         dialogueManager.BigBossEnabledMessage();
+        bossAlive = true;
     }
 
     //Method to wrap up game when Big Boss is defeated
     public void EndOfGame()
     {
-        Fido.SetActive(true);
+        //Fido.SetActive(true);
         dialogueManager.YouWonMessage();
     }
 }
