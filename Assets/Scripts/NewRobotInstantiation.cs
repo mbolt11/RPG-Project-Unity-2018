@@ -8,20 +8,32 @@ public class NewRobotInstantiation : MonoBehaviour
     public GameObject[] spots;
 
     private int counter;
+    private bool firstAwake = true;
 
     // Use this for initialization
     void Awake ()
     {
-        counter = 0;
-
-        //Disable the robots that have been beaten
-        for (int i = 0; i < OverworldGameController.gameInfo.robotsBeaten.Count; i++)
+        if (OverworldGameController.gameInfo != null)
         {
-            string todeactivate = OverworldGameController.gameInfo.robotsBeaten[i];
-            Destroy(GameObject.Find(todeactivate));
+            counter = 0;
+
+            //Disable the robots that have been beaten
+            for (int i = 0; i < OverworldGameController.gameInfo.robotsBeaten.Count; i++)
+            {
+                string todeactivate = OverworldGameController.gameInfo.robotsBeaten[i];
+                Destroy(GameObject.Find(todeactivate));
+            }
+
+            firstAwake = false;
         }
 	}
-	
+
+    public void Update()
+    {
+        if (firstAwake)
+            Awake();
+    }
+
     //Method to be called by OverworldRobotMovement script when a robot is destroyed
     public void CreateNewRobot(GameObject robot)
     {

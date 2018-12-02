@@ -10,7 +10,7 @@ public class NoRadiusObliteration : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
     {
-        Debug.Log(gameObject.name);
+        //Debug.Log(gameObject.name);
         Destroy(gameObject, MaxLifeTime);
 	}
 

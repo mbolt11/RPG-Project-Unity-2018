@@ -70,7 +70,7 @@ public class OverworldRobotMovement : MonoBehaviour
         else if (other.tag == "Wall")
         {
             transform.Rotate(0, 180, 0);
-            Debug.Log("Rotated 180");
+            //Debug.Log("Rotated 180");
         }
     }
 

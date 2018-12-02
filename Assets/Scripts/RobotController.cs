@@ -56,7 +56,7 @@ public class RobotController : MonoBehaviour
         }
         if (isBoss)
         {
-            Debug.Log("Should be yellow");
+            //Debug.Log("Should be yellow");
             robotBody.transform.GetComponent<Renderer>().material.color = new Color(.83f, .69f, .22f, 1f);
         }
     }
@@ -74,7 +74,9 @@ public class RobotController : MonoBehaviour
             //If this is a bomb or wrench, play the explosion and destroy it
             if (other.tag == "Bomb" || other.tag == "BigBomb" || other.tag == "Wrench") 
             {
-                explosionParticles.Play();
+                Debug.Log("Explosion should play");
+                if(!explosionParticles.isPlaying)
+                    explosionParticles.Play();
                 Destroy(other.gameObject);
             }
 

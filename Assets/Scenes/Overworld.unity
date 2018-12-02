@@ -4230,7 +4230,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerSpeed: 7
   playerWalkSpeed: 5
-  playerRunSpeed: 10
+  playerRunSpeed: 20
   playerTurnSpeed: 200
   userCamera: {fileID: 678251538}
   villager: {fileID: 1374705863890260, guid: 8ae454e87a2a8b64b87cd1412e07bccb, type: 2}
