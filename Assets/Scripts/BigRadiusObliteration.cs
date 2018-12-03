@@ -6,7 +6,9 @@ using UnityEngine;
 public class BigRadiusObliteration : MonoBehaviour
 {
 
-    public float MaxLifeTime;
+    public float BigBombLifetime;
+    public float BombLifetime;
+    private float lifetime;
     public ParticleSystem explosionParticles;
 
     // Use this for initialization
@@ -14,37 +16,25 @@ public class BigRadiusObliteration : MonoBehaviour
     {
         Debug.Log(gameObject.name);
         GetComponent<BoxCollider>().enabled = false;
+
+        if (tag == "BigBomb")
+        {
+            lifetime = BigBombLifetime;
+        }
+        else if (tag == "Bomb")
+        {
+            lifetime = BombLifetime;
+        }
+
         StartCoroutine(Explosion());
     }
-
-    /* I am trying a different method than this. The bomb will "explode" after a certain amount of time
-
-    //first thing the normal collider touches causes a blast
-    private void OnTriggerEnter(Collider other)
-    {
-        //robot or player could get hit
-        if(other.tag == "Player")
-        {
-            //player health reduced by 50 for big bomb
-            //30 for bomb
-
-        }
-        else if(other.tag == "Robot")
-        {
-            //robot health reduced by 50 for big bomb 
-            //30 for bomb
-        }
-
-        //Destroy.
-    }
-    */
 
     //This is a good idea for the big bomb for future reference
     //After a certain amount of time, bomb will explode
     private IEnumerator Explosion()
     {
         //Wait a certain amount of time before the bomb explodes
-        yield return new WaitForSeconds(MaxLifeTime);
+        yield return new WaitForSeconds(lifetime);
 
         //Enable the collider for the explosion zone
         GetComponent<BoxCollider>().enabled = true;

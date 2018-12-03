@@ -69,57 +69,139 @@ public class RobotController : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //When the robot gets hit by a tool/weapon
-        if (other.tag == "Wrench" || other.tag == "Hammer" || other.tag == "Oil Spill" || other.tag == "Bomb" || other.tag == "BigBomb")
+        if (other.tag == "Wrench")
         {
-            //If this is a bomb or wrench, play the explosion and destroy it
-            if (other.tag == "Bomb" || other.tag == "BigBomb" || other.tag == "Wrench") 
-            {
-                Debug.Log("Explosion should play");
-                if(!explosionParticles.isPlaying)
-                    explosionParticles.Play();
-                Destroy(other.gameObject);
-            }
+            //Play the explosion and destroy weapon
+            Debug.Log("Explosion should play");
+            if (!explosionParticles.isPlaying)
+                explosionParticles.Play();
+            Destroy(other.gameObject);
 
-            //Reduce health of robot.. can update this to be different for different kinds of weapons in the future
-            //Boss is harder to beat than other robots
             if (OverworldGameController.gameInfo.getBossStatus())
             {
                 HealthScript.TakeDamage(5);
             }
             else
             {
+                HealthScript.TakeDamage(8);
+            }
+
+            //Check if the robot's health is at 0 = dead
+            if (HealthScript.Dead && !firstDeath)
+            {
+                IsDead();
+            }
+        }
+        else if(other.tag == "Hammer")
+        {
+            //Boss takes less damage than other robots
+            if (OverworldGameController.gameInfo.getBossStatus())
+            {
+                HealthScript.TakeDamage(5);
+            }
+            else
+            {
+                HealthScript.TakeDamage(8);
+            }
+
+            //Check if the robot's health is at 0 = dead
+            if (HealthScript.Dead && !firstDeath)
+            {
+                IsDead();
+            }
+        }
+        else if(other.tag == "Oil Spill")
+        {
+            //Boss takes less damage than other robots
+            if (OverworldGameController.gameInfo.getBossStatus())
+            {
+                HealthScript.TakeDamage(8);
+            }
+            else
+            {
                 HealthScript.TakeDamage(10);
             }
 
-            //When health reaches 0, the robot is dead
+            //Check if the robot's health is at 0 = dead
             if (HealthScript.Dead && !firstDeath)
             {
-                firstDeath = true;
-                //Change robot color to green to indicate fixed
-                robotBody.transform.GetComponent<Renderer>().material.color = Color.green;
+                IsDead();
+            }
+        }
+        else if(other.tag == "Bomb")
+        {
+            Debug.Log("Explosion should play");
+            if (!explosionParticles.isPlaying)
+                explosionParticles.Play();
+            Destroy(other.gameObject);
 
-                //Stop throwing parts
-                GetComponent<RobotThrowsParts>().enabled = false;
+            //Boss takes less damage than other robots
+            if (OverworldGameController.gameInfo.getBossStatus())
+            {
+                HealthScript.TakeDamage(10);
+            }
+            else
+            {
+                HealthScript.TakeDamage(15);
+            }
 
-                //Add this robot to the list of robots that have been defeated
-                OverworldGameController.gameInfo.RobotDefeated();
+            //Check if the robot's health is at 0 = dead
+            if (HealthScript.Dead && !firstDeath)
+            {
+                IsDead();
+            }
+        }
+        else if(other.tag == "BigBomb")
+        {
+            Debug.Log("Explosion should play");
+            if (!explosionParticles.isPlaying)
+                explosionParticles.Play();
+            Destroy(other.gameObject);
 
-                //Check if boss
-                if (OverworldGameController.gameInfo.getBossStatus() && !OverworldGameController.gameInfo.bossFixed)
-                {
-                    //Drop a tool here
-                    Instantiate(BBPickUp, Vector3.zero, Quaternion.identity);
-                    OverworldGameController.gameInfo.bossFixed = true;
-                }
-                else
-                {
-                    if (!OverworldGameController.gameInfo.isSceneLoading())
-                    {
-                        GameObject.FindGameObjectWithTag("GamePieces").transform.GetChild(0).gameObject.GetComponent<FixItPlayerController>().setRobotPanel(true);
-                        //code in progress
-                        OverworldGameController.gameInfo.changeScene();
-                    }
-                }
+            //Boss takes less damage than other robots
+            if (OverworldGameController.gameInfo.getBossStatus())
+            {
+                HealthScript.TakeDamage(10);
+            }
+            else
+            {
+                HealthScript.TakeDamage(20);
+            }
+
+            //Check if the robot's health is at 0 = dead
+            if (HealthScript.Dead && !firstDeath)
+            {
+                IsDead();
+            }
+        }
+    }
+
+    void IsDead()
+    {
+        firstDeath = true;
+        //Change robot color to green to indicate fixed
+        robotBody.transform.GetComponent<Renderer>().material.color = Color.green;
+
+        //Stop throwing parts
+        GetComponent<RobotThrowsParts>().enabled = false;
+
+        //Add this robot to the list of robots that have been defeated
+        OverworldGameController.gameInfo.RobotDefeated();
+
+        //Check if boss
+        if (OverworldGameController.gameInfo.getBossStatus() && !OverworldGameController.gameInfo.bossFixed)
+        {
+            //Drop a tool here
+            Instantiate(BBPickUp, Vector3.zero, Quaternion.identity);
+            OverworldGameController.gameInfo.bossFixed = true;
+        }
+        else
+        {
+            if (!OverworldGameController.gameInfo.isSceneLoading())
+            {
+                GameObject.FindGameObjectWithTag("GamePieces").transform.GetChild(0).gameObject.GetComponent<FixItPlayerController>().setRobotPanel(true);
+                //code in progress
+                OverworldGameController.gameInfo.changeScene();
             }
         }
     }

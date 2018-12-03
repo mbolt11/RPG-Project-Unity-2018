@@ -87,7 +87,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100004}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.08, y: 3.42, z: 2.08}
+  m_LocalPosition: {x: -4.02, y: 1, z: 2.08}
   m_LocalScale: {x: 0.005, y: 0.005, z: 0.005}
   m_Children:
   - {fileID: 400002}
@@ -240,7 +240,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4325898578583498
 Transform:
   m_ObjectHideFlags: 1
@@ -249,7 +249,7 @@ Transform:
   m_GameObject: {fileID: 1502160509846720}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -3.7109566, y: 2.6687799, z: -5.073317}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 400004}
   m_RootOrder: 2
@@ -361,7 +361,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ef0f327ba5276948bc1c84c6e63b79a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxLifeTime: 3
+  BigBombLifetime: 3
+  BombLifetime: 4
   explosionParticles: {fileID: 198552065911064300}
 --- !u!136 &136149586865843718
 CapsuleCollider:
@@ -383,7 +384,7 @@ ParticleSystem:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1502160509846720}
   serializedVersion: 5
-  lengthInSec: 0.5
+  lengthInSec: 1
   simulationSpeed: 1
   stopAction: 0
   looping: 0

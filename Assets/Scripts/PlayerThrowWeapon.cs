@@ -83,7 +83,6 @@ public class PlayerThrowWeapon : MonoBehaviour {
         {
             case "Bomb":
                 Rigidbody weaponInstance = Instantiate(bomb, weaponSpawn.position, weaponSpawn.rotation) as Rigidbody;
-                Debug.Log("made bomb");
                 weaponInstance.velocity = bombVelocity * weaponSpawn.forward;
                 break;
             case "BigBomb":
