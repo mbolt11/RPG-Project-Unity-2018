@@ -7,7 +7,6 @@ public class RobotController : MonoBehaviour
 {
     public GameObject robotBody;
     public GameObject BBPickUp;
-    public ParticleSystem explosionParticles;
 
     [HideInInspector]
     public bool isBoss;
@@ -71,19 +70,18 @@ public class RobotController : MonoBehaviour
         //When the robot gets hit by a tool/weapon
         if (other.tag == "Wrench")
         {
-            //Play the explosion and destroy weapon
-            Debug.Log("Explosion should play");
-            if (!explosionParticles.isPlaying)
-                explosionParticles.Play();
-            Destroy(other.gameObject);
+            //Play the effect and destroy the wrench
+            other.GetComponentInChildren<ParticleSystem>().Play();
+            StartCoroutine(DestroyWrench(other.gameObject));
 
+            //Take damage
             if (OverworldGameController.gameInfo.getBossStatus())
             {
-                HealthScript.TakeDamage(5);
+                HealthScript.TakeDamage(1);
             }
             else
             {
-                HealthScript.TakeDamage(8);
+                HealthScript.TakeDamage(5);
             }
 
             //Check if the robot's health is at 0 = dead
@@ -130,11 +128,6 @@ public class RobotController : MonoBehaviour
         }
         else if(other.tag == "Bomb")
         {
-            Debug.Log("Explosion should play");
-            if (!explosionParticles.isPlaying)
-                explosionParticles.Play();
-            Destroy(other.gameObject);
-
             //Boss takes less damage than other robots
             if (OverworldGameController.gameInfo.getBossStatus())
             {
@@ -153,11 +146,6 @@ public class RobotController : MonoBehaviour
         }
         else if(other.tag == "BigBomb")
         {
-            Debug.Log("Explosion should play");
-            if (!explosionParticles.isPlaying)
-                explosionParticles.Play();
-            Destroy(other.gameObject);
-
             //Boss takes less damage than other robots
             if (OverworldGameController.gameInfo.getBossStatus())
             {
@@ -204,5 +192,11 @@ public class RobotController : MonoBehaviour
                 OverworldGameController.gameInfo.changeScene();
             }
         }
+    }
+
+    private IEnumerator DestroyWrench(GameObject wrench)
+    {
+        yield return new WaitForSeconds(.25f);
+        Destroy(wrench);
     }
 }

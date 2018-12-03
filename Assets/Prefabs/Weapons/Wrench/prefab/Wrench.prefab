@@ -412,7 +412,7 @@ Transform:
   m_GameObject: {fileID: 1243548107791204}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 400002}
   m_RootOrder: 4
@@ -485,7 +485,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 041fb32bec8ae6944a45c7cda6d9f082, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxLifeTime: 2
+  MaxLifeTime: 1.5
   ObliterationParticles: {fileID: 198571812686479092}
 --- !u!136 &136018643851969658
 CapsuleCollider:

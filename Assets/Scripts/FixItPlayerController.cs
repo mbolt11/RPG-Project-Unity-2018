@@ -30,14 +30,14 @@ public class FixItPlayerController : MonoBehaviour
                 HealthScript.TakeDamage(15);
         }
         //For player taking damage from its own weapons
-        /*else if (other.tag == "Oil Spill" || other.tag == "Bomb" || other.tag == "BigBomb")
+        else if (other.tag == "Oil Spill" || other.tag == "Bomb" || other.tag == "BigBomb")
         {
             HealthScript.TakeDamage(10);
             if(other.tag == "Oil Spill")
             {
                 Destroy(other.gameObject);
             }
-        }*/
+        }
 
         //For picking up the big bomb and leaving the fix it world
         else if(other.tag=="BBPickUp" && OverworldGameController.gameInfo.bossFixed)
