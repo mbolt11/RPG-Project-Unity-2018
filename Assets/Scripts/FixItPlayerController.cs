@@ -35,7 +35,7 @@ public class FixItPlayerController : MonoBehaviour
             if (other.tag == "Bomb")
             {
                if(other.transform.GetChild(4).GetComponent<ParticleSystem>().isPlaying)
-                    HealthScript.TakeDamage(2);
+                    HealthScript.TakeDamage(10);
             }
             if(other.tag == "Oil Spill")
             {

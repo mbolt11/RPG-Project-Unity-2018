@@ -133,11 +133,11 @@ public class RobotController : MonoBehaviour
             {
                 if (OverworldGameController.gameInfo.getBossStatus())
                 {
-                    HealthScript.TakeDamage(5);
+                    HealthScript.TakeDamage(10);
                 }
                 else
                 {
-                    HealthScript.TakeDamage(6);
+                    HealthScript.TakeDamage(15);
                 }
 
                 //Check if the robot's health is at 0 = dead
