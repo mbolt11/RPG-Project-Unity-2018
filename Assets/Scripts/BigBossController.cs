@@ -75,24 +75,30 @@ public class BigBossController : MonoBehaviour
         }
         else if (other.tag == "Bomb")
         {
-            //Update health
-            HealthScript.TakeDamage(10);
-
-            //Check if the robot's health is at 0 = dead
-            if (HealthScript.Dead && !firstDeath)
+            if (other.transform.GetChild(4).GetComponent<ParticleSystem>().isPlaying)
             {
-                IsDead();
+                //Update health
+                HealthScript.TakeDamage(10);
+
+                //Check if the robot's health is at 0 = dead
+                if (HealthScript.Dead && !firstDeath)
+                {
+                    IsDead();
+                }
             }
         }
         else if (other.tag == "BigBomb")
         {
-            //Update Health
-            HealthScript.TakeDamage(20);
-
-            //Check if the robot's health is at 0 = dead
-            if (HealthScript.Dead && !firstDeath)
+            if (other.transform.GetChild(4).GetComponent<ParticleSystem>().isPlaying)
             {
-                IsDead();
+                //Update Health
+                HealthScript.TakeDamage(20);
+
+                //Check if the robot's health is at 0 = dead
+                if (HealthScript.Dead && !firstDeath)
+                {
+                    IsDead();
+                }
             }
         }
     }
