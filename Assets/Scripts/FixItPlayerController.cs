@@ -32,10 +32,20 @@ public class FixItPlayerController : MonoBehaviour
         //For player taking damage from its own weapons
         else if (other.tag == "Oil Spill" || other.tag == "Bomb" || other.tag == "BigBomb")
         {
-            HealthScript.TakeDamage(10);
+            if (other.tag == "Bomb")
+            {
+               if(other.transform.GetChild(4).GetComponent<ParticleSystem>().isPlaying)
+                    HealthScript.TakeDamage(2);
+            }
             if(other.tag == "Oil Spill")
             {
+                HealthScript.TakeDamage(10);
                 Destroy(other.gameObject);
+            }
+            if(other.tag == "BigBomb")
+            {
+                if (other.transform.GetChild(0).GetComponent<ParticleSystem>().isPlaying)
+                    HealthScript.TakeDamage(3);
             }
         }
 

@@ -9,6 +9,7 @@ public class PlayerSwingWeapon : MonoBehaviour {
     public Transform hammerSpawn;
     public Transform oilSpawn;
     public GameObject oilSpill;
+    private ParticleSystem oilStream;
     //public float velocity;
 
     private string selectedWeapon;
@@ -36,6 +37,7 @@ public class PlayerSwingWeapon : MonoBehaviour {
         //probrably will want to make hammer a child of the arm
         hammer = OverworldGameController.gameInfo.Hammer;
         oil = OverworldGameController.gameInfo.Oil;
+        oilStream = oil.transform.GetChild(1).GetComponent<ParticleSystem>();
 
         if (selectedWeapon == "Hammer")
         {
@@ -125,6 +127,10 @@ public class PlayerSwingWeapon : MonoBehaviour {
             if(spillLocation.z >= -6 && spillLocation.z <= 8)
             {
                 Instantiate(oilSpill, spillLocation, Quaternion.identity);
+                //if (oilStream.tag == "Oilstream")
+                //  Debug.Log("has correct particle system");
+                Debug.Log(oilStream.name);
+                oilStream.Play();
             }
         }
 

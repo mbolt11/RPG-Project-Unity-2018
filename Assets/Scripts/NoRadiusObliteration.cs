@@ -30,9 +30,5 @@ public class NoRadiusObliteration : MonoBehaviour {
                 Destroy(gameObject);
             }
         }
-        else
-        {
-            ObliterationParticles.Play();
-        }
     }
 }

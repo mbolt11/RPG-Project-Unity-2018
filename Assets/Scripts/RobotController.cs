@@ -129,37 +129,43 @@ public class RobotController : MonoBehaviour
         else if(other.tag == "Bomb")
         {
             //Boss takes less damage than other robots
-            if (OverworldGameController.gameInfo.getBossStatus())
+            if (other.transform.GetChild(4).GetComponent<ParticleSystem>().isPlaying)
             {
-                HealthScript.TakeDamage(10);
-            }
-            else
-            {
-                HealthScript.TakeDamage(15);
-            }
+                if (OverworldGameController.gameInfo.getBossStatus())
+                {
+                    HealthScript.TakeDamage(5);
+                }
+                else
+                {
+                    HealthScript.TakeDamage(6);
+                }
 
-            //Check if the robot's health is at 0 = dead
-            if (HealthScript.Dead && !firstDeath)
-            {
-                IsDead();
+                //Check if the robot's health is at 0 = dead
+                if (HealthScript.Dead && !firstDeath)
+                {
+                    IsDead();
+                }
             }
         }
         else if(other.tag == "BigBomb")
         {
             //Boss takes less damage than other robots
-            if (OverworldGameController.gameInfo.getBossStatus())
+            if (other.transform.GetChild(0).GetComponent<ParticleSystem>().isPlaying)
             {
-                HealthScript.TakeDamage(10);
-            }
-            else
-            {
-                HealthScript.TakeDamage(20);
-            }
+                if (OverworldGameController.gameInfo.getBossStatus())
+                {
+                    HealthScript.TakeDamage(1);
+                }
+                else
+                {
+                    HealthScript.TakeDamage(2);
+                }
 
-            //Check if the robot's health is at 0 = dead
-            if (HealthScript.Dead && !firstDeath)
-            {
-                IsDead();
+                //Check if the robot's health is at 0 = dead
+                if (HealthScript.Dead && !firstDeath)
+                {
+                    IsDead();
+                }
             }
         }
     }
