@@ -110,7 +110,7 @@ public class OverworldGameController : MonoBehaviour
         playerlocation = new Vector3(3, 0, -3);
 
         //Disable Fido at the beginning of the game
-        Fido.SetActive(false);
+        //Fido.SetActive(false);
 
         //For the starting narration
         dialogueManager.BeginMessage();
@@ -136,7 +136,7 @@ public class OverworldGameController : MonoBehaviour
         if(bossAlive)
         {
             BigBoss.SetActive(true);
-            Fido.SetActive(true);
+            //Fido.SetActive(true);
         }
 
         //Make sure that only the chests that have been opened are deactivated
@@ -445,7 +445,7 @@ public class OverworldGameController : MonoBehaviour
     //Method to wrap up game when Big Boss is defeated
     public void EndOfGame()
     {
-        //Fido.SetActive(true);
+        Fido.SetActive(true);
         dialogueManager.YouWonMessage();
     }
 }
