@@ -25,8 +25,6 @@ public class BigBossController : MonoBehaviour
         else
         {
             transform.localScale = new Vector3(1, 1, 1);
-            //transform.Rotate(0, 180, 0);
-            //transform.position = new Vector3(transform.position.x, -.75f, transform.position.z);
         }
 
         firstDeath = false;

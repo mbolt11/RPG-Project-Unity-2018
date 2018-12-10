@@ -4418,7 +4418,6 @@ MonoBehaviour:
   Bomb: {fileID: 100004, guid: a72885e93c1e4c5449d8f2a4888f2ed7, type: 2}
   Villager: {fileID: 1374705863890260, guid: 8ae454e87a2a8b64b87cd1412e07bccb, type: 2}
   BigBoss: {fileID: 1599422662}
-  Fido: {fileID: 973156033}
   bossAlive: 0
   gameOver: 0
   bossFixed: 0
@@ -9469,7 +9468,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1508663388037386, guid: 59f785792178d044180c5dba12e11c14, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59f785792178d044180c5dba12e11c14, type: 2}
@@ -9479,6 +9478,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1508663388037386, guid: 59f785792178d044180c5dba12e11c14,
     type: 2}
   m_PrefabInternal: {fileID: 973156032}
+--- !u!114 &973156035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 973156033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be75c2bd5cc3941c287b8af95b00c2aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &973450613 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1325823067429616, guid: 60cbfa0087cb7483db79766703b179b0,
@@ -11493,7 +11503,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}

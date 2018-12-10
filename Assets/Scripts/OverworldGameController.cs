@@ -36,7 +36,6 @@ public class OverworldGameController : MonoBehaviour
     //Villager and big boss
     public GameObject Villager;
     public GameObject BigBoss;
-    public GameObject Fido;
     public bool bossAlive = false;
     public bool gameOver = false;
 
@@ -109,9 +108,6 @@ public class OverworldGameController : MonoBehaviour
         //At the start of the game the player is at 3, 0, -3
         playerlocation = new Vector3(3, 0, -3);
 
-        //Disable Fido at the beginning of the game
-        //Fido.SetActive(false);
-
         //For the starting narration
         dialogueManager.BeginMessage();
 
@@ -128,15 +124,13 @@ public class OverworldGameController : MonoBehaviour
         enterKeyPrompt.text = "Enter Key Prompt";
         chestPromptPanel.SetActive(false);
 
-        //Initialize the Big Boss and Fido
+        //Initialize the Big Boss
         BigBoss = GameObject.FindGameObjectWithTag("BigBoss");
-        Fido = GameObject.FindGameObjectWithTag("Fido");
 
         //For returning to overworld if big boss has been enabled already
         if(bossAlive)
         {
             BigBoss.SetActive(true);
-            //Fido.SetActive(true);
         }
 
         //Make sure that only the chests that have been opened are deactivated
@@ -445,7 +439,6 @@ public class OverworldGameController : MonoBehaviour
     //Method to wrap up game when Big Boss is defeated
     public void EndOfGame()
     {
-        Fido.SetActive(true);
         dialogueManager.YouWonMessage();
     }
 }

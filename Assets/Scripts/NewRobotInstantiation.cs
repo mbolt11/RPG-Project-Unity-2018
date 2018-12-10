@@ -21,6 +21,7 @@ public class NewRobotInstantiation : MonoBehaviour
             for (int i = 0; i < OverworldGameController.gameInfo.robotsBeaten.Count; i++)
             {
                 string todeactivate = OverworldGameController.gameInfo.robotsBeaten[i];
+                Debug.Log(todeactivate);
                 Destroy(GameObject.Find(todeactivate));
             }
 
