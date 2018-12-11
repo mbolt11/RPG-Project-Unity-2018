@@ -87,10 +87,10 @@ public class BigBossController : MonoBehaviour
         }
         else if (other.tag == "BigBomb")
         {
-            if (other.transform.GetChild(4).GetComponent<ParticleSystem>().isPlaying)
+            if (other.transform.GetChild(0).GetComponent<ParticleSystem>().isPlaying)
             {
                 //Update Health
-                HealthScript.TakeDamage(1);
+                HealthScript.TakeDamage(6);
 
                 //Check if the robot's health is at 0 = dead
                 if (HealthScript.Dead && !firstDeath)
